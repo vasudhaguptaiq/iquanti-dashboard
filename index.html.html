@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>iQuanti Health Dashboard · Q1–Q2 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090f;--sf:#0f1523;--sf2:#151d2e;--sf3:#1c2640;--bd:#1e2d47;--bd2:#273852;--ac:#5b9cf6;--gr:#3ecf8e;--re:#f16060;--or:#f59e0b;--pu:#9f7aea;--mu:#64748b;--dim:#334155;--tx:#e2e8f0;--fn:'Inter',sans-serif;--mo:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;overflow:hidden}
+body{font-family:var(--fn);background:var(--bg);color:var(--tx);font-size:13px;display:flex;flex-direction:column}
+.tb{height:52px;background:var(--sf);border-bottom:1px solid var(--bd);display:flex;align-items:center;padding:0 20px;gap:16px;flex-shrink:0}
+.brand{font-size:17px;font-weight:700;letter-spacing:-.5px;background:linear-gradient(135deg,#5b9cf6,#9f7aea);-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap}
+.tb-mid{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}
+.mb{background:var(--sf2);border:1px solid var(--bd2);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--mu)}
+.mb strong{color:var(--ac)}
+.cs{background:var(--sf2);border:1px solid var(--bd2);color:var(--tx);padding:5px 28px 5px 10px;border-radius:8px;font-family:var(--fn);font-size:12px;cursor:pointer;outline:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 8px center}
+.cs:focus{border-color:var(--ac)}
+.cs.sm{font-size:11px;padding:4px 22px 4px 8px}
+.lay{display:flex;flex:1;overflow:hidden}
+.sb{width:162px;flex-shrink:0;background:var(--sf);border-right:1px solid var(--bd);display:flex;flex-direction:column;padding:10px 0;overflow-y:auto}
+.slbl{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--dim);padding:10px 14px 3px}
+.st{display:flex;align-items:center;gap:8px;padding:8px 14px;cursor:pointer;color:var(--mu);font-size:12px;font-weight:500;border-left:3px solid transparent;transition:all .12s}
+.st:hover{color:var(--tx);background:var(--sf2)}.st.active{color:var(--ac);background:rgba(91,156,246,.08);border-left-color:var(--ac)}
+.st-i{font-size:13px;width:16px;text-align:center;flex-shrink:0}
+.ct{flex:1;overflow-y:auto;padding:18px}
+.pn{display:none}.pn.active{display:block}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kp{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;position:relative;overflow:hidden}
+.kp::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:12px 12px 0 0}
+.kp.bl::before{background:linear-gradient(90deg,var(--ac),transparent)}.kp.gr::before{background:linear-gradient(90deg,var(--gr),transparent)}.kp.re::before{background:linear-gradient(90deg,var(--re),transparent)}.kp.or::before{background:linear-gradient(90deg,var(--or),transparent)}.kp.pu::before{background:linear-gradient(90deg,var(--pu),transparent)}
+.kp-l{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--mu);margin-bottom:6px}
+.kp-v{font-size:22px;font-weight:700;font-family:var(--mo);line-height:1}.kp-s{font-size:10px;color:var(--mu);margin-top:4px}
+.kp.bl .kp-v{color:var(--ac)}.kp.gr .kp-v{color:var(--gr)}.kp.re .kp-v{color:var(--re)}.kp.or .kp-v{color:var(--or)}.kp.pu .kp-v{color:var(--pu)}
+.tw{border:1px solid var(--bd);border-radius:10px;overflow:hidden}.tw.ox{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{background:var(--sf2);padding:7px 11px;text-align:left;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.4px;color:var(--mu);border-bottom:1px solid var(--bd);white-space:nowrap}
+td{padding:7px 11px;border-bottom:1px solid var(--bd);font-size:12px;color:var(--tx)}
+tr:last-child td{border-bottom:none}.tot td{background:var(--sf2);font-weight:600}
+tr:hover:not(.tot) td{background:rgba(91,156,246,.035)}
+.r{text-align:right}.mn{font-family:var(--mo)}.cg{color:var(--gr)}.cr{color:var(--re)}.co{color:var(--or)}.cb{color:var(--ac)}.cp{color:var(--pu)}.cm{color:var(--mu)}
+.bx{display:inline-block;padding:2px 8px;border-radius:20px;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.3px}
+.bg{background:rgba(62,207,142,.1);color:var(--gr);border:1px solid rgba(62,207,142,.22)}
+.br{background:rgba(241,96,96,.1);color:var(--re);border:1px solid rgba(241,96,96,.22)}
+.bo{background:rgba(245,158,11,.1);color:var(--or);border:1px solid rgba(245,158,11,.22)}
+.bb{background:rgba(91,156,246,.1);color:var(--ac);border:1px solid rgba(91,156,246,.22)}
+.bp{background:rgba(159,122,234,.1);color:var(--pu);border:1px solid rgba(159,122,234,.22)}
+.bm{background:rgba(100,116,139,.1);color:var(--mu);border:1px solid rgba(100,116,139,.22)}
+.cb2{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;position:relative}
+.cb-t{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--mu);margin-bottom:10px}
+canvas{display:block;max-width:100%}
+/* TOOLTIP */
+.tt{position:fixed;pointer-events:none;background:rgba(15,21,35,.97);border:1px solid var(--bd2);border-radius:8px;padding:10px 13px;font-size:11px;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.5);min-width:150px;display:none}
+.tt-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--mu);margin-bottom:6px}
+.tt-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:2px 0}
+.tt-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.tt-label{color:var(--mu);font-size:11px}.tt-val{font-family:var(--mo);font-weight:600;font-size:12px}
+/* SECTION */
+.sec{margin-bottom:22px}
+.shd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:6px}
+.st2{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.9px;color:var(--mu);display:flex;align-items:center;gap:8px}
+.st2::after{content:'';display:block;width:20px;height:1px;background:var(--bd2)}
+/* FILTER ROW */
+.fr{display:flex;gap:8px;margin-bottom:10px;align-items:center;flex-wrap:wrap}
+.si{flex:1;min-width:140px;background:var(--sf);border:1px solid var(--bd2);color:var(--tx);padding:6px 10px;border-radius:8px;font-family:var(--fn);font-size:12px;outline:none}
+.si:focus{border-color:var(--ac)}.rc{font-size:10px;color:var(--dim)}
+/* INSIGHT */
+.ic{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px 16px}
+.ic-t{font-size:11px;font-weight:600;color:var(--ac);margin-bottom:10px}
+.ic-l{list-style:none}
+.ic-l li{font-size:12px;color:var(--tx);padding:7px 0 7px 16px;position:relative;border-bottom:1px solid rgba(30,45,71,.6);line-height:1.55}
+.ic-l li:last-child{border-bottom:none}
+.ic-l li::before{content:'›';position:absolute;left:0;color:var(--ac);font-weight:700;font-size:14px;top:6px}
+.ic-l li .sub{font-size:11px;color:var(--mu);display:block;margin-top:3px;padding-left:0}
+.ic-l li .q{font-size:10px;color:var(--pu);display:block;margin-top:2px;font-style:italic}
+.ic-l li em{color:var(--or);font-style:normal}
+/* PL CARD */
+.plc{background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px 16px}
+.plc-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.plc-n{font-size:13px;font-weight:600}
+.plc-g{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.plc-v{font-size:16px;font-weight:700;font-family:var(--mo)}
+.plc-l{font-size:9px;color:var(--mu);text-transform:uppercase;letter-spacing:.3px;margin-top:2px}
+.plc-s{font-size:9px;color:var(--dim);margin-top:1px}
+.plc-r{display:flex;gap:4px;flex-wrap:wrap;margin-top:8px}
+.pb{height:4px;background:var(--sf2);border-radius:2px;overflow:hidden;margin-top:3px}
+.pb-f{height:100%;border-radius:2px}.fg{background:var(--gr)}.fo{background:var(--or)}.fr2{background:var(--re)}.fb{background:var(--ac)}
+/* PROGRESS BAR */
+.pbr-wrap{display:flex;align-items:center;gap:8px;margin-top:4px}
+.pbr{flex:1;height:5px;background:var(--sf2);border-radius:3px;overflow:hidden}
+.pbr-f{height:100%;border-radius:3px}
+/* MODAL */
+.ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:500;align-items:center;justify-content:center}.ov.open{display:flex}
+.mod{background:var(--sf);border:1px solid var(--bd2);border-radius:14px;padding:22px;width:380px;max-width:92vw}
+.mod-t{font-size:14px;font-weight:600;margin-bottom:14px}
+.fld{margin-bottom:10px}.fld label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--mu);margin-bottom:4px}
+.fld input,.fld select{width:100%;background:var(--bg);border:1px solid var(--bd2);color:var(--tx);padding:7px 10px;border-radius:8px;font-family:var(--fn);font-size:12px;outline:none}
+.ma{display:flex;gap:8px;justify-content:flex-end;margin-top:14px}
+.btn{display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:8px;border:1px solid var(--bd2);background:var(--sf2);color:var(--mu);font-family:var(--fn);font-size:11px;font-weight:500;cursor:pointer;transition:all .12s}.btn:hover{border-color:var(--ac);color:var(--ac)}
+.ntf{position:fixed;bottom:20px;right:20px;background:var(--sf);border:1px solid var(--bd2);border-radius:10px;padding:10px 16px;font-size:12px;z-index:999;transform:translateY(60px);opacity:0;transition:all .3s;box-shadow:0 4px 20px rgba(0,0,0,.4)}.ntf.show{transform:translateY(0);opacity:1}.ntf.ok{border-color:var(--gr);color:var(--gr)}.ntf.err{border-color:var(--re);color:var(--re)}
+.tag-hl{background:rgba(91,156,246,.12);border:1px solid rgba(91,156,246,.2);color:var(--ac);padding:1px 7px;border-radius:12px;font-size:10px;font-weight:600}
+/* MONTH FILTER CHIP */
+.mf-row{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.mf-chip{padding:4px 12px;border-radius:16px;font-size:11px;font-weight:500;cursor:pointer;border:1px solid var(--bd2);color:var(--mu);background:var(--sf2);transition:all .12s}
+.mf-chip:hover{border-color:var(--ac);color:var(--ac)}.mf-chip.active{background:var(--ac);border-color:var(--ac);color:#0a0e1a;font-weight:600}
+/* DIVIDER */
+.dv{height:1px;background:var(--bd);margin:16px 0}
+</style>
+</head>
+<body>
+<div class="tb">
+  <div class="brand">iQuanti</div>
+  <div class="tb-mid">
+    <div class="mb">Health Dashboard · <strong id="tb-period">Q1 2026</strong></div>
+  </div>
+</div>
+
+<div class="lay">
+<nav class="sb">
+  <div class="slbl">Dashboard</div>
+  <div class="st active" onclick="sw('ov')" id="st-ov"><span class="st-i">◈</span>Overview</div>
+  <div class="slbl">Metrics</div>
+  <div class="st" onclick="sw('ro')" id="st-ro"><span class="st-i">📊</span>Rev & Ops</div>
+  <div class="st" onclick="sw('pm')" id="st-pm"><span class="st-i">📐</span>Proj Margin</div>
+  <div class="st" onclick="sw('rf')" id="st-rf"><span class="st-i">👤</span>Rev / FTE</div>
+  <div class="st" onclick="sw('rk')" id="st-rk"><span class="st-i">⚠️</span>Risk</div>
+  <div class="st" onclick="sw('ut')" id="st-ut"><span class="st-i">📈</span>Utilization</div>
+</nav>
+<div class="ct">
+
+<!-- ══════════ OVERVIEW ══════════ -->
+<div class="pn active" id="pn-ov">
+  <div class="shd"><div class="st2">Cumulative Overview</div><span class="bx bb">All months combined</span></div>
+  <div class="g4" id="ov-kpis"></div>
+
+  <!-- Target Reference Table -->
+  <div class="sec">
+    <div class="shd"><div class="st2">PL Targets — Reference</div></div>
+    <div class="tw"><table><thead><tr>
+      <th>Portfolio Leader</th><th class="r">Margin Target</th><th class="r">Rev/FTE Target</th>
+      <th class="r">Jan Margin</th><th class="r">Feb Margin</th><th class="r">Mar Margin</th>
+      <th class="r">Jan Rev/FTE</th><th class="r">Feb Rev/FTE</th><th class="r">Mar Rev/FTE</th>
+    </tr></thead><tbody id="ov-tgt-body"></tbody></table></div>
+  </div>
+
+  <!-- MoM Performance Tables -->
+  <div class="g2">
+    <div class="sec">
+      <div class="shd"><div class="st2">Margin — Month-on-Month Performance</div></div>
+      <div class="tw"><table><thead><tr><th>Portfolio Leader</th><th class="r">Jan'26</th><th class="r">Feb'26</th><th class="r">Mar'26</th><th class="r">Q1 Avg</th></tr></thead><tbody id="ov-pm-mom"></tbody></table></div>
+    </div>
+    <div class="sec">
+      <div class="shd"><div class="st2">Rev/FTE — Month-on-Month Performance</div></div>
+      <div class="tw"><table><thead><tr><th>Portfolio Leader</th><th class="r">Jan'26</th><th class="r">Feb'26</th><th class="r">Mar'26</th><th class="r">Q1 Avg</th></tr></thead><tbody id="ov-rf-mom"></tbody></table></div>
+    </div>
+  </div>
+
+  <!-- Charts with hover -->
+  <div class="g2">
+    <div class="cb2">
+      <div class="cb-t">PL Margin — Month-on-Month (hover for exact values)</div>
+      <canvas id="ov-mt" height="210"></canvas>
+    </div>
+    <div class="cb2">
+      <div class="cb-t">PL Rev/FTE — Month-on-Month (hover for exact values)</div>
+      <canvas id="ov-rt" height="210"></canvas>
+    </div>
+  </div>
+
+  <!-- PL Scorecards -->
+  <div class="sec">
+    <div class="shd"><div class="st2">PL Scorecards — Q1 Cumulative</div></div>
+    <div id="pl-cards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px"></div>
+  </div>
+
+  <!-- Revenue + Utilization trend -->
+  <div class="g2">
+    <div class="cb2"><div class="cb-t">Revenue Trend ($M) — hover for values</div><canvas id="ov-rev" height="140"></canvas></div>
+    <div class="cb2"><div class="cb-t">Utilization GT% Trend — hover for values</div><canvas id="ov-util" height="140"></canvas></div>
+  </div>
+
+  <div class="g2">
+    <div class="ic"><div class="ic-t">✅ Q1 Highlights</div><ul class="ic-l" id="ov-pos"></ul></div>
+    <div class="ic"><div class="ic-t">🔴 Q1 Watch Items</div><ul class="ic-l" id="ov-neg"></ul></div>
+  </div>
+</div>
+
+<!-- ══════════ REV & OPS ══════════ -->
+<div class="pn" id="pn-ro">
+  <div class="shd">
+    <div class="st2">Revenue & Operations</div>
+    <div style="display:flex;gap:6px;align-items:center">
+      <label style="font-size:10px;color:var(--mu)">Filter:</label>
+      <select class="cs sm" id="ro-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select>
+    </div>
+  </div>
+  <div class="g4" id="ro-kpis"></div>
+  <div class="g2">
+    <div class="cb2"><div class="cb-t">Revenue by Solution — <span id="ro-sl"></span></div><canvas id="ro-sol" height="200"></canvas></div>
+    <div class="cb2"><div class="cb-t">Client Goals — <span id="ro-gl"></span></div><canvas id="ro-goal" height="200"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="sec">
+      <div class="shd"><div class="st2">Solution Revenue</div><select class="cs sm" id="ro-sol-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select></div>
+      <div class="tw"><table><thead><tr id="ro-sol-hdr"></tr></thead><tbody id="ro-sol-b"></tbody></table></div>
+    </div>
+    <div class="sec">
+      <div class="shd"><div class="st2">Revenue Loss</div><select class="cs sm" id="ro-loss-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select></div>
+      <div class="tw"><table><thead><tr id="ro-loss-hdr"></tr></thead><tbody id="ro-loss-b"></tbody></table></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="sec">
+      <div class="shd"><div class="st2">PL-wise Revenue Loss</div><select class="cs sm" id="ro-pll-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><td><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select></div>
+      <div class="tw"><table><thead><tr id="ro-pll-hdr"></tr></thead><tbody id="ro-pll-b"></tbody></table></div>
+      <div style="margin-top:10px" class="tw ox"><table><thead><tr><th>PL</th><th>Jan: Delivery</th><th>Jan: External</th><th>Jan: Multiple</th><th>Feb: External</th><th>Mar: Delivery</th></tr></thead><tbody>
+        <tr><td>Bindiya</td><td class="mn cm">—</td><td class="mn co">$286K</td><td class="mn cm">—</td><td class="mn cm">—</td><td class="mn cm">—</td></tr>
+        <tr><td>Jithin</td><td class="mn co">$150K</td><td class="mn cm">—</td><td class="mn co">$440K</td><td class="mn cm">—</td><td class="mn cm">—</td></tr>
+        <tr><td>Pawan</td><td class="mn cm">—</td><td class="mn co">$215K</td><td class="mn cm">—</td><td class="mn cm">—</td><td class="mn cr">$1.72M</td></tr>
+        <tr><td>Kerstin</td><td class="mn cm">—</td><td class="mn co">$280K</td><td class="mn cm">—</td><td class="mn co">$165K</td><td class="mn cm">—</td></tr>
+        <tr><td>Madhurima</td><td class="mn cm">—</td><td class="mn co">$293K</td><td class="mn cm">—</td><td class="mn co">$270K</td><td class="mn cm">—</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="sec">
+      <div class="shd"><div class="st2">Escalations</div><select class="cs sm" id="ro-esc-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select></div>
+      <div class="tw"><table><thead><tr id="ro-esc-cnt-hdr"></tr></thead><tbody id="ro-esc-cnt-b"></tbody></table></div>
+      <div style="margin-top:10px" class="tw ox"><table><thead><tr><th>Type</th><th>Sev</th><th>Project</th><th>Issue</th><th>Solution</th></tr></thead><tbody id="ro-esc-det-b"></tbody></table></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="sec">
+      <div class="shd"><div class="st2">Quality Feedback</div><select class="cs sm" id="ro-fb-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select></div>
+      <div class="tw"><table><thead><tr id="ro-fb-hdr"></tr></thead><tbody id="ro-fb-b"></tbody></table></div>
+    </div>
+    <div class="sec">
+      <div class="shd"><div class="st2">Client Goal Performance</div><select class="cs sm" id="ro-cg-mf" onchange="renderRO()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select></div>
+      <div class="tw"><table><thead><tr id="ro-cg-hdr"></tr></thead><tbody id="ro-cg-b"></tbody></table></div>
+      <div style="margin-top:10px" class="shd"><div class="st2">Behind Goals Detail</div><select class="cs sm" id="ro-bg-mf" onchange="renderRO()"><option value="jan">Jan'26</option><option value="feb">Feb'26</option><option value="mar">Mar'26</option></select></div>
+      <div class="tw ox"><table><thead><tr><th>Type</th><th class="r">#</th><th>Projects</th></tr></thead><tbody id="ro-bg-b"></tbody></table></div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="shd"><div class="st2">Program Management · Q1'26</div></div>
+    <div class="g2">
+      <div style="background:var(--sf);border:1px solid var(--bd);border-radius:12px;padding:14px 16px"><div id="pm-bars"></div></div>
+      <div class="g2" style="margin-bottom:0;align-content:start">
+        <div class="kp bl"><div class="kp-l">Total Reports</div><div class="kp-v">66</div></div>
+        <div class="kp or"><div class="kp-l">Completion</div><div class="kp-v">52%</div></div>
+        <div class="kp gr"><div class="kp-l">Structure</div><div class="kp-v">78.9%</div></div>
+        <div class="kp re"><div class="kp-l">Hygiene</div><div class="kp-v">37.7%</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ PROJECT MARGIN ══════════ -->
+<div class="pn" id="pn-pm">
+  <div class="shd"><div class="st2">Project Margin</div><span id="pm-lbl" class="bx bb"></span></div>
+  <div class="g4" id="pm-kpis"></div>
+
+  <!-- PL Summary: clean data only, no met/not met -->
+  <div class="sec">
+    <div class="shd">
+      <div class="st2">PL Performance Summary</div>
+      <select class="cs sm" id="pm-sum-mf" onchange="renderPM()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select>
+    </div>
+    <div class="tw ox"><table><thead id="pm-pl-hdr"></thead><tbody id="pm-pl"></tbody></table></div>
+  </div>
+
+  <!-- Project Detail -->
+  <div class="sec">
+    <div class="shd"><div class="st2">Project Detail</div></div>
+    <div class="fr">
+      <input class="si" id="pm-srch" placeholder="Search project…" oninput="filterPM()">
+      <select class="cs" id="pm-plf" onchange="filterPM()" style="min-width:140px"><option value="">All PLs</option></select>
+      <select class="cs" id="pm-mf" onchange="filterPM()" style="min-width:110px"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar" selected>Mar'26</option></select>
+      <span class="rc" id="pm-cnt"></span>
+    </div>
+    <div class="tw ox"><table><thead id="pm-det-hdr"></thead><tbody id="pm-det"></tbody></table></div>
+  </div>
+
+  <!-- Deep Insights -->
+  <div class="shd"><div class="st2">In-Depth Analysis — <span id="pm-ins-lbl"></span></div><select class="cs sm" id="pm-ins-mf" onchange="renderPMInsights()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar" selected>Mar'26</option></select></div>
+  <div class="g2">
+    <div class="ic"><div class="ic-t">⚠️ Projects with Declining Margins</div><ul class="ic-l" id="pm-decline"></ul></div>
+    <div class="ic"><div class="ic-t">🔴 Negative / Critical Margin Projects</div><ul class="ic-l" id="pm-negative"></ul></div>
+  </div>
+  <div class="ic" style="margin-top:12px"><div class="ic-t">📉 Consecutive Poor Performers (2+ months below 60%)</div><ul class="ic-l" id="pm-consec"></ul></div>
+  <div class="ic" style="margin-top:12px"><div class="ic-t">📊 PL Impact Analysis — Projects Dragging Portfolio Performance</div><ul class="ic-l" id="pm-plimpact"></ul></div>
+</div>
+
+<!-- ══════════ REV/FTE ══════════ -->
+<div class="pn" id="pn-rf">
+  <div class="shd"><div class="st2">Revenue / FTE</div><span id="rf-lbl" class="bx bb"></span></div>
+  <div class="g4" id="rf-kpis"></div>
+
+  <div class="sec">
+    <div class="shd">
+      <div class="st2">PL Performance Summary</div>
+      <select class="cs sm" id="rf-sum-mf" onchange="renderRF()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option></select>
+    </div>
+    <div class="tw ox"><table><thead id="rf-pl-hdr"></thead><tbody id="rf-pl"></tbody></table></div>
+  </div>
+
+  <div class="sec">
+    <div class="shd"><div class="st2">Project Detail</div></div>
+    <div class="fr">
+      <input class="si" id="rf-srch" placeholder="Search project…" oninput="filterRF()">
+      <select class="cs" id="rf-plf" onchange="filterRF()" style="min-width:140px"><option value="">All PLs</option></select>
+      <select class="cs" id="rf-mf" onchange="filterRF()" style="min-width:110px"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar" selected>Mar'26</option></select>
+      <span class="rc" id="rf-cnt"></span>
+    </div>
+    <div class="tw ox"><table><thead id="rf-det-hdr"></thead><tbody id="rf-det"></tbody></table></div>
+  </div>
+
+  <div class="shd" style="margin-top:4px"><div class="st2">In-Depth Analysis — <span id="rf-ins-lbl"></span></div><select class="cs sm" id="rf-ins-mf" onchange="renderRFInsights()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar" selected>Mar'26</option></select></div>
+  <div class="g2" style="margin-top:10px">
+    <div class="ic"><div class="ic-t">⚠️ PLs Below Rev/FTE Target — Diagnostic</div><ul class="ic-l" id="rf-below"></ul></div>
+    <div class="ic"><div class="ic-t">📉 High FTE, Low Revenue — Efficiency Concerns</div><ul class="ic-l" id="rf-highfte"></ul></div>
+  </div>
+  <div class="ic" style="margin-top:12px"><div class="ic-t">📊 Consecutive Underperformance — Rev/FTE</div><ul class="ic-l" id="rf-consec"></ul></div>
+</div>
+
+<!-- ══════════ RISK ══════════ -->
+<div class="pn" id="pn-rk">
+  <div class="shd">
+    <div class="st2">Risk Register</div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <label style="font-size:11px;color:var(--mu)">Viewing month:</label>
+      <select class="cs sm" id="rk-mf" onchange="setRKMonth(this.value)" style="min-width:100px"></select>
+      <span class="bx bp" id="rk-snapshot-lbl" style="font-size:10px"></span>
+    </div>
+  </div>
+  <div class="g4" id="rk-kpis"></div>
+  <div class="g2">
+    <div class="cb2"><div class="cb-t">Risk by PL — <span id="rk-pl-lbl">Current Month</span></div><canvas id="rk-pl" height="200"></canvas></div>
+    <div class="cb2"><div class="cb-t">Risk by Type</div><canvas id="rk-type" height="200"></canvas></div>
+  </div>
+  <div class="sec">
+    <div class="fr">
+      <input class="si" id="rk-srch" placeholder="Search project, PL or type…" oninput="filterRisk()">
+      <select class="cs" id="rk-plf" onchange="filterRisk()" style="min-width:140px"><option value="">All PLs</option></select>
+      <select class="cs" id="rk-stf" onchange="filterRisk()" style="min-width:110px"><option value="">All Statuses</option><option>High</option><option>Medium</option><option>Low</option><option>No</option></select>
+      <select class="cs" id="rk-tyf" onchange="filterRisk()" style="min-width:130px"><option value="">All Types</option><option>Performance</option><option>Resource Issues</option><option>Quality</option></select>
+      <span class="rc" id="rk-cnt"></span>
+    </div>
+    <div class="tw ox"><table><thead><tr><th>Project</th><th>Risk Type</th><th>PL</th><th id="rk-prev-hdr">Prev Month</th><th id="rk-curr-hdr">Current Month</th><th>Action</th></tr></thead><tbody id="rk-body"></tbody></table></div>
+  </div>
+  <div class="g2">
+    <div class="ic"><div class="ic-t">🔴 High Risk — May'26 (Action Required)</div><ul class="ic-l" id="rk-high"></ul></div>
+    <div class="ic"><div class="ic-t">✅ Improvements: Apr'26 → May'26</div><ul class="ic-l" id="rk-imp"></ul></div>
+  </div>
+  <div class="ic" style="margin-top:12px"><div class="ic-t">📊 Risk Escalations & Persistent Issues</div><ul class="ic-l" id="rk-esc"></ul></div>
+  <div class="sec" style="margin-top:16px">
+    <div class="shd"><div class="st2">📋 Risk Summary — May'26</div></div>
+    <div style="padding:14px 16px;line-height:1.7;font-size:12px;color:var(--tx)">
+      <p><strong>Summary:</strong></p>
+      <p style="margin-top:4px">This report provides an integrated view of the health of key client projects, highlighting revenue risks and outlining current mitigation efforts for 2026.</p>
+      <p style="margin-top:12px"><strong>Projects with Elevated Risks</strong></p>
+      <ul class="ic-l" style="margin-top:6px">
+        <li><strong>Aritzia-SEO (Bridge Scope):</strong> The client is evaluating bringing SEO/GEO capabilities in-house under new e-commerce leadership, creating renewal risk beyond the current bridge scope. Interest currently remains limited to a short-term technical SEO extension, with additional GEO scope potentially impacted by exploration of an internal dynamic rendering solution.</li>
+        <li><strong>Brimar-PCM:</strong> The Google MCC breach intensified existing strategic and efficiency concerns, with recent optimization pivots not yet stabilizing performance amid increased competition and product mix changes. Client trust is gradually recovering, though leadership expects stronger proactive strategic guidance moving forward.</li>
+        <li><strong>HSBC APAC-SEO:</strong> Client feedback on the engagement remains positive; however, implementation challenges within the Philippines team continue to create renewal risk as the client focuses on internal priorities before revisiting longer-term engagement discussions.</li>
+        <li><strong>Sunrise Brands – Donald Pliner-PCM:</strong> The client has raised quality concerns related to resource and skill gaps, particularly around retail industry and business context understanding. Interim resource support remains in place while hiring efforts continue, alongside active client communication and development of a more detailed action plan.</li>
+        <li><strong>Kapitus PCM:</strong> Performance across April and May continues to remain challenging despite SME involvement and optimization strategy adjustments. The team is evaluating the need for dedicated SME support, as progress in stabilizing performance has remained limited.</li>
+      </ul>
+      <p style="margin-top:12px"><strong>Positive Developments</strong></p>
+      <ul class="ic-l" style="margin-top:6px">
+        <li><strong>UOB-TH-SEO:</strong> Geo-tracking gaps have been resolved through the implementation of PEEC.AI, providing the client with meaningful and reliable geo-level insights.</li>
+        <li><strong>Bread Financial:</strong> The engagement has stabilized following earlier breach-related concerns, with overall conditions continuing to improve.</li>
+      </ul>
+      <p style="margin-top:12px"><strong>Areas Requiring Continued Focus</strong></p>
+      <ul class="ic-l" style="margin-top:6px">
+        <li><strong>Amex-MCG-Analytics:</strong> The team has narrowed the root cause impacting data consistency across the user journey. Additional analytics support is being engaged to strengthen planning visibility while deeper validation of tagging setup and event flow continues toward a long-term remediation path.</li>
+        <li><strong>Amex D&amp;D:</strong> Resource coverage is being strengthened through DevOps backup support, expanded on-call alerting, and extended developer availability. A formalized escalation process is still being developed as a preventive measure.</li>
+        <li><strong>Discover Credit Cards-SEO:</strong> Agency consolidation discussions at CapOne have introduced uncertainty around future scope. The situation is being monitored closely as engagement structure decisions evolve.</li>
+      </ul>
+      <p style="margin-top:12px"><strong>Other Key Observations</strong></p>
+      <p style="margin-top:4px">Active risks this period continue to be weighted toward the Delivery category, with several areas potentially addressable through bridging SME gaps, strengthening non-BFSI business skill sets, and resourcing improvements, rather than external market or client-driven factors.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ UTILIZATION ══════════ -->
+<div class="pn" id="pn-ut">
+  <div class="shd">
+    <div class="st2">Team Utilization</div>
+    <select class="cs sm" id="ut-mf" onchange="renderUT()"><option value="Apr" selected>Apr'26</option><option value="Mar">Mar'26</option><option value="Feb">Feb'26</option><option value="Jan">Jan'26</option></select>
+  </div>
+  <div class="g4" id="ut-kpis"></div>
+  <div class="g2">
+    <div class="cb2"><div class="cb-t">Practice GT% — <span id="ut-bl"></span> (hover for values)</div><canvas id="ut-bar" height="220"></canvas></div>
+    <div class="cb2"><div class="cb-t">Overall GT% Trend — All Months (hover for values)</div><canvas id="ut-trend" height="220"></canvas></div>
+  </div>
+  <div class="g2">
+    <div class="sec">
+      <div class="shd"><div class="st2">Practice Detail — <span id="ut-tl"></span></div></div>
+      <div class="tw ox"><table><thead><tr><th>Practice</th><th class="r">L1</th><th class="r">L2</th><th class="r">L3</th><th class="r">M1</th><th class="r">M2</th><th class="r">GT%</th><th>Status</th></tr></thead><tbody id="ut-body"></tbody></table></div>
+    </div>
+    <div class="sec">
+      <div class="shd"><div class="st2">Month-over-Month Comparison</div><select class="cs sm" id="ut-mom-mf" onchange="renderUT()"><option value="all">All Months</option><option value="Jan">Jan'26</option><option value="Feb">Feb'26</option><option value="Mar">Mar'26</option><option value="Apr">Apr'26</option></select></div>
+      <div class="tw ox"><table><thead id="ut-mom-hdr"></thead><tbody id="ut-mom-b"></tbody></table></div>
+    </div>
+  </div>
+  <div class="g2">
+    <div class="ic"><div class="ic-t">📈 Strong Practices — Apr'26</div><ul class="ic-l">
+      <li><strong>PCM</strong> reached <strong>Prime</strong> in Apr'26 at 93.4% (up from Healthy 72.1% in Mar) — strongest improvement of the month</li>
+      <li><strong>Analytics</strong> jumped to <strong>Healthy</strong> at 79.9% in Apr (up from Watch 67.0% in Mar) — significant recovery</li>
+      <li><strong>SEO/GEO/Alps</strong> Healthy at 83.3% in Apr (up from Watch 69.2% in Mar) — strong rebound</li>
+      <li><strong>D&D/Martech</strong> Healthy at 83.8% in Apr — consistent performer</li>
+      <li>Overall GT% improved sharply to <strong>79.2%</strong> in Apr from 68.5% in Mar — best month of the year</li>
+    </ul></div>
+    <div class="ic"><div class="ic-t">⚠️ Under-Utilization Alerts — Apr'26</div><ul class="ic-l">
+      <li><strong>Account Management</strong> Critical at <strong>37.9%</strong> — persistently low, requires immediate attention</li>
+      <li><strong>Consumer Insight</strong> and <strong>Tech and AI</strong> at <strong>0%</strong> — no recorded utilization this month</li>
+      <li><strong>Creative Services</strong> Critical at <strong>0%</strong> for the 4th consecutive month — severely under-resourced or no active demand</li>
+      <li><strong>CRO/LEAP</strong> dropped back to Critical at <strong>58.3%</strong> (was Watch 65.2% in Mar)</li>
+      <li><strong>LEAP</strong> Critical at <strong>58.6%</strong> — only M1-level resources tracked this month</li>
+      <li><strong>EM</strong> declined to Watch at <strong>69.7%</strong> (M2 at 41.6% dragging down overall)</li>
+    </ul></div>
+  </div>
+</div>
+
+</div><!-- ct -->
+</div><!-- lay -->
+
+<!-- Tooltip -->
+<div class="tt" id="tooltip">
+  <div class="tt-title" id="tt-title"></div>
+  <div id="tt-rows"></div>
+</div>
+
+<!-- Modal -->
+<div class="ov" id="addM">
+  <div class="mod"><div class="mod-t">+ Add New Month</div>
+    <div class="fld"><label>Month Name</label><input id="nm-n" placeholder="e.g. April"></div>
+    <div class="fld"><label>Year (2-digit)</label><input id="nm-y" value="26"></div>
+    <div class="fld"><label>Total Revenue</label><input id="nm-r" placeholder="$3.20M"></div>
+    <div class="fld"><label>Overall Util GT%</label><input id="nm-u" placeholder="70.1"></div>
+    <div class="ma"><button class="btn" onclick="cM('addM')">Cancel</button><button class="btn" style="border-color:var(--ac);color:var(--ac)" onclick="addMonth()">Add Month</button></div>
+  </div>
+</div>
+<div class="ntf" id="ntf"></div>
+
+<script>
+// ═══════════════════ STATIC DATA
+const MMETA={Jan:{l:"Jan'26",rev:"$2.54M",revN:2.54,util:65.4},Feb:{l:"Feb'26",rev:"$3.66M",revN:3.66,util:72.3},Mar:{l:"Mar'26",rev:"$3.19M",revN:3.19,util:68.5},Apr:{l:"Apr'26",rev:"—",revN:null,util:79.2}};
+let MONTHS=['Jan','Feb','Mar','Apr'], GACT='Apr';
+const PL_MARGIN=[{pl:'Bindiya Jiwani',t:.74,Jan:.86,Feb:.87,Mar:.87},{pl:'Jithin Vinod',t:.78,Jan:.77,Feb:.76,Mar:.78},{pl:'Kerstin Baker-Ash',t:.79,Jan:.75,Feb:.73,Mar:.74},{pl:'Madhurima Srivastava',t:.68,Jan:.80,Feb:.68,Mar:.79},{pl:'Pawan Jaiswal',t:.78,Jan:.82,Feb:.86,Mar:.76},{pl:'Tylor Hermanson',t:.83,Jan:.74,Feb:.81,Mar:.72}];
+const PL_REVFTE=[{pl:'Bindiya Jiwani',tK:196,Jan:178,Feb:233,Mar:262},{pl:'Jithin Vinod',tK:190,Jan:117,Feb:142,Mar:130},{pl:'Pawan Jaiswal',tK:365,Jan:374,Feb:438,Mar:229},{pl:'Kerstin Baker-Ash',tK:199,Jan:163,Feb:161,Mar:193},{pl:'Tylor Hermanson',tK:432,Jan:412,Feb:404,Mar:244},{pl:'Madhurima Srivastava',tK:191,Jan:286,Feb:225,Mar:299}];
+const PL_LOSS=[{pl:'Bindiya Jiwani',Jan:286,Feb:0,Mar:0},{pl:'Jithin Vinod',Jan:590,Feb:0,Mar:0},{pl:'Pawan Kumar Jaiswal',Jan:215,Feb:0,Mar:1500},{pl:'Ravi Vidyarthi',Jan:0,Feb:0,Mar:0},{pl:'Kerstin Baker-Ash',Jan:280,Feb:165,Mar:0},{pl:'Tylor Hermanson',Jan:0,Feb:0,Mar:0},{pl:'Madhurima Srivastava',Jan:293,Feb:270,Mar:0}];
+const REV_SOL=[{s:'SEO',Jan:817,Feb:966,Mar:868},{s:'PCM',Jan:567,Feb:604,Mar:633},{s:'CRO/LEAP',Jan:183,Feb:275,Mar:234},{s:'D&D',Jan:210,Feb:472,Mar:593},{s:'Content',Jan:528,Feb:917,Mar:593},{s:'Analytics',Jan:200,Feb:411,Mar:245},{s:'GEO',Jan:21,Feb:-2,Mar:12},{s:'ALPS',Jan:14,Feb:16,Mar:16}];
+const PM_SCORES=[{l:'Completeness',v:.504},{l:'Detailing',v:.568},{l:'Hygiene',v:.377},{l:'PM Best Practices',v:.449},{l:'Structure',v:.789},{l:'iQ Workflow Adoption',v:.440}];
+// RISK_DATA: each row stores status for every month
+// months array tracks which months have risk data
+// pr = previous month status, cu = current month status
+// Both are now looked up dynamically based on selected month
+const RISK_MONTHS=['Mar','Apr','May']; // Risk is always 1 month ahead of dashboard months
+const RISK_DATA=[
+  {p:'AMEX_AETI_Insurance_Analytics',t:'Performance',pl:'Kerstin Baker-Ash',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'No',ac:'Partially Implemented'},
+  {p:'AMEX_AETI_Insurance_Analytics',t:'Resource Issues',pl:'Kerstin Baker-Ash',Sep:'Medium',Oct:'Medium',Nov:'Medium',Dec:'Medium',Jan:'Medium',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'No',ac:'Partially Implemented'},
+  {p:'AMEX_Consumer_Cardshop - SEO',t:'Performance',pl:'Kerstin Baker-Ash',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'No',ac:'Partially Implemented'},
+  {p:'CignaHealth_ME - SEO & Content',t:'Performance',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Low',Mar:'Low',Apr:'Medium',May:'Low',ac:'Partially Implemented'},
+  {p:'CITI - SEO',t:'Quality',pl:'Tylor Hermanson',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'Low',ac:'Partially Implemented'},
+  {p:'KAPITUS - LEAP & CRO (Internal)',t:'Performance',pl:'Kerstin Baker-Ash',Sep:'Medium',Oct:'Medium',Nov:'Medium',Dec:'Medium',Jan:'Medium',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'Low',ac:'Partially Implemented'},
+  {p:'ONEMAIN FINANCIAL - PCM',t:'Resource Issues',pl:'Pawan Jaiswal',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'No',Apr:'High',May:'Low',ac:'Partially Implemented'},
+  {p:'ONEMAIN FINANCIAL - PCM',t:'Performance',pl:'Pawan Jaiswal',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'Medium',Apr:'Medium',May:'Low',ac:'Partially Implemented'},
+  {p:'ONEMAIN FINANCIAL - SEO',t:'Resource Issues',pl:'Pawan Jaiswal',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Medium',Mar:'Low',Apr:'High',May:'No',ac:'Partially Implemented'},
+  {p:'UNITED OVERSEAS BANK_TH - SEO',t:'Performance',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Low',Mar:'Low',Apr:'Medium',May:'Low',ac:'Partially Implemented'},
+  {p:'US BANK - D&D_LEAP_Development & Test Execution',t:'Performance',pl:'Madhurima Srivastava',Sep:'No',Oct:'No',Nov:'Medium',Dec:'Low',Jan:'Low',Feb:'No',Mar:'No',Apr:'High',May:'Medium',ac:'Partially Implemented'},
+  {p:'WELLS FARGO_Home Lending_Paid Search and GEO',t:'Quality',pl:'Kerstin Baker-Ash',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'No',ac:'Partially Implemented'},
+  {p:'AFLAC - SEO & CRO',t:'Resource Issues',pl:'Madhurima Srivastava',Sep:'Low',Oct:'Low',Nov:'Medium',Dec:'Medium',Jan:'No',Feb:'Medium',Mar:'Low',Apr:'Low',May:'Medium',ac:'Partially Implemented'},
+  {p:'AFLAC - SEO & CRO',t:'Performance',pl:'Madhurima Srivastava',Sep:'High',Oct:'Medium',Nov:'Medium',Dec:'Medium',Jan:'No',Feb:'No',Mar:'No',Apr:'No',May:'Medium',ac:'Not Started'},
+  {p:'AMEX-Consumer_My Credit Guide & Credit Secure/ - ANA & CRO',t:'Quality',pl:'Kerstin Baker-Ash',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'High',ac:'Partially Implemented'},
+  {p:'AMEX-Consumer_My Credit Guide & Credit Secure/ - ANA & CRO',t:'Quality',pl:'Kerstin Baker-Ash',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'High',Mar:'Medium',Apr:'Medium',May:'High',ac:'Partially Implemented'},
+  {p:'AMEX-Consumer_My Credit Guide & Credit Secure/ - ANA & CRO',t:'Resource Issues',pl:'Kerstin Baker-Ash',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'High',ac:'Partially Implemented'},
+  {p:'CITI - SEO',t:'Resource Issues',pl:'Tylor Hermanson',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'High',ac:'Partially Implemented'},
+  {p:'KAPITUS - PCM',t:'Quality',pl:'Kerstin Baker-Ash',Sep:'High',Oct:'High',Nov:'High',Dec:'High',Jan:'High',Feb:'High',Mar:'Low',Apr:'No',May:'High',ac:'Partially Implemented'},
+  {p:'Amex D&D',t:'Resource Issues',pl:'Bindiya Jiwani',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'High',Jan:'Medium',Feb:'No',Mar:'High',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'AMEX_Consumer_Credit Intel - SEO',t:'Performance',pl:'Kerstin Baker-Ash',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'AMEX_Consumer_Credit Intel - SEO',t:'Quality',pl:'Kerstin Baker-Ash',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'BNY MELLON - ANA_Data Analytics - Q4',t:'Quality',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'Medium',Apr:'Medium',May:'Medium',ac:'Action Plan Creation'},
+  {p:'BNY MELLON - ANA_Data Analytics - Q4',t:'Resource Issues',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Low',Mar:'Medium',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'CignaHealth_ME - SEO & Content',t:'Quality',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Not Started'},
+  {p:'CITI - SEO',t:'Performance',pl:'Tylor Hermanson',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'High',Mar:'High',Apr:'High',May:'High',ac:'Partially Implemented'},
+  {p:'DISCOVER_Credit Cards - SEO & Analytics',t:'Performance',pl:'Pawan Jaiswal',Sep:'Medium',Oct:'Medium',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'EDWARD JONES - SEO & Content',t:'Quality',pl:'Madhurima Srivastava',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'No',Apr:'Medium',May:'Medium',ac:'Action Plan Creation'},
+  {p:'EDWARD JONES - SEO & Content',t:'Resource Issues',pl:'Madhurima Srivastava',Sep:'No',Oct:'No',Nov:'Medium',Dec:'Low',Jan:'No',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'FICO-SEO',t:'Performance',pl:'Pawan Jaiswal',Sep:'High',Oct:'High',Nov:'Medium',Dec:'Medium',Jan:'Low',Feb:'High',Mar:'High',Apr:'High',May:'High',ac:'Partially Implemented'},
+  {p:'JP MORGAN CHASE_Home Loans - SEO_Authority',t:'Resource Issues',pl:'Pawan Jaiswal',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'No',Apr:'High',May:'High',ac:'Not Started'},
+  {p:'JP MORGAN CHASE_Home Loans - SEO_Authority',t:'Performance',pl:'Pawan Jaiswal',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'High',Mar:'High',Apr:'High',May:'High',ac:'Partially Implemented'},
+  {p:'KAPITUS - LEAP & CRO (Internal)',t:'Quality',pl:'Kerstin Baker-Ash',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'KAPITUS - LEAP & CRO (Internal)',t:'Resource Issues',pl:'Kerstin Baker-Ash',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'KAPITUS - PCM',t:'Performance',pl:'Kerstin Baker-Ash',Sep:'High',Oct:'High',Nov:'High',Dec:'High',Jan:'High',Feb:'Medium',Mar:'Medium',Apr:'High',May:'High',ac:'Partially Implemented'},
+  {p:'ONEMAIN FINANCIAL - SEO',t:'Performance',pl:'Pawan Jaiswal',Sep:'Medium',Oct:'Medium',Nov:'Medium',Dec:'Medium',Jan:'Medium',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'ONEMAIN FINANCIAL - SEO',t:'Quality',pl:'Pawan Jaiswal',Sep:'High',Oct:'High',Nov:'Medium',Dec:'Medium',Jan:'Medium',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'OPORTUN - SEO',t:'Performance',pl:'Pawan Jaiswal',Sep:'No',Oct:'Low',Nov:'Medium',Dec:'Medium',Jan:'Medium',Feb:'Medium',Mar:'Medium',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'PERNOD RICARD - Marketing Accelerator_Excecution Support',t:'Quality',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'PERNOD RICARD - Marketing Accelerator_Excecution Support',t:'Performance',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'No',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'PRUDENT PUBLISHING - SEO_Digital Media Services RFP',t:'Quality',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'Medium',Mar:'No',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'PRUDENT PUBLISHING - SEO_Digital Media Services RFP',t:'Resource Issues',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'High',Mar:'No',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'SILICON VALLEY BANK - Analytics',t:'Resource Issues',pl:'Jithin Vinod',Sep:'Medium',Oct:'Medium',Nov:'High',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Medium',Apr:'Medium',May:'Medium',ac:'Action Plan Creation'},
+  {p:'SILICON VALLEY BANK - Analytics',t:'Quality',pl:'Jithin Vinod',Sep:'Medium',Oct:'Medium',Nov:'Medium',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'SILICON VALLEY BANK - Analytics',t:'Performance',pl:'Jithin Vinod',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'SILICON VALLEY BANK - Paid Search',t:'Performance',pl:'Jithin Vinod',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'SYNCHRONY FINANCIAL - HOLISTIC SEARCH DASHBOARD',t:'Quality',pl:'Jithin Vinod',Sep:'Medium',Oct:'Medium',Nov:'Medium',Dec:'Medium',Jan:'Medium',Feb:'High',Mar:'High',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'SYNCHRONY FINANCIAL - HOLISTIC SEARCH DASHBOARD',t:'Resource Issues',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'High',Mar:'High',Apr:'Low',May:'Low',ac:'Partially Implemented'},
+  {p:'SYNCHRONY FINANCIAL - HOLISTIC SEARCH DASHBOARD',t:'Performance',pl:'Jithin Vinod',Sep:'No',Oct:'No',Nov:'No',Dec:'No',Jan:'No',Feb:'High',Mar:'High',Apr:'Medium',May:'Medium',ac:'Partially Implemented'},
+  {p:'UNITED OVERSEAS BANK_SG - SEO_Demand Generation',t:'Performance',pl:'Jithin Vinod',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Not Started'},
+  {p:'UNITED OVERSEAS BANK_SG - SEO_Demand Generation',t:'Quality',pl:'Jithin Vinod',Sep:'Low',Oct:'Low',Nov:'Low',Dec:'Low',Jan:'Low',Feb:'Low',Mar:'Low',Apr:'Low',May:'Low',ac:'Not Started'},
+  {p:'US BANK - D&D_LEAP_Development & Test Execution',t:'Resource Issues',pl:'Madhurima Srivastava',Sep:'No',Oct:'Medium',Nov:'Medium',Dec:'Low',Jan:'Low',Feb:'Medium',Mar:'Low',Apr:'Low',May:'Low',ac:'Partially Implemented'}
+];
+const UTIL={Jan:[{p:'Analytics',l1:.47,l2:.82,l3:.682,m1:.512,m2:.494,gt:.658,s:'△ Watch'},{p:'Content',l1:.284,l2:.36,l3:.556,m1:.147,m2:null,gt:.392,s:'✗ Critical'},{p:'Creative Services',l1:0,l2:null,l3:.269,m1:0,m2:.494,gt:.288,s:'✗ Critical'},{p:'CRO',l1:.601,l2:.588,l3:0,m1:.366,m2:null,gt:.489,s:'✗ Critical'},{p:'Data Management',l1:null,l2:.594,l3:.593,m1:null,m2:null,gt:.593,s:'△ Watch'},{p:'EM',l1:null,l2:null,l3:null,m1:.697,m2:null,gt:.697,s:'△ Watch'},{p:'Martech',l1:.241,l2:.893,l3:.776,m1:.865,m2:.801,gt:.768,s:'✓ Healthy'},{p:'PCM',l1:.583,l2:.863,l3:.917,m1:.694,m2:.581,gt:.758,s:'✓ Healthy'},{p:'SEO',l1:.693,l2:.743,l3:.701,m1:.669,m2:.375,gt:.689,s:'△ Watch'},{p:'Grand Total',l1:.526,l2:.734,l3:.672,m1:.656,m2:.531,gt:.654,s:'65.4% Overall'}],Feb:[{p:'Analytics',l1:.777,l2:.684,l3:.811,m1:.493,m2:.406,gt:.69,s:'△ Watch'},{p:'Content',l1:.538,l2:.467,l3:.666,m1:.193,m2:null,gt:.537,s:'✗ Critical'},{p:'Creative Services',l1:0,l2:null,l3:.225,m1:0,m2:.484,gt:.272,s:'✗ Critical'},{p:'CRO',l1:.508,l2:.55,l3:.13,m1:.617,m2:null,gt:.509,s:'✗ Critical'},{p:'Data Management',l1:null,l2:.841,l3:.665,m1:null,m2:null,gt:.69,s:'△ Watch'},{p:'EM',l1:null,l2:null,l3:null,m1:.737,m2:null,gt:.737,s:'✓ Healthy'},{p:'Martech',l1:.939,l2:1.003,l3:.819,m1:.809,m2:.863,gt:.862,s:'✓ Prime'},{p:'PCM',l1:.618,l2:.893,l3:.871,m1:.916,m2:.519,gt:.798,s:'✓ Healthy'},{p:'SEO',l1:.836,l2:.791,l3:.817,m1:.696,m2:.471,gt:.765,s:'✓ Healthy'},{p:'Grand Total',l1:.676,l2:.768,l3:.75,m1:.707,m2:.557,gt:.723,s:'72.3% Overall'}],Mar:[{p:'Analytics',l1:.732,l2:.82,l3:.661,m1:.445,m2:null,gt:.67,s:'△ Watch'},{p:'Content',l1:.629,l2:.612,l3:.746,m1:.223,m2:null,gt:.63,s:'△ Watch'},{p:'Creative Services',l1:0,l2:null,l3:.125,m1:0,m2:.262,gt:.13,s:'✗ Critical'},{p:'CRO',l1:.501,l2:.756,l3:null,m1:.747,m2:null,gt:.652,s:'△ Watch'},{p:'Data Management',l1:null,l2:null,l3:.629,m1:null,m2:null,gt:.63,s:'△ Watch'},{p:'EM',l1:null,l2:null,l3:null,m1:.764,m2:null,gt:.764,s:'✓ Healthy'},{p:'Martech',l1:.895,l2:.888,l3:.788,m1:.899,m2:.639,gt:.837,s:'✓ Prime'},{p:'PCM',l1:.744,l2:.77,l3:.786,m1:.599,m2:.324,gt:.721,s:'✓ Healthy'},{p:'SEO',l1:.708,l2:.731,l3:.744,m1:.707,m2:.263,gt:.692,s:'△ Watch'},{p:'Grand Total',l1:.676,l2:.73,l3:.714,m1:.692,m2:.35,gt:.685,s:'68.5% Overall'}],Apr:[{p:'Analytics',l1:1.1821,l2:0.8495,l3:0.7222,m1:0.963,m2:0.4223,gt:0.7992,s:'✓ Healthy'},{p:'Consumer Insight',l1:0,l2:null,l3:null,m1:null,m2:null,gt:0,s:'✗ Critical'},{p:'Content',l1:0.3125,l2:0.4622,l3:0.7281,m1:null,m2:null,gt:0.5386,s:'✗ Critical'},{p:'Creative Services',l1:0,l2:null,l3:null,m1:null,m2:null,gt:0,s:'✗ Critical'},{p:'EM',l1:0.6809,l2:null,l3:0,m1:0.8657,m2:0.4159,gt:0.6971,s:'△ Watch'},{p:'PCM',l1:0.9106,l2:0.8906,l3:0.9935,m1:1.1926,m2:null,gt:0.9335,s:'★ Prime'},{p:'Performance Marketing',l1:null,l2:null,l3:0.628,m1:null,m2:0.5526,gt:0.6029,s:'△ Watch'},{p:'Tech and AI',l1:0,l2:null,l3:null,m1:null,m2:null,gt:0,s:'✗ Critical'},{p:'SEO/GEO/Alps',l1:0.8265,l2:0.7964,l3:0.8651,m1:1.1077,m2:0.7011,gt:0.8328,s:'✓ Healthy'},{p:'D&D/Martech',l1:0.5055,l2:0.9444,l3:0.7991,m1:0.887,m2:0.6877,gt:0.8377,s:'✓ Healthy'},{p:'CRO/LEAP',l1:0.4641,l2:0.7172,l3:0.5742,m1:0.5666,m2:null,gt:0.5832,s:'✗ Critical'},{p:'LEAP',l1:null,l2:null,l3:null,m1:0.5855,m2:null,gt:0.5855,s:'✗ Critical'},{p:'Account Management',l1:null,l2:null,l3:null,m1:null,m2:null,gt:0.3785,s:'✗ Critical'},{p:'Grand Total',l1:0.7435,l2:0.8247,l3:0.806,m1:0.8949,m2:0.5251,gt:0.7917,s:'79.2% Overall'}]};
+const PL_C={'Bindiya Jiwani':'#5b9cf6','Jithin Vinod':'#3ecf8e','Kerstin Baker-Ash':'#9f7aea','Madhurima Srivastava':'#f59e0b','Pawan Jaiswal':'#f16060','Tylor Hermanson':'#fbbf24'};
+const MC=['#5b9cf6','#3ecf8e','#f59e0b','#9f7aea','#f16060','#fbbf24'];
+const ESC_DATA={"jan":[{"type":"Client","sev":"High","proj":"Kapitus PCM","issue":"Process Gap","solution":"Performance Marketing"},{"type":"Client","sev":"High","proj":"Vanguard Hybrid Management","issue":"Resource Gap","solution":"Analytics"},{"type":"Client","sev":"High","proj":"Kapitus SEM & LEAP","issue":"Communication Gap, Strategic Gap","solution":"Performance Marketing"},{"type":"Internal","sev":"Medium","proj":"About Schwab","issue":"Insufficient QA","solution":"Performance Marketing"},{"type":"Internal","sev":"High","proj":"Wells Fargo Home Lending","issue":"Resource Gap","solution":"Performance Marketing (GEO)"},{"type":"Internal","sev":"Medium","proj":"Cap One","issue":"Insufficient QA, Communication Gap","solution":"LEAP (Creatives)"},{"type":"Internal","sev":"High","proj":"SVB Paid","issue":"Skill Gap","solution":"Performance Marketing"}],"feb":[{"type":"Client","sev":"High","proj":"Kapitus SEM & LEAP","issue":"Process Gap","solution":"Performance Marketing"},{"type":"Internal","sev":"Medium","proj":"About Schwab","issue":"Operational","solution":"Performance Marketing"}],"mar":[{"type":"Client","sev":"High","proj":"Kapitus-PCM","issue":"Process Gap","solution":"Performance Marketing"},{"type":"Client","sev":"High","proj":"HEB","issue":"Process Gap","solution":"Performance Marketing"},{"type":"Client","sev":"High","proj":"Unifirst","issue":"Resource Gap","solution":"Performance Marketing"},{"type":"Client","sev":"High","proj":"Prudent Publishing","issue":"Communication Gap","solution":"Creatives"},{"type":"Internal","sev":"Medium","proj":"Discover","issue":"Operational","solution":"Performance Marketing"},{"type":"Internal","sev":"Medium","proj":"OMF","issue":"Insufficient QA","solution":"Performance Marketing"},{"type":"Internal","sev":"Medium","proj":"Synchrony","issue":"Operational","solution":"Analytics"}]};
+const BG_DATA={"jan":{"Improving but still behind":{"n":4,"projects":"Kapitus PCM, Aflac, US Bank SEO_AOR RFP, OneMain Financial SEO"},"Consistent & deteriorating":{"n":2,"projects":"US BANK_Cards SEO, Charles Schwab Corp SEO (Advisor & Enterprise)"},"First month behind":{"n":3,"projects":"FICO, Bread Financial, CITI SEO & CRO"},"Still behind":{"n":3,"projects":"Sunrise Brands PCM, HEB_CA, OneMain Financial PCM"}},"feb":{"Improving but still behind":{"n":3,"projects":"HEB_CA, US BANK_Cards SEO, Charles Schwab (Advisor, Enterprise)"},"Consistent & deteriorating":{"n":5,"projects":"FICO, CITI SEO & CRO, Aflac, US Bank SEO_AOR RFP, Frontpoint Security"},"First month behind":{"n":5,"projects":"Discover Credit Cards, AMEX_GMS Resy SEO, Aritzia, Sunrise Brands Rebecca Minkoff PCM, AvidXchange"},"Still behind":{"n":2,"projects":"OneMain Financial PCM, OneMain Financial SEO"}},"mar":{"Improving but still behind":{"n":3,"projects":"FICO, Aflac, Frontpoint Security"},"Consistent & deteriorating":{"n":0,"projects":"\u2014"},"First month behind":{"n":2,"projects":"CignaHealth_ME, UOB_TH"},"Still behind":{"n":4,"projects":"HEB_CA, CITI, AMEX GMS Resy, US Bank SEO AOR"}}};
+const PM_DETAIL=[{"proj":"Laurel Road - D&D UX Design","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Laurel Road - LP Optimization Assessment","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_IIS_IND - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$1.2K","jCost":"$97","jM":0.92,"fRev":"$1.2K","fCost":"$170","fM":0.86,"mRev":"$1.2K","mCost":"$275","mM":0.78},{"proj":"Amex_IIS_IND - D&D_MSE","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":"$600","mCost":"$52","mM":0.91},{"proj":"Amex_GBT - Hosting(old)","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"AMEX-GCS_Partn_Delta - D&D_Business Pages","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Laurel Road - PCM & CRO - Marketing Campaigns & Testing","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_Consumer - D&D_Cross Sell Landing Pages","pl":"Bindiya Jiwani","jRev":"$5.7K","jCost":"$610","jM":0.89,"fRev":"$6.6K","fCost":"$543","fM":0.92,"mRev":"$9.3K","mCost":"$777","mM":0.92},{"proj":"Amex_Consumer_Morgan Stanley - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$10.6K","jCost":"$1.4K","jM":0.86,"fRev":"$11.2K","fCost":"$2.4K","fM":0.79,"mRev":"$15.1K","mCost":"$2.0K","mM":0.86},{"proj":"Amex_GBT - Hosting","pl":"Bindiya Jiwani","jRev":"$1.0K","jCost":"$320","jM":0.68,"fRev":"$1.0K","fCost":"$212","fM":0.79,"mRev":"$1.0K","mCost":"$190","mM":0.81},{"proj":"AMEX-GCS_Partn_Delta - D&D_DBT GCS Hosting","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"AMEX-GCS_Partn_Delta - D&D_ Hosting","pl":"Bindiya Jiwani","jRev":"$64.8K","jCost":"$10.9K","jM":0.83,"fRev":"$67.1K","fCost":"$11.7K","fM":0.83,"mRev":"$72.6K","mCost":"$15.7K","mM":0.78},{"proj":"AMEX-GCS_Partn_Hilton - D&D_Aspire Hosting","pl":"Bindiya Jiwani","jRev":"$5.5K","jCost":"$318","jM":0.94,"fRev":"$2.5K","fCost":"$265","fM":0.89,"mRev":"$1.3K","mCost":"$220","mM":0.84},{"proj":"AMEX-GCS_Partn_Hilton - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$99.0K","jCost":"$15.9K","jM":0.84,"fRev":"$126.2K","fCost":"$14.0K","fM":0.89,"mRev":"$94.2K","mCost":"$11.9K","mM":0.87},{"proj":"AMEX-GCS_Partn_Hilton - D&D_SBO Hosting","pl":"Bindiya Jiwani","jRev":"$5.5K","jCost":"$436","jM":0.92,"fRev":"$5.8K","fCost":"$479","fM":0.92,"mRev":"$3.8K","mCost":"$366","mM":0.9},{"proj":"AMEX-GCS_Partn_Marriott - Consumer-D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$13.8K","jCost":"$689","jM":0.95,"fRev":"$21.9K","fCost":"$607","fM":0.97,"mRev":"$10.6K","mCost":"$377","mM":0.96},{"proj":"AMEX-GCS_Partn_Marriott - D&D_Bevy SCLP Hosting","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"AMEX-GCS_Partn_Marriott - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$9.4K","jCost":"$2.3K","jM":0.76,"fRev":"$14.2K","fCost":"$3.8K","fM":0.73,"mRev":"$24.9K","mCost":"$2.7K","mM":0.89},{"proj":"AMEX-GCS_Partn_Marriott - D&D_SCLP Hosting","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"AMEX-GCS_US - D&D_AP Automation Hosting(old)","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"AMEX-GCS_US - D&D_AP Automation Hosting","pl":"Bindiya Jiwani","jRev":"$2.6K","jCost":"$234","jM":0.91,"fRev":"$5.3K","fCost":"$253","fM":0.95,"mRev":"$10.5K","mCost":"$917","mM":0.91},{"proj":"AMEX-GCS_US - D&D_Carbon Offset Landing Pages","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"AMEX-GCS_US - D&D_Charge & Lending Cross Sell Landing Pages","pl":"Bindiya Jiwani","jRev":"$21.9K","jCost":"$1.0K","jM":0.95,"fRev":"$10.4K","fCost":"$725","fM":0.93,"mRev":"$20.4K","mCost":"$956","mM":0.95},{"proj":"AMEX-GCS_US - D&D_Paid Search Landing Pages","pl":"Bindiya Jiwani","jRev":"$11.9K","jCost":"$4.5K","jM":0.62,"fRev":"$14.1K","fCost":"$2.5K","fM":0.83,"mRev":"$12.7K","mCost":"$2.3K","mM":0.82},{"proj":"AMEX-GCS_US - D&D_VBT & Disclosure Landing Pages","pl":"Bindiya Jiwani","jRev":"$8.0K","jCost":"$483","jM":0.94,"fRev":"$6.8K","fCost":"$611","fM":0.91,"mRev":"$3.2K","mCost":"$349","mM":0.89},{"proj":"First West Credit Union - Webside Dev & Content","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Laurel Road - Content","pl":"Bindiya Jiwani","jRev":"$13.5K","jCost":"$740","jM":0.95,"fRev":"$16.2K","fCost":"$1.2K","fM":0.92,"mRev":null,"mCost":null,"mM":null},{"proj":"Laurel Road - CRO_Marketing Design","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Laurel Road - D&D(old)","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"LAUREL ROAD - SEO_D&D","pl":"Bindiya Jiwani","jRev":"$5.2K","jCost":"$994","jM":0.81,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Laurel Road - SEO","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Kotak Bank - PCM(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SYNCHRONY FINANCIAL - ANA_MTA Modeling","pl":"Jithin Vinod","jRev":"$16.5K","jCost":"$929","jM":-1.06,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Advantage Dental - PCM","pl":"Kerstin Baker-Ash","jRev":"$11.5K","jCost":"$1.6K","jM":0.86,"fRev":"$11.9K","fCost":"$1.7K","fM":0.85,"mRev":"$11.9K","mCost":"$1.6K","mM":0.86},{"proj":"Allstate - Analytics BAU(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Aspen_Clearchoice - SEO & Content","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Aspen_Dental - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Bread Financial_Carter - Paid","pl":"Jithin Vinod","jRev":"$3.7K","jCost":"$288","jM":0.92,"fRev":"$3.7K","fCost":"$625","fM":0.83,"mRev":"$3.7K","mCost":"$499","mM":0.87},{"proj":"Bread Financial_FBB - CRO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Capital One - ANA_Affiiliate","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Capital One_Creditwise - CRO","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Capital One - LEAP","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Charles Schwab Corporation_Intl - SEO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"VISA_CIBC_CA_Cards - SEO_On Page Content Breifs","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"CIBC_CA_Careers - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"CIBC_CA_RESL - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"CignaHealth_ME - ANA & CRO_Envoy Performance Analysis(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Citi-APAC_SG - SEO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"FrontPoint - PCM(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"OPORTUN - SEO & Content(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD - Marketing Accelerator_Excecution Support(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"STANDARD CHARTERED BANK_IND - Staff Aug(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"STANDARD CHARTERED BANK_IND - Staff Aug(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"STANDARD CHARTERED BANK_IND - Staff Aug(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"STANDARD CHARTERED BANK_SG - SEO_Content_Staff Aug","pl":"Jithin Vinod","jRev":"$20.4K","jCost":"$10.8K","jM":0.47,"fRev":"$20.5K","fCost":"$10.2K","fM":0.5,"mRev":"$20.5K","mCost":"$10.2K","mM":0.5},{"proj":"SYNCHRONY FINANCIAL_Health & Wellness - ANA_Budget Planning & Geo","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"UNITED OVERSEAS BANK_ID, MY & SG - SEO_Content Hub Strategy","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Allstate - Analytics BAU","pl":"Jithin Vinod","jRev":"$28.4K","jCost":"$2.5K","jM":0.91,"fRev":"$29.7K","fCost":"$3.5K","fM":0.88,"mRev":"$29.7K","mCost":"$2.5K","mM":0.92},{"proj":"Aspen_Dental - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Aspen_Dental - SEO","pl":"Pawan Jaiswal","jRev":"$37.7K","jCost":"$7.8K","jM":0.79,"fRev":"$72.2K","fCost":"$34.8K","fM":0.52,"mRev":"$140.6K","mCost":"$12.4K","mM":0.91},{"proj":"Bitdeer.AI - SEO","pl":"Jithin Vinod","jRev":"$3.3K","jCost":"$1.8K","jM":0.45,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"BNY Mellon - ANA_Staff Aug","pl":"Jithin Vinod","jRev":"$25.2K","jCost":"$4.3K","jM":0.83,"fRev":"$25.2K","fCost":"$5.2K","fM":0.79,"mRev":"$25.2K","mCost":"$4.8K","mM":0.81},{"proj":"Bread Financial_Ross - Paid","pl":"Jithin Vinod","jRev":"$8.5K","jCost":"$1.1K","jM":0.87,"fRev":"$10.4K","fCost":"$1.2K","fM":0.89,"mRev":"$10.5K","mCost":"$1.2K","mM":0.88},{"proj":"Bread Financial - Proposals","pl":"Jithin Vinod","jRev":null,"jCost":"$506","jM":null,"fRev":"$10.4K","fCost":"$2.2K","fM":0.79,"mRev":"$4.6K","mCost":"$86","mM":0.98},{"proj":"Bread Financial_Ross - SEO_Influencer","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Bread Financial_Bread Pay - Paid","pl":"Jithin Vinod","jRev":"$3.7K","jCost":"$265","jM":0.93,"fRev":"$3.7K","fCost":"$1.2K","fM":0.66,"mRev":"$3.7K","mCost":"$1.3K","mM":0.65},{"proj":"Bread Financial_NFL - Paid","pl":"Jithin Vinod","jRev":"$3.7K","jCost":"$753","jM":0.8,"fRev":"$3.7K","fCost":"$1.1K","fM":0.69,"mRev":"$3.7K","mCost":"$987","mM":0.73},{"proj":"Bread Financial_Signet - LEAP","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Brother USA - ANA_Proposal","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Brother USA - PCM & SEO","pl":"Jithin Vinod","jRev":"$62.2K","jCost":"$11.0K","jM":0.82,"fRev":"$64.7K","fCost":"$8.1K","fM":0.88,"mRev":"$67.8K","mCost":"$10.7K","mM":0.84},{"proj":"Charles Schwab Corporation_Enterprise - SEO","pl":"Jithin Vinod","jRev":"$84.9K","jCost":"$13.0K","jM":0.85,"fRev":"$41.4K","fCost":"$16.9K","fM":0.59,"mRev":"$10.3K","mCost":"$15.4K","mM":-0.49},{"proj":"Charles Schwab Corporation_Advisor services - SEO","pl":"Jithin Vinod","jRev":"$19.3K","jCost":"$4.1K","jM":0.79,"fRev":"$18.4K","fCost":"$3.2K","fM":0.83,"mRev":"$10.0K","mCost":"$4.5K","mM":0.55},{"proj":"CIBC_CA - SEO_Lights On Support","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":"$6.5K","fCost":"$413","fM":0.94,"mRev":"$3.2K","mCost":"$624","mM":0.81},{"proj":"CIBC_CA - SEO_Traffic Deep Dive Analysis","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"CignaHealth_ME - ANA & CRO_Envoy Performance Analysis","pl":"Jithin Vinod","jRev":"$6.2K","jCost":"$847","jM":0.86,"fRev":"$2.2K","fCost":"$645","fM":-1.29,"mRev":"$532","mCost":"$505","mM":-1.95},{"proj":"CignaHealth_ME - SEO & Content","pl":"Jithin Vinod","jRev":"$3.4K","jCost":"$1.9K","jM":0.44,"fRev":"$8.3K","fCost":"$2.3K","fM":0.72,"mRev":"$5.6K","mCost":"$1.7K","mM":0.7},{"proj":"CignaHealth_ME_KSA - SEO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Citi_UAE - SEO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Edward Jones - SEO_Workplace","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"FrontPoint - PCM","pl":"Jithin Vinod","jRev":"$7.0K","jCost":"$1.1K","jM":0.85,"fRev":"$7.0K","fCost":"$1.1K","fM":0.84,"mRev":"$7.0K","mCost":"$1.1K","mM":0.85},{"proj":"HSBC_APAC - SEO","pl":"Jithin Vinod","jRev":"$8.3K","jCost":"$2.5K","jM":0.7,"fRev":"$8.3K","fCost":"$1.7K","fM":0.8,"mRev":"$8.3K","mCost":"$1.5K","mM":0.82},{"proj":"Kotak Bank - PCM","pl":"Jithin Vinod","jRev":"$10.4K","jCost":"$1.9K","jM":0.82,"fRev":"$16.8K","fCost":"$1.5K","fM":0.91,"mRev":"$16.4K","mCost":"$1.7K","mM":0.9},{"proj":"PERNOD RICARD - Marketing Accelerator_Excecution Support","pl":"Jithin Vinod","jRev":"$16.7K","jCost":"$6.1K","jM":0.64,"fRev":"$16.7K","fCost":"$10.1K","fM":0.39,"mRev":"$16.7K","mCost":"$3.7K","mM":0.78},{"proj":"PERNOD RICARD_Mumm Napa - SEO_On-page Pilot","pl":"Jithin Vinod","jRev":"$1.7K","jCost":"$28","jM":0.98,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Prudent Publishing - SEO & PCM","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PRUDENTIAL FINANCIAL_HK - ANA_Build & Transfer","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PRUDENTIAL FINANCIAL_HK - ANA_GA4 Tag Audit","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SILICON VALLEY BANK - Analytics","pl":"Jithin Vinod","jRev":"$29.8K","jCost":"$7.1K","jM":0.76,"fRev":"$41.6K","fCost":"$9.4K","fM":0.77,"mRev":"$34.6K","mCost":"$8.4K","mM":0.76},{"proj":"SILICON VALLEY BANK - Paid Search(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SILICON VALLEY BANK - Paid Search","pl":"Jithin Vinod","jRev":"$38.4K","jCost":"$4.3K","jM":0.89,"fRev":"$35.6K","fCost":"$5.9K","fM":0.84,"mRev":"$38.5K","mCost":"$9.7K","mM":0.75},{"proj":"SILICON VALLEY BANK - SEO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SILICON VALLEY BANK - Staff Augmentation","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"STANDARD CHARTERED BANK_IND - Staff Aug","pl":"Jithin Vinod","jRev":"$15.0K","jCost":"$6.1K","jM":0.59,"fRev":"$15.0K","fCost":"$3.6K","fM":0.76,"mRev":"$15.0K","mCost":"$6.1K","mM":0.6},{"proj":"SUNRISE BRANDS_NYDJ - PCM_Amazon Management","pl":"Jithin Vinod","jRev":"$9.5K","jCost":"$1.6K","jM":0.83,"fRev":"$7.5K","fCost":"$1.2K","fM":0.84,"mRev":"$14.4K","mCost":"$1.2K","mM":0.91},{"proj":"SUNRISE BRANDS - PCM_Paid Media","pl":"Jithin Vinod","jRev":"$44.0K","jCost":"$5.5K","jM":0.88,"fRev":"$47.7K","fCost":"$6.3K","fM":0.87,"mRev":"$61.4K","mCost":"$6.9K","mM":0.89},{"proj":"SUNRISE BRANDS_Rebecca_Minkoff - PCM","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SYNCHRONY FINANCIAL - ANA_Holistic Analytics Support","pl":"Jithin Vinod","jRev":"$2.4K","jCost":"$2.7K","jM":-0.11,"fRev":"$2.4K","fCost":"$3.2K","fM":-0.34,"mRev":null,"mCost":"$5.5K","mM":null},{"proj":"UNITED OVERSEAS BANK_SG - SEO","pl":"Jithin Vinod","jRev":"$14.3K","jCost":"$3.6K","jM":0.75,"fRev":"$18.0K","fCost":"$12.0K","fM":0.33,"mRev":"$10.0K","mCost":"$5.3K","mM":1.53},{"proj":"UNITED OVERSEAS BANK_TH - SEO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":"$4.6K","fCost":"$1.4K","fM":0.69,"mRev":"$4.6K","mCost":"$1.2K","mM":0.74},{"proj":"VISA_CIBC_CA_Cards - SEO","pl":"Kerstin Baker-Ash","jRev":"$939","jCost":"$606","jM":0.35,"fRev":"$15.1K","fCost":"$102","fM":0.99,"mRev":"$16.1K","mCost":null,"mM":-1.0},{"proj":"WELLS FARGO - Cards_Paid Search Analytics","pl":"Kerstin Baker-Ash","jRev":"$45.4K","jCost":"$4.1K","jM":0.91,"fRev":"$45.4K","fCost":"$4.1K","fM":0.91,"mRev":"$45.4K","mCost":"$3.7K","mM":0.92},{"proj":"WELLS FARGO - LEAP CSBB","pl":"Kerstin Baker-Ash","jRev":"$2.3K","jCost":"$4.5K","jM":-0.94,"fRev":null,"fCost":"$862","fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"WELLS FARGO_Home_Lending Paid Search & GEO","pl":"Kerstin Baker-Ash","jRev":"$54.0K","jCost":"$15.1K","jM":0.72,"fRev":"$26.0K","fCost":"$18.3K","fM":0.29,"mRev":"$48.7K","mCost":"$15.6K","mM":0.68},{"proj":"WELLS FARGO - IND - ANA_Staff Aug","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Discover_Credit Cards - SEO & ANA(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Discover_Credit Cards - SEO & ANA(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Discover_Home Loans - Content","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Discover_Home Loans - SEO, Content","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"MYFICO - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"ONEMAIN FINANCIAL - Content_CMS_2025","pl":"Pawan Jaiswal","jRev":"$6.9K","jCost":"$917","jM":0.87,"fRev":"$4.1K","fCost":"$436","fM":0.89,"mRev":"$10.7K","mCost":"$725","mM":-1.07},{"proj":"ONEMAIN FINANCIAL - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"WEX_Cards - Acq-in-a-box","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_Consumer_Insurance - Analytics","pl":"Kerstin Baker-Ash","jRev":"$19.8K","jCost":"$4.8K","jM":0.76,"fRev":"$14.7K","fCost":"$4.3K","fM":0.71,"mRev":"$16.8K","mCost":"$4.7K","mM":0.72},{"proj":"Amex_Consumer_Cardshop - LEAP","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_Consumer_Credit Intel & Card Shop - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_GMS_Resy - SEO","pl":"Kerstin Baker-Ash","jRev":"$21.8K","jCost":"$5.6K","jM":0.74,"fRev":"$32.7K","fCost":"$9.4K","fM":0.71,"mRev":"$27.2K","mCost":"$12.6K","mM":0.54},{"proj":"Amex_Personal Savings - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":"$1.5K","jM":null,"fRev":null,"fCost":"$238","fM":null,"mRev":null,"mCost":"$10","mM":null},{"proj":"Amex_Consumer_Centurion Lounges - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_Consumer_My Credit Guide - Analytics","pl":"Kerstin Baker-Ash","jRev":"$13.6K","jCost":"$3.5K","jM":0.74,"fRev":"$14.3K","fCost":"$2.1K","fM":0.85,"mRev":"$10.9K","mCost":"$2.9K","mM":0.73},{"proj":"AMEX-GCS_US - SEO_GEO_Search 2.0/Experience","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Aritzia_CA - SEO","pl":"Madhurima Srivastava","jRev":"$26.5K","jCost":"$5.9K","jM":0.78,"fRev":"$49.2K","fCost":"$6.4K","fM":0.87,"mRev":"$4.6K","mCost":"$12.3K","mM":-1.67},{"proj":"Discover_Credit Cards - SEO & ANA","pl":"Pawan Jaiswal","jRev":"$122.8K","jCost":"$13.9K","jM":0.89,"fRev":"$125.5K","fCost":"$20.3K","fM":0.84,"mRev":"$125.5K","mCost":"$17.2K","mM":0.86},{"proj":"Discover_Home Loans - ANA_Training","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"MYFICO - SEO","pl":"Pawan Jaiswal","jRev":"$25.0K","jCost":"$5.2K","jM":0.79,"fRev":"$25.0K","fCost":"$5.8K","fM":0.77,"mRev":"$25.0K","mCost":"$13.4K","mM":0.46},{"proj":"JP Morgan Chase_Home Loans - SEO","pl":"Pawan Jaiswal","jRev":"$50.1K","jCost":"$7.3K","jM":0.85,"fRev":"$30.6K","fCost":"$11.1K","fM":0.64,"mRev":"$14.8K","mCost":"$8.0K","mM":0.46},{"proj":"KAPITUS - PCM, SEO & CRO-LEAP","pl":"Kerstin Baker-Ash","jRev":"$70.1K","jCost":"$17.5K","jM":0.75,"fRev":"$70.1K","fCost":"$19.8K","fM":0.72,"mRev":"$70.1K","mCost":"$20.8K","mM":0.7},{"proj":"ONEMAIN FINANCIAL - PCM","pl":"Pawan Jaiswal","jRev":"$91.7K","jCost":"$4.4K","jM":0.95,"fRev":"$91.7K","fCost":"$9.0K","fM":0.9,"mRev":"$91.7K","mCost":"$10.6K","mM":0.88},{"proj":"ONEMAIN FINANCIAL - PCM_Social","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"ONEMAIN FINANCIAL - SEO","pl":"Pawan Jaiswal","jRev":"$13.9K","jCost":"$14.9K","jM":-0.07,"fRev":"$16.2K","fCost":"$7.5K","fM":0.54,"mRev":"$12.9K","mCost":"$18.4K","mM":-0.43},{"proj":"Citi - SEO & CRO(old)","pl":"Tylor Hermanson","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Edward Jones - ANA_MMM","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Edward Jones - LEAP(old)","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Edward Jones - Digital Shelf - Social & Urban","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"JP Morgan Chase_Consumer Bank - SEO & Content","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"JP Morgan Chase_Home Loans - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SANTANDER BANK - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - ANA_Affiliate Strategist 2_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - ANA_Aprimo Strategist 1_Staff Aug(old)","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - ANA_Aprimo Strategist 2_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - ANA_Aprimo Strategist 3_Staff Aug(old)","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - ANA_Business Analyst_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - D&D_LEAP_Audit Proposal","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - D&D_LEAP_Development & Test Execution","pl":"Madhurima Srivastava","jRev":"$20.9K","jCost":"$15.8K","jM":0.24,"fRev":"$56.1K","fCost":"$19.6K","fM":0.65,"mRev":"$40.3K","mCost":"$22.1K","mM":0.45},{"proj":"US BANK - SEO & D&D_Content Hub AEM Page Build & LEAP","pl":"Madhurima Srivastava","jRev":"$33.3K","jCost":"$4.9K","jM":0.85,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Aflac - Dev_Staff Aug","pl":"Madhurima Srivastava","jRev":"$12.5K","jCost":"$2.1K","jM":0.83,"fRev":"$12.5K","fCost":"$4.4K","fM":0.65,"mRev":"$12.5K","mCost":"$3.2K","mM":0.74},{"proj":"Aflac - SEO & CRO","pl":"Madhurima Srivastava","jRev":"$74.4K","jCost":"$9.5K","jM":0.87,"fRev":"$14.0K","fCost":"$39.8K","fM":-1.85,"mRev":"$188.1K","mCost":"$18.3K","mM":0.9},{"proj":"Aflac - Website Redesign","pl":"Madhurima Srivastava","jRev":"$7.3K","jCost":"$2.2K","jM":0.7,"fRev":"$2.3K","fCost":"$587","fM":0.74,"mRev":"$1.5K","mCost":"$12","mM":0.99},{"proj":"Citi - SEO & CRO","pl":"Tylor Hermanson","jRev":"$353.4K","jCost":"$88.3K","jM":0.75,"fRev":"$353.4K","fCost":"$68.4K","fM":0.81,"mRev":"$353.4K","mCost":"$96.2K","mM":0.73},{"proj":"Edward Jones - LEAP","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":"$237","fCost":"$116","fM":0.51,"mRev":"$10.9K","mCost":"$2.6K","mM":0.76},{"proj":"Edward Jones - SEO","pl":"Madhurima Srivastava","jRev":"$70.4K","jCost":"$7.0K","jM":0.9,"fRev":"$70.4K","fCost":"$7.4K","fM":0.89,"mRev":"$70.4K","mCost":"$4.2K","mM":0.94},{"proj":"Edward Jones - SEO_Wikipedia","pl":"Madhurima Srivastava","jRev":null,"jCost":"$194","jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"HEB_CA - Acq-in-a-box(old)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"HEB_CA - Acq-in-a-box","pl":"Kerstin Baker-Ash","jRev":"$64.1K","jCost":"$12.5K","jM":0.8,"fRev":"$64.1K","fCost":"$11.8K","fM":0.82,"mRev":"$64.1K","mCost":"$12.9K","mM":0.8},{"proj":"HEB_CA - SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"HEB_CA - SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"HEB_CA - SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"HEB_ChipAdvisor_CA - D&D_Calculator Changes","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"NEW YORK CRUISE LINES - ANA_Staff Aug","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"NEW YORK CRUISE LINES - PCM(old)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"OPORTUN - SEO & Content","pl":"Pawan Jaiswal","jRev":"$25.0K","jCost":"$7.0K","jM":0.72,"fRev":"$25.0K","fCost":"$5.3K","fM":0.79,"mRev":"$25.0K","mCost":"$3.2K","mM":0.87},{"proj":"UNIFIRST - PCM & SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"UNIFIRST - PCM & SEO","pl":"Kerstin Baker-Ash","jRev":"$18.3K","jCost":"$7.7K","jM":0.58,"fRev":"$19.2K","fCost":"$7.6K","fM":0.6,"mRev":"$17.0K","mCost":"$8.9K","mM":0.48},{"proj":"US BANK - ANA_Aprimo Strategist 1_Staff Aug","pl":"Madhurima Srivastava","jRev":"$9.7K","jCost":"$3.1K","jM":0.68,"fRev":"$9.7K","fCost":"$3.4K","fM":0.65,"mRev":"$9.7K","mCost":"$3.4K","mM":0.65},{"proj":"US BANK - ANA_Persado Project Manager_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - CRO & D&D_FIQ UX Revamp","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - SEO_AOR RFP","pl":"Madhurima Srivastava","jRev":"$71.1K","jCost":"$15.2K","jM":0.79,"fRev":"$71.1K","fCost":"$14.7K","fM":0.79,"mRev":"$71.1K","mCost":"$18.3K","mM":0.74},{"proj":"US BANK_Cards - D&D_Content Hub Development","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK_Cards - SEO","pl":"Madhurima Srivastava","jRev":"$25.7K","jCost":"$4.0K","jM":0.84,"fRev":"$21.2K","fCost":"$2.8K","fM":0.87,"mRev":"$15.6K","mCost":"$6.4K","mM":0.59},{"proj":"SUNRISE BRANDS_NYDJ - CRO","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SUNRISE BRANDS_NYDJ - PCM_Amazon Management(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_Codigo - D&D_Website Updates","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_ NADL - D&D_Website Launch Nov","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_Royal Salute and Midleton - SEO & D&D_On-page Optim","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PRUDENTIAL FINANCIAL_FSI - SEO & D&D_Site Redesign","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"HEB_ChipAdvisor_CA - D&D_Hosting & Maintenance","pl":"Kerstin Baker-Ash","jRev":"$4.1K","jCost":"$1.2K","jM":0.71,"fRev":"$3.5K","fCost":"$917","fM":0.74,"mRev":"$5.6K","mCost":"$890","mM":0.84},{"proj":"PERNOD RICARD_NADL - D&D_ Contract Distilling Website Build","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_NADL - D&D_Website Build","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_TX Whiskey Export - D&D_ site Development","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":"$4","mCost":"$22","mM":-4.45},{"proj":"PERNOD RICARD_ Codigo - Cocktial Collection Redesign and Dev 2025","pl":"Jithin Vinod","jRev":"$2.1K","jCost":"$68","jM":-1.03,"fRev":"$1.7K","fCost":null,"fM":1.0,"mRev":"$10.5K","mCost":null,"mM":1.0},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Maintenance(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Maintenance(old)","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Upgrades","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Maintenance","pl":"Jithin Vinod","jRev":"$2.0K","jCost":"$130","jM":0.94,"fRev":"$2.0K","fCost":null,"fM":1.0,"mRev":"$2.0K","mCost":"$65","mM":0.97},{"proj":"WYNDHAM - CRO","pl":"Bindiya Jiwani","jRev":"$6.8K","jCost":"$593","jM":0.91,"fRev":"$12.4K","fCost":"$1.0K","fM":0.92,"mRev":"$7.9K","mCost":"$468","mM":0.94},{"proj":"AMEX-GCS_Partn_Marriott - D&D_Gated SCLP Hosting","pl":"Bindiya Jiwani","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Amex_GMS_Tock - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"ASPEN_Clearchoice - ContentBriefs_Q4","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Aspen_Dental - SEO_Additional Link Building","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Bread Financial_Caesars - PCM","pl":"Jithin Vinod","jRev":"$3.7K","jCost":"$414","jM":0.89,"fRev":"$3.7K","fCost":"$560","fM":0.85,"mRev":"$4.2K","mCost":"$952","mM":0.78},{"proj":"Capital One_SBC - Video Solution","pl":"Pawan Jaiswal","jRev":"$13.0K","jCost":"$3.7K","jM":0.72,"fRev":"$23.5K","fCost":"$124","fM":0.99,"mRev":null,"mCost":"$1.3K","mM":null},{"proj":"CAPITAL ONE - SBC_ATL Content","pl":"Pawan Jaiswal","jRev":"$100.0K","jCost":"$30.2K","jM":0.7,"fRev":"$489.0K","fCost":"$23.6K","fM":0.95,"mRev":null,"mCost":"$817","mM":null},{"proj":"CignaHealth_ME - SEO_NA","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"SANTANDER BANK - SEO & GEO","pl":"Kerstin Baker-Ash","jRev":"$27.2K","jCost":"$3.6K","jM":0.87,"fRev":null,"fCost":"$1.6K","fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"US BANK - SEO_Fragmented search","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"WEX_Card - Production Positing Testing Program","pl":"Pawan Jaiswal","jRev":"$25.3K","jCost":"$3.4K","jM":0.86,"fRev":"$14.0K","fCost":"$4.2K","fM":0.7,"mRev":null,"mCost":null,"mM":null},{"proj":"AvidXchange - SEO & PCM","pl":"Kerstin Baker-Ash","jRev":"$9.3K","jCost":"$1.8K","jM":0.81,"fRev":"$11.8K","fCost":"$1.5K","fM":0.87,"mRev":"$13.5K","mCost":"$2.0K","mM":0.85},{"proj":"Aflac - Dev_Staff Aug(old)","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"ASPEN_DENTAL - Schema Audit","pl":"Pawan Jaiswal","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":null,"mCost":null,"mM":null},{"proj":"Citi - SEO_Mortgage.com","pl":"Tylor Hermanson","jRev":"$32.3K","jCost":"$10.6K","jM":0.67,"fRev":"$52.4K","fCost":"$9.7K","fM":0.82,"mRev":"$39.4K","mCost":"$13.0K","mM":0.67},{"proj":"HEB_CA - SEO","pl":"Kerstin Baker-Ash","jRev":"$13.8K","jCost":"$1.4K","jM":0.9,"fRev":"$13.8K","fCost":"$1.9K","fM":0.86,"mRev":"$13.8K","mCost":"$2.3K","mM":0.83},{"proj":"HEB - CA - Web Experience Redesign","pl":"Kerstin Baker-Ash","jRev":"$25.9K","jCost":"$6.7K","jM":0.74,"fRev":"$46.9K","fCost":"$8.1K","fM":0.83,"mRev":"$35.8K","mCost":"$4.3K","mM":0.88},{"proj":"US BANK - ANA_Aprimo Strategist 3_Staff Aug","pl":"Madhurima Srivastava","jRev":"$9.7K","jCost":"$1.8K","jM":0.81,"fRev":"$9.7K","fCost":"$2.2K","fM":0.77,"mRev":"$9.7K","mCost":"$2.2K","mM":0.77},{"proj":"Prudent Publishing - D&D","pl":"Jithin Vinod","jRev":null,"jCost":"$2.1K","jM":null,"fRev":null,"fCost":"$4.1K","fM":null,"mRev":null,"mCost":"$11.9K","mM":null},{"proj":"Brother USA - PCM_ Affiliate Marketing","pl":"Jithin Vinod","jRev":"$15.0K","jCost":"$3.9K","jM":0.74,"fRev":"$16.4K","fCost":"$3.8K","fM":0.77,"mRev":"$20.2K","mCost":"$3.3K","mM":0.84},{"proj":"CAPITAL ONE - LEAP Q4","pl":"Pawan Jaiswal","jRev":"$37.6K","jCost":"$13.9K","jM":0.63,"fRev":"$111.2K","fCost":"$13.1K","fM":0.88,"mRev":"$46.3K","mCost":"$6.8K","mM":0.85},{"proj":"CAPITAL ONE_Consumer Cards - SEO & GEO_Audit","pl":"Pawan Jaiswal","jRev":"$61.7K","jCost":"$10.2K","jM":0.83,"fRev":"$29.3K","fCost":"$8.7K","fM":0.7,"mRev":"$38.4K","mCost":"$5.8K","mM":-1.15},{"proj":"CHARLES SCHWAB CORPORATION (About) - SEO_Q4","pl":"Jithin Vinod","jRev":"$3.9K","jCost":"$2.1K","jM":0.46,"fRev":"$8.0K","fCost":"$1.4K","fM":0.83,"mRev":null,"mCost":"$80","mM":null},{"proj":"CIBC_CA - Private Wealth _SEO Assessment","pl":"Kerstin Baker-Ash","jRev":"$16.4K","jCost":"$2.7K","jM":0.84,"fRev":"$13.6K","fCost":"$1.4K","fM":0.9,"mRev":null,"mCost":"$233","mM":null},{"proj":"CITI - SEO_CRS_Sears","pl":"Tylor Hermanson","jRev":"$976","jCost":"$2.0K","jM":-1.04,"fRev":"$570","fCost":"$737","fM":-0.29,"mRev":null,"mCost":"$370","mM":null},{"proj":"US BANK - ANA_WorkFlow Management_Junior Business Analyst_Staff A","pl":"Madhurima Srivastava","jRev":"$6.4K","jCost":"$1.0K","jM":0.84,"fRev":"$6.4K","fCost":"$1.0K","fM":0.84,"mRev":"$6.4K","mCost":"$1.3K","mM":0.8},{"proj":"HEB_ChipAdvisor_Migration EN&FR","pl":"Kerstin Baker-Ash","jRev":"$1.5K","jCost":"$144","jM":0.9,"fRev":"$221","fCost":"$33","fM":0.85,"mRev":"$18.9K","mCost":"$271","mM":0.99},{"proj":"Brother USA_Marketplace_Label Makers_campaign","pl":"Jithin Vinod","jRev":"$1.7K","jCost":"$91","jM":0.95,"fRev":"$2.7K","fCost":"$198","fM":0.93,"mRev":"$2.2K","mCost":null,"mM":1.0},{"proj":"PEARL HAWAII FCU - SEO","pl":"Ravi Vidyarthi","jRev":"$17.2K","jCost":"$1.8K","jM":0.89,"fRev":"$14.2K","fCost":"$456","fM":0.97,"mRev":"$15.8K","mCost":"$882","mM":0.94},{"proj":"AMEX-GCS_US - D&D_MET Hosting","pl":"Bindiya Jiwani","jRev":"$444","jCost":"$39","jM":0.91,"fRev":"$5.5K","fCost":"$68","fM":0.99,"mRev":"$3.0K","mCost":"$174","mM":0.94},{"proj":"BRIMAR - PCM_SEM AOR","pl":"Jithin Vinod","jRev":"$25.0K","jCost":"$5.0K","jM":0.8,"fRev":"$48.3K","fCost":"$6.7K","fM":0.86,"mRev":"$36.9K","mCost":"$6.1K","mM":0.83},{"proj":"Laurel Road - D&D","pl":"Bindiya Jiwani","jRev":"$10.0K","jCost":"$759","jM":0.92,"fRev":"$10.0K","fCost":"$2.4K","fM":0.76,"mRev":"$23.7K","mCost":"$2.4K","mM":0.9},{"proj":"ONEMAIN FINANCIAL - SEO+CMS+Analytics","pl":"Pawan Jaiswal","jRev":"$127.8K","jCost":"$9.5K","jM":0.93,"fRev":"$52.9K","fCost":"$13.5K","fM":0.75,"mRev":"$32.7K","mCost":"$14.0K","mM":0.57},{"proj":"WELLS FARGO - Content Strategy - RFP","pl":"Kerstin Baker-Ash","jRev":"$52.5K","jCost":"$22.9K","jM":0.56,"fRev":"$46.3K","fCost":"$30.9K","fM":0.33,"mRev":"$73.7K","mCost":"$34.6K","mM":0.53},{"proj":"Amex_Consumer_Credit Card Shop - SEO","pl":"Kerstin Baker-Ash","jRev":"$19.1K","jCost":"$1.8K","jM":0.9,"fRev":"$27.4K","fCost":"$2.7K","fM":0.9,"mRev":"$19.0K","mCost":"$3.7K","mM":0.81},{"proj":"Amex_Consumer_Credit Intel - SEO","pl":"Kerstin Baker-Ash","jRev":"$56.2K","jCost":"$16.7K","jM":0.7,"fRev":"$68.1K","fCost":"$20.7K","fM":0.7,"mRev":"$188.8K","mCost":"$40.8K","mM":0.78},{"proj":"Prudent Publishing - PCM","pl":"Jithin Vinod","jRev":"$7.8K","jCost":"$4.7K","jM":-1.61,"fRev":"$15.2K","fCost":"$5.7K","fM":0.63,"mRev":"$35.6K","mCost":"$4.6K","mM":0.87},{"proj":"Prudent Publishing - SEO","pl":"Jithin Vinod","jRev":"$18.3K","jCost":"$4.8K","jM":0.74,"fRev":"$2.7K","fCost":"$5.0K","fM":-2.89,"mRev":"$10.4K","mCost":"$5.9K","mM":0.44},{"proj":"NEW YORK CRUISE LINES - PCM","pl":"Kerstin Baker-Ash","jRev":"$7.5K","jCost":"$2.4K","jM":0.69,"fRev":"$16.6K","fCost":"$2.7K","fM":0.84,"mRev":"$18.7K","mCost":"$2.8K","mM":0.85},{"proj":"Amex_Consumer_My Credit Guide - Analytics (Insurance)","pl":"Kerstin Baker-Ash","jRev":null,"jCost":"$574","jM":null,"fRev":"$4.1K","fCost":"$292","fM":0.93,"mRev":"$9.1K","mCost":"$796","mM":0.91},{"proj":"US BANK_Cards - SEO & Content Hub Development","pl":"Madhurima Srivastava","jRev":"$6.4K","jCost":"$2.0K","jM":0.7,"fRev":"$297","fCost":"$2.4K","fM":-6.93,"mRev":"$19.4K","mCost":"$85","mM":1.0},{"proj":"PRUDENTIAL FINANCIAL_FSI - D&D_Website Launch","pl":"Jithin Vinod","jRev":null,"jCost":"$404","jM":null,"fRev":"$8.8K","fCost":"$1.5K","fM":0.83,"mRev":"$8.4K","mCost":"$1.0K","mM":0.88},{"proj":"BROTHER USA - ANA_ GA_Governance","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":"$7.9K","fCost":"$482","fM":0.94,"mRev":"$17.2K","mCost":"$523","mM":0.97},{"proj":"BROTHER USA - Laser_Strategy - Acq-in-a-box","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":"$20.3K","fCost":"$61","fM":1.0,"mRev":"$29.7K","mCost":"$1.5K","mM":0.95},{"proj":"BROTHER USA - LEAP_Experience Optimization","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":"$12.2K","fCost":"$802","fM":0.93,"mRev":"$16.7K","mCost":"$4.7K","mM":0.72},{"proj":"CIBC Visa SMB Authority Audit and Implementation","pl":"Kerstin Baker-Ash","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":"$239","fM":null,"mRev":"$14.3K","mCost":"$5.9K","mM":0.59},{"proj":"US BANK - ANA_Workflow Management 4_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":"$5.6K","mCost":"$2.5K","mM":0.56},{"proj":"BROTHER USA - SEO_Strategy_Initiatives","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":"$16.5K","mCost":"$702","mM":0.96},{"proj":"BRIMAR - ANA_SEM Tag Implementation","pl":"Jithin Vinod","jRev":null,"jCost":null,"jM":null,"fRev":null,"fCost":null,"fM":null,"mRev":"$950","mCost":"$158","mM":0.83}];
+const RF_DETAIL=[{"proj":"AMEX-GCS_US - D&D_Carbon Offset Landing Pages","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_Partn_Marriott - D&D_SCLP Hosting","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_Partn_Marriott - Consumer-D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$13.8K","jFTE":0.41,"jRFTE":"$33.6K","fRev":"$21.9K","fFTE":0.26,"fRFTE":"$84.1K","mRev":"$10.6K","mFTE":0.16,"mRFTE":"$66.3K"},{"proj":"AMEX-GCS_Partn_Hilton - D&D_SBO Hosting","pl":"Bindiya Jiwani","jRev":"$5.5K","jFTE":0.26,"jRFTE":"$21.2K","fRev":"$5.8K","fFTE":0.21,"fRFTE":"$27.9K","mRev":"$3.8K","mFTE":0.2,"mRFTE":"$19.2K"},{"proj":"AMEX-GCS_US - D&D_AP Automation Hosting(old)","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_US - D&D_VBT & Disclosure Landing Pages","pl":"Bindiya Jiwani","jRev":"$8.0K","jFTE":0.35,"jRFTE":"$22.8K","fRev":"$6.8K","fFTE":0.55,"fRFTE":"$12.4K","mRev":"$3.2K","mFTE":0.23,"mRFTE":"$14.0K"},{"proj":"Amex_IIS_IND - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$1.2K","jFTE":0.04,"jRFTE":"$31.2K","fRev":"$1.2K","fFTE":0.06,"fRFTE":"$20.8K","mRev":"$1.2K","mFTE":0.06,"mRFTE":"$20.8K"},{"proj":"AMEX-GCS_Partn_Marriott - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$9.4K","jFTE":0.8,"jRFTE":"$11.7K","fRev":"$14.2K","fFTE":1.23,"fRFTE":"$11.5K","mRev":"$24.9K","mFTE":1.27,"mRFTE":"$19.6K"},{"proj":"AMEX-GCS_US - D&D_Charge & Lending Cross Sell Landing Pages","pl":"Bindiya Jiwani","jRev":"$21.9K","jFTE":0.88,"jRFTE":"$24.9K","fRev":"$10.4K","fFTE":0.5,"fRFTE":"$20.8K","mRev":"$20.4K","mFTE":0.91,"mRFTE":"$22.4K"},{"proj":"AMEX-GCS_US - D&D_Paid Search Landing Pages","pl":"Bindiya Jiwani","jRev":"$11.9K","jFTE":1.34,"jRFTE":"$8.9K","fRev":"$14.1K","fFTE":1.01,"fRFTE":"$13.9K","mRev":"$12.7K","mFTE":1.11,"mRFTE":"$11.4K"},{"proj":"Amex_Consumer_Morgan Stanley - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$10.6K","jFTE":0.8,"jRFTE":"$13.2K","fRev":"$11.2K","fFTE":0.66,"fRFTE":"$17.0K","mRev":"$15.1K","mFTE":0.6,"mRFTE":"$25.2K"},{"proj":"Laurel Road - Content","pl":"Bindiya Jiwani","jRev":"$13.5K","jFTE":0.08,"jRFTE":"$169.3K","fRev":"$16.2K","fFTE":0.12,"fRFTE":"$135.4K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_Partn_Hilton - D&D_Hosting","pl":"Bindiya Jiwani","jRev":"$99.0K","jFTE":4.32,"jRFTE":"$22.9K","fRev":"$126.2K","fFTE":4.39,"fRFTE":"$28.7K","mRev":"$94.2K","mFTE":3.0,"mRFTE":"$31.4K"},{"proj":"Amex_IIS_IND - D&D_MSE","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$600","mFTE":0.03,"mRFTE":"$20.0K"},{"proj":"AMEX-GCS_Partn_Delta - D&D_ Hosting","pl":"Bindiya Jiwani","jRev":"$64.8K","jFTE":4.26,"jRFTE":"$15.2K","fRev":"$67.1K","fFTE":2.77,"fRFTE":"$24.2K","mRev":"$72.6K","mFTE":4.1,"mRFTE":"$17.7K"},{"proj":"AMEX-GCS_Partn_Hilton - D&D_Aspire Hosting","pl":"Bindiya Jiwani","jRev":"$5.5K","jFTE":0.18,"jRFTE":"$30.7K","fRev":"$2.5K","fFTE":0.12,"fRFTE":"$20.8K","mRev":"$1.3K","mFTE":0.1,"mRFTE":"$13.4K"},{"proj":"Amex_Consumer - D&D_Cross Sell Landing Pages","pl":"Bindiya Jiwani","jRev":"$5.7K","jFTE":0.38,"jRFTE":"$15.0K","fRev":"$6.6K","fFTE":0.27,"fRFTE":"$24.5K","mRev":"$9.3K","mFTE":0.55,"mRFTE":"$17.0K"},{"proj":"SILICON VALLEY BANK - Analytics","pl":"Jithin Vinod","jRev":"$29.8K","jFTE":0.98,"jRFTE":"$30.4K","fRev":"$41.6K","fFTE":1.54,"fRFTE":"$27.0K","mRev":"$34.6K","mFTE":2.52,"mRFTE":"$13.7K"},{"proj":"SYNCHRONY FINANCIAL - ANA_Holistic Analytics Support","pl":"Jithin Vinod","jRev":"$2.4K","jFTE":1.53,"jRFTE":"$1.6K","fRev":"$2.4K","fFTE":1.38,"fRFTE":"$1.7K","mRev":null,"mFTE":2.13,"mRFTE":null},{"proj":"Laurel Road - D&D UX Design","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"WELLS FARGO - IND - ANA_Staff Aug","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Brother USA - PCM & SEO","pl":"Jithin Vinod","jRev":"$62.2K","jFTE":4.48,"jRFTE":"$13.9K","fRev":"$64.7K","fFTE":4.65,"fRFTE":"$13.9K","mRev":"$67.8K","mFTE":4.95,"mRFTE":"$13.7K"},{"proj":"Edward Jones - SEO","pl":"Madhurima Srivastava","jRev":"$70.4K","jFTE":1.16,"jRFTE":"$60.7K","fRev":"$70.4K","fFTE":1.37,"fRFTE":"$51.4K","mRev":"$70.4K","mFTE":0.31,"mRFTE":"$227.1K"},{"proj":"Bread Financial_NFL - Paid","pl":"Jithin Vinod","jRev":"$3.7K","jFTE":0.82,"jRFTE":"$4.5K","fRev":"$3.7K","fFTE":0.71,"fRFTE":"$5.2K","mRev":"$3.7K","mFTE":0.74,"mRFTE":"$5.0K"},{"proj":"PRUDENTIAL FINANCIAL_HK - ANA_Build & Transfer","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Edward Jones - SEO_Workplace","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Bread Financial_Bread Pay - Paid","pl":"Jithin Vinod","jRev":"$3.7K","jFTE":0.3,"jRFTE":"$12.3K","fRev":"$3.7K","fFTE":0.93,"fRFTE":"$4.0K","mRev":"$3.7K","mFTE":0.79,"mRFTE":"$4.7K"},{"proj":"STANDARD CHARTERED BANK_IND - Staff Aug","pl":"Jithin Vinod","jRev":"$15.0K","jFTE":4.0,"jRFTE":"$3.7K","fRev":"$15.0K","fFTE":2.0,"fRFTE":"$7.5K","mRev":"$15.0K","mFTE":3.26,"mRFTE":"$4.6K"},{"proj":"SILICON VALLEY BANK - Paid Search","pl":"Jithin Vinod","jRev":"$38.4K","jFTE":2.41,"jRFTE":"$15.9K","fRev":"$35.6K","fFTE":2.44,"fRFTE":"$14.6K","mRev":"$38.5K","mFTE":2.91,"mRFTE":"$13.2K"},{"proj":"UNITED OVERSEAS BANK_TH - SEO","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$4.6K","fFTE":0.93,"fRFTE":"$4.9K","mRev":"$4.6K","mFTE":0.99,"mRFTE":"$4.6K"},{"proj":"STANDARD CHARTERED BANK_SG - SEO_Content_Staff Aug","pl":"Jithin Vinod","jRev":"$20.4K","jFTE":4.22,"jRFTE":"$4.8K","fRev":"$20.5K","fFTE":3.72,"fRFTE":"$5.5K","mRev":"$20.5K","mFTE":4.06,"mRFTE":"$5.0K"},{"proj":"Bread Financial_FBB - CRO","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Kotak Bank - PCM(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Advantage Dental - PCM","pl":"Kerstin Baker-Ash","jRev":"$11.5K","jFTE":1.27,"jRFTE":"$9.1K","fRev":"$11.9K","fFTE":1.17,"fRFTE":"$10.2K","mRev":"$11.9K","mFTE":1.28,"mRFTE":"$9.3K"},{"proj":"Charles Schwab Corporation_Intl - SEO","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"FrontPoint - PCM","pl":"Jithin Vinod","jRev":"$7.0K","jFTE":0.9,"jRFTE":"$7.8K","fRev":"$7.0K","fFTE":1.04,"fRFTE":"$6.7K","mRev":"$7.0K","mFTE":0.93,"mRFTE":"$7.5K"},{"proj":"Edward Jones - Digital Shelf - Social & Urban","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Bitdeer.AI - SEO","pl":"Jithin Vinod","jRev":"$3.3K","jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Citi_UAE - SEO","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"CignaHealth_ME - SEO & Content","pl":"Jithin Vinod","jRev":"$3.4K","jFTE":0.57,"jRFTE":"$6.0K","fRev":"$8.3K","fFTE":1.34,"fRFTE":"$6.2K","mRev":"$5.6K","mFTE":1.19,"mRFTE":"$4.7K"},{"proj":"Charles Schwab Corporation_Enterprise - SEO","pl":"Jithin Vinod","jRev":"$32.3K","jFTE":2.07,"jRFTE":"$15.6K","fRev":"$17.0K","fFTE":2.17,"fRFTE":"$7.8K","mRev":"$10.3K","mFTE":3.05,"mRFTE":"$3.4K"},{"proj":"CIBC_CA - SEO_Lights On Support","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$6.5K","fFTE":0.3,"fRFTE":"$21.6K","mRev":"$3.2K","mFTE":0.42,"mRFTE":"$7.7K"},{"proj":"UNITED OVERSEAS BANK_SG - SEO","pl":"Jithin Vinod","jRev":"$14.3K","jFTE":2.0,"jRFTE":"$7.1K","fRev":"$18.0K","fFTE":0.75,"fRFTE":"$24.0K","mRev":"$10.0K","mFTE":0.89,"mRFTE":"$11.3K"},{"proj":"BNY Mellon - ANA_Staff Aug","pl":"Jithin Vinod","jRev":"$25.2K","jFTE":2.34,"jRFTE":"$10.8K","fRev":"$25.2K","fFTE":2.55,"fRFTE":"$9.9K","mRev":"$25.2K","mFTE":2.67,"mRFTE":"$9.4K"},{"proj":"SUNRISE BRANDS_NYDJ - PCM_Amazon Management","pl":"Jithin Vinod","jRev":"$9.5K","jFTE":1.17,"jRFTE":"$8.1K","fRev":"$7.5K","fFTE":0.74,"fRFTE":"$10.1K","mRev":"$14.4K","mFTE":0.75,"mRFTE":"$19.2K"},{"proj":"CignaHealth_ME_KSA - SEO","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"HSBC_APAC - SEO","pl":"Jithin Vinod","jRev":"$8.3K","jFTE":1.21,"jRFTE":"$6.9K","fRev":"$8.3K","fFTE":1.1,"fRFTE":"$7.6K","mRev":"$8.3K","mFTE":0.88,"mRFTE":"$9.5K"},{"proj":"PERNOD RICARD - Marketing Accelerator_Excecution Support","pl":"Jithin Vinod","jRev":"$16.7K","jFTE":0.65,"jRFTE":"$25.6K","fRev":"$16.7K","fFTE":1.16,"fRFTE":"$14.4K","mRev":"$16.7K","mFTE":0.61,"mRFTE":"$27.3K"},{"proj":"Allstate - Analytics BAU","pl":"Jithin Vinod","jRev":"$28.4K","jFTE":1.75,"jRFTE":"$16.2K","fRev":"$29.7K","fFTE":2.45,"fRFTE":"$12.1K","mRev":"$29.7K","mFTE":1.86,"mRFTE":"$16.0K"},{"proj":"SUNRISE BRANDS - PCM_Paid Media","pl":"Jithin Vinod","jRev":"$44.0K","jFTE":3.17,"jRFTE":"$13.9K","fRev":"$47.7K","fFTE":2.87,"fRFTE":"$16.6K","mRev":"$61.4K","mFTE":3.69,"mRFTE":"$16.6K"},{"proj":"Aspen_Dental - SEO","pl":"Pawan Jaiswal","jRev":"$37.7K","jFTE":0.58,"jRFTE":"$65.0K","fRev":"$72.2K","fFTE":2.33,"fRFTE":"$31.0K","mRev":"$140.6K","mFTE":1.81,"mRFTE":"$77.7K"},{"proj":"WELLS FARGO - Cards_Paid Search Analytics","pl":"Kerstin Baker-Ash","jRev":"$45.4K","jFTE":3.1,"jRFTE":"$14.7K","fRev":"$45.4K","fFTE":2.77,"fRFTE":"$16.4K","mRev":"$45.4K","mFTE":2.63,"mRFTE":"$17.3K"},{"proj":"Bread Financial_Ross - Paid","pl":"Jithin Vinod","jRev":"$8.5K","jFTE":0.91,"jRFTE":"$9.3K","fRev":"$10.4K","fFTE":0.75,"fRFTE":"$13.8K","mRev":"$10.5K","mFTE":0.94,"mRFTE":"$11.1K"},{"proj":"OPORTUN - SEO & Content(old)","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Charles Schwab Corporation_Advisor services - SEO","pl":"Jithin Vinod","jRev":"$19.3K","jFTE":1.27,"jRFTE":"$15.2K","fRev":"$18.4K","fFTE":1.2,"fRFTE":"$15.4K","mRev":"$10.0K","mFTE":0.84,"mRFTE":"$11.9K"},{"proj":"Capital One - LEAP","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Amex_Consumer_Cardshop - LEAP","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_US - SEO_GEO_Search 2.0/Experience","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Discover_Credit Cards - SEO & ANA(old)","pl":"Pawan Jaiswal","jRev":null,"jFTE":4.46,"jRFTE":null,"fRev":null,"fFTE":6.46,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Amex_Consumer_Centurion Lounges - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"WEX_Cards - Acq-in-a-box","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"MYFICO - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Amex_Personal Savings - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":0.69,"jRFTE":null,"fRev":null,"fFTE":0.06,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Amex_Consumer_Credit Intel - SEO","pl":"Kerstin Baker-Ash","jRev":"$56.2K","jFTE":3.91,"jRFTE":"$14.4K","fRev":"$68.1K","fFTE":5.32,"fRFTE":"$12.8K","mRev":"$188.8K","mFTE":7.8,"mRFTE":"$24.2K"},{"proj":"Discover_Credit Cards - SEO & ANA","pl":"Pawan Jaiswal","jRev":"$122.8K","jFTE":4.46,"jRFTE":"$27.5K","fRev":"$125.5K","fFTE":6.46,"fRFTE":"$19.4K","mRev":"$125.5K","mFTE":6.45,"mRFTE":"$19.5K"},{"proj":"Amex_Consumer_Insurance - Analytics","pl":"Kerstin Baker-Ash","jRev":"$19.8K","jFTE":1.89,"jRFTE":"$10.5K","fRev":"$14.7K","fFTE":1.68,"fRFTE":"$8.7K","mRev":"$16.8K","mFTE":1.9,"mRFTE":"$8.9K"},{"proj":"Discover_Home Loans - SEO, Content","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Discover_Home Loans - Content","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Amex_Consumer_Credit Card Shop - SEO","pl":"Kerstin Baker-Ash","jRev":"$19.1K","jFTE":0.84,"jRFTE":"$22.8K","fRev":"$27.4K","fFTE":1.19,"fRFTE":"$23.0K","mRev":"$19.0K","mFTE":1.28,"mRFTE":"$14.9K"},{"proj":"Amex_Consumer_My Credit Guide - Analytics","pl":"Kerstin Baker-Ash","jRev":"$13.6K","jFTE":1.28,"jRFTE":"$10.6K","fRev":"$14.3K","fFTE":1.36,"fRFTE":"$10.5K","mRev":"$10.9K","mFTE":1.64,"mRFTE":"$6.7K"},{"proj":"Aritzia_CA - SEO","pl":"Madhurima Srivastava","jRev":"$26.5K","jFTE":1.38,"jRFTE":"$19.2K","fRev":"$49.2K","fFTE":1.14,"fRFTE":"$43.2K","mRev":"$4.6K","mFTE":1.59,"mRFTE":"$2.9K"},{"proj":"Amex_GMS_Resy - SEO","pl":"Kerstin Baker-Ash","jRev":"$21.8K","jFTE":0.73,"jRFTE":"$29.8K","fRev":"$32.7K","fFTE":1.47,"fRFTE":"$22.2K","mRev":"$27.2K","mFTE":2.58,"mRFTE":"$10.5K"},{"proj":"Aflac - Website Redesign","pl":"Madhurima Srivastava","jRev":"$7.3K","jFTE":0.09,"jRFTE":"$81.1K","fRev":"$2.3K","fFTE":0.03,"fRFTE":"$76.4K","mRev":"$1.5K","mFTE":0.01,"mRFTE":"$152.1K"},{"proj":"PRUDENTIAL FINANCIAL_FSI - SEO & D&D_Site Redesign","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"JP Morgan Chase_Home Loans - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"JP Morgan Chase_Consumer Bank - SEO & Content","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Citi - SEO & CRO","pl":"Tylor Hermanson","jRev":"$353.4K","jFTE":8.7,"jRFTE":"$40.6K","fRev":"$353.4K","fFTE":9.4,"fRFTE":"$37.6K","mRev":"$353.4K","mFTE":15.87,"mRFTE":"$22.3K"},{"proj":"Aflac - SEO & CRO","pl":"Madhurima Srivastava","jRev":"$74.4K","jFTE":1.78,"jRFTE":"$41.8K","fRev":"$14.0K","fFTE":2.73,"fRFTE":"$5.1K","mRev":"$188.1K","mFTE":2.81,"mRFTE":"$66.9K"},{"proj":"SANTANDER BANK - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - SEO_AOR RFP","pl":"Madhurima Srivastava","jRev":"$71.1K","jFTE":3.77,"jRFTE":"$18.9K","fRev":"$71.1K","fFTE":4.94,"fRFTE":"$14.4K","mRev":"$71.1K","mFTE":4.41,"mRFTE":"$16.1K"},{"proj":"US BANK - SEO & D&D_Content Hub AEM Page Build & LEAP","pl":"Madhurima Srivastava","jRev":"$33.3K","jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Aprimo Strategist 2_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Edward Jones - LEAP(old)","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK_Cards - D&D_Content Hub Development","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Aprimo Strategist 1_Staff Aug(old)","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Aprimo Strategist 3_Staff Aug(old)","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Persado Project Manager_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Affiliate Strategist 2_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - D&D_LEAP_Development & Test Execution","pl":"Madhurima Srivastava","jRev":"$20.9K","jFTE":2.72,"jRFTE":"$7.7K","fRev":"$56.1K","fFTE":2.86,"fRFTE":"$19.6K","mRev":"$40.3K","mFTE":3.73,"mRFTE":"$10.8K"},{"proj":"ONEMAIN FINANCIAL - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"CignaHealth_ME - ANA & CRO_Envoy Performance Analysis","pl":"Jithin Vinod","jRev":"$6.3K","jFTE":0.46,"jRFTE":"$13.6K","fRev":"$2.2K","fFTE":0.3,"fRFTE":"$7.4K","mRev":"$532","mFTE":0.33,"mRFTE":"$1.6K"},{"proj":"VISA_CIBC_CA_Cards - SEO","pl":"Kerstin Baker-Ash","jRev":"$939","jFTE":0.05,"jRFTE":"$18.8K","fRev":"$15.1K","fFTE":0.0,"fRFTE":null,"mRev":"$16.1K","mFTE":null,"mRFTE":null},{"proj":"Bread Financial_Carter - Paid","pl":"Jithin Vinod","jRev":"$3.7K","jFTE":0.21,"jRFTE":"$17.6K","fRev":"$3.7K","fFTE":0.32,"fRFTE":"$11.6K","mRev":"$3.7K","mFTE":0.28,"mRFTE":"$13.2K"},{"proj":"ONEMAIN FINANCIAL - Content_CMS_2025","pl":"Pawan Jaiswal","jRev":"$6.9K","jFTE":0.06,"jRFTE":"$115.0K","fRev":"$4.1K","fFTE":0.0,"fRFTE":null,"mRev":"$10.7K","mFTE":0.04,"mRFTE":"$267.2K"},{"proj":"ONEMAIN FINANCIAL - PCM","pl":"Pawan Jaiswal","jRev":"$91.7K","jFTE":2.06,"jRFTE":"$44.5K","fRev":"$91.7K","fFTE":3.08,"fRFTE":"$29.8K","mRev":"$91.7K","mFTE":4.23,"mRFTE":"$21.7K"},{"proj":"WELLS FARGO - LEAP CSBB","pl":"Kerstin Baker-Ash","jRev":"$2.3K","jFTE":0.5,"jRFTE":"$4.6K","fRev":null,"fFTE":0.0,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"TRU COOPERATIVE BANK - Webside Dev & Content","pl":"Bindiya Jiwani","jRev":null,"jFTE":3.46,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$68.0K","mFTE":6.99,"mRFTE":"$9.7K"},{"proj":"SYNCHRONY FINANCIAL_Health & Wellness - ANA_Budget Planning & Geo","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$16.2K","fFTE":1.9,"fRFTE":"$8.5K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"ONEMAIN FINANCIAL - SEO","pl":"Pawan Jaiswal","jRev":"$13.9K","jFTE":2.32,"jRFTE":"$6.0K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$12.9K","mFTE":1.71,"mRFTE":"$7.6K"},{"proj":"SILICON VALLEY BANK - Staff Augmentation","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$16.6K","fFTE":1.16,"fRFTE":"$14.3K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"NEW YORK CRUISE LINES - PCM","pl":"Kerstin Baker-Ash","jRev":"$7.5K","jFTE":1.26,"jRFTE":"$6.0K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$18.7K","mFTE":1.46,"mRFTE":"$12.8K"},{"proj":"PRUDENTIAL FINANCIAL_HK - ANA_GA4 Tag Audit","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"ONEMAIN FINANCIAL - PCM_Social","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$70.1K","fFTE":3.84,"fRFTE":"$18.3K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Kapitus - LEAP & PCM","pl":"Kerstin Baker-Ash","jRev":"$70.1K","jFTE":3.72,"jRFTE":"$18.9K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$70.1K","mFTE":3.16,"mRFTE":"$22.2K"},{"proj":"SILICON VALLEY BANK - SEO","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$3.5K","fFTE":0.5,"fRFTE":"$7.0K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"HEB_ChipAdvisor_CA - D&D_Hosting & Maintenance","pl":"Kerstin Baker-Ash","jRev":"$4.1K","jFTE":0.8,"jRFTE":"$5.1K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$5.6K","mFTE":0.58,"mRFTE":"$9.7K"},{"proj":"UNIFIRST - PCM & SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"HEB_CA - SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD - Marketing Accelerator_Excecution Support(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"HEB_CA - Acq-in-a-box(old)","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Capital One - ANA_Affiiliate","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Aspen_Dental - SEO(old)","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"SILICON VALLEY BANK - Paid Search(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"FrontPoint - PCM(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"UNITED OVERSEAS BANK_ID, MY & SG - SEO_Content Hub Strategy","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"STANDARD CHARTERED BANK_IND - Staff Aug(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Bread Financial_Signet - LEAP","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_NADL - D&D_ Contract Distilling Website Build","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_Royal Salute and Midleton - SEO & D&D_On-page Optim","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$12.4K","fFTE":0.6,"fRFTE":"$20.6K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"WYNDHAM - CRO","pl":"Bindiya Jiwani","jRev":"$6.8K","jFTE":0.37,"jRFTE":"$18.3K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$7.9K","mFTE":0.28,"mRFTE":"$28.3K"},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Maintenance(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_TX Whiskey Export - D&D_ site Development","pl":"Jithin Vinod","jRev":"$0","jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$4","mFTE":0.01,"mRFTE":"$393"},{"proj":"Laurel Road - SEO(old)","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"HEB_ChipAdvisor_CA - D&D_Calculator Changes","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_Codigo - D&D_Website Updates","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Upgrades","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$1.0K","fFTE":0.1,"fRFTE":"$10.0K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Amex_GBT - Hosting","pl":"Bindiya Jiwani","jRev":"$1.0K","jFTE":0.17,"jRFTE":"$5.9K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$1.0K","mFTE":0.09,"mRFTE":"$11.1K"},{"proj":"AMEX-GCS_Partn_Marriott - D&D_Bevy SCLP Hosting","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":0.04,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_US - D&D_AP Automation Hosting","pl":"Bindiya Jiwani","jRev":null,"jFTE":0.07,"jRFTE":null,"fRev":"$237","fFTE":0.01,"fRFTE":"$23.7K","mRev":"$10.5K","mFTE":0.25,"mRFTE":"$41.9K"},{"proj":"Edward Jones - LEAP","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$10.9K","mFTE":0.01,"mRFTE":"$1.09M"},{"proj":"Edward Jones - SEO_Wikipedia","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$64.1K","fFTE":5.69,"fRFTE":"$11.3K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"HEB_CA - Acq-in-a-box","pl":"Kerstin Baker-Ash","jRev":"$64.1K","jFTE":5.06,"jRFTE":"$12.7K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$64.1K","mFTE":5.85,"mRFTE":"$11.0K"},{"proj":"HEB_CA - SEO(old)","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$30.6K","fFTE":0.81,"fRFTE":"$37.7K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"JP Morgan Chase_Home Loans - SEO","pl":"Pawan Jaiswal","jRev":"$50.1K","jFTE":0.74,"jRFTE":"$67.6K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$14.8K","mFTE":1.42,"mRFTE":"$10.4K"},{"proj":"NEW YORK CRUISE LINES - ANA_Staff Aug","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_NADL - D&D_Website Build","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"SUNRISE BRANDS_Rebecca_Minkoff - PCM","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Maintenance(old)","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Brother USA - ANA_Proposal","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$9.7K","fFTE":1.0,"fRFTE":"$9.7K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Aprimo Strategist 1_Staff Aug","pl":"Madhurima Srivastava","jRev":"$9.7K","jFTE":1.05,"jRFTE":"$9.3K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$9.7K","mFTE":1.1,"mRFTE":"$8.9K"},{"proj":"US BANK - CRO & D&D_FIQ UX Revamp","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$21.2K","fFTE":0.82,"fRFTE":"$25.9K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"US BANK_Cards - SEO","pl":"Madhurima Srivastava","jRev":"$25.7K","jFTE":0.85,"jRFTE":"$30.3K","fRev":"$297","fFTE":0.26,"fRFTE":"$1.1K","mRev":"$15.6K","mFTE":1.11,"mRFTE":"$14.0K"},{"proj":"US BANK_Cards - SEO & Content Hub Development","pl":"Madhurima Srivastava","jRev":"$6.4K","jFTE":1.01,"jRFTE":"$6.4K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$19.4K","mFTE":0.0,"mRFTE":null},{"proj":"Bread Financial_Ross - SEO_Influencer","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"CIBC_CA - SEO_Traffic Deep Dive Analysis","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$16.8K","fFTE":1.17,"fRFTE":"$14.4K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Kotak Bank - PCM","pl":"Jithin Vinod","jRev":"$10.4K","jFTE":1.25,"jRFTE":"$8.3K","fRev":"$23.6K","fFTE":1.64,"fRFTE":"$14.4K","mRev":"$16.4K","mFTE":1.41,"mRFTE":"$11.6K"},{"proj":"OPORTUN - SEO & Content","pl":"Pawan Jaiswal","jRev":"$23.6K","jFTE":1.25,"jRFTE":"$18.9K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$25.0K","mFTE":1.05,"mRFTE":"$23.8K"},{"proj":"PERNOD RICARD_Mumm Napa - SEO_On-page Pilot","pl":"Jithin Vinod","jRev":"$1.7K","jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_Partn_Delta - D&D_DBT GCS Hosting","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$2.7K","fFTE":2.0,"fRFTE":"$1.3K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Prudent Publishing - SEO","pl":"Jithin Vinod","jRev":"$18.3K","jFTE":1.83,"jRFTE":"$10.0K","fRev":"$15.2K","fFTE":3.31,"fRFTE":"$4.6K","mRev":"$10.4K","mFTE":2.08,"mRFTE":"$5.0K"},{"proj":"Prudent Publishing - PCM","pl":"Jithin Vinod","jRev":"$7.8K","jFTE":2.55,"jRFTE":"$3.0K","fRev":"$26.0K","fFTE":5.32,"fRFTE":"$4.9K","mRev":"$35.6K","mFTE":2.73,"mRFTE":"$13.1K"},{"proj":"WELLS FARGO_Home_Lending Paid Search & GEO","pl":"Kerstin Baker-Ash","jRev":"$54.0K","jFTE":5.88,"jRFTE":"$9.2K","fRev":"$25.0K","fFTE":1.3,"fRFTE":"$19.3K","mRev":"$48.7K","mFTE":4.72,"mRFTE":"$10.3K"},{"proj":"MYFICO - SEO","pl":"Pawan Jaiswal","jRev":"$25.0K","jFTE":1.26,"jRFTE":"$19.9K","fRev":"$1.7K","fFTE":null,"fRFTE":null,"mRev":"$25.0K","mFTE":2.04,"mRFTE":"$12.3K"},{"proj":"PERNOD RICARD_ Codigo - Cocktial Collection Redesign and Dev 2025","pl":"Jithin Vinod","jRev":"$2.1K","jFTE":0.05,"jRFTE":"$41.5K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$10.5K","mFTE":null,"mRFTE":null},{"proj":"Amex_GMS_Tock - SEO","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Aspen_Dental - SEO_Additional Link Building","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$3.7K","fFTE":0.24,"fRFTE":"$15.6K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Bread Financial_Caesars - PCM","pl":"Jithin Vinod","jRev":"$3.7K","jFTE":0.29,"jRFTE":"$12.8K","fRev":"$23.5K","fFTE":0.01,"fRFTE":"$2.35M","mRev":"$4.2K","mFTE":0.71,"mRFTE":"$6.0K"},{"proj":"Capital One_SBC - Video Solution","pl":"Pawan Jaiswal","jRev":"$13.0K","jFTE":0.03,"jRFTE":"$433.1K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"SANTANDER BANK - SEO & GEO","pl":"Kerstin Baker-Ash","jRev":"$27.2K","jFTE":0.91,"jRFTE":"$29.8K","fRev":"$19.2K","fFTE":1.74,"fRFTE":"$11.0K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"UNIFIRST - PCM & SEO","pl":"Kerstin Baker-Ash","jRev":"$18.3K","jFTE":1.8,"jRFTE":"$10.2K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$17.0K","mFTE":2.95,"mRFTE":"$5.8K"},{"proj":"US BANK - SEO_Fragmented search","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$14.0K","fFTE":0.75,"fRFTE":"$18.6K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"WEX_Card - Production Positing Testing Program","pl":"Pawan Jaiswal","jRev":"$25.3K","jFTE":0.44,"jRFTE":"$57.5K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AMEX-GCS_Partn_Marriott - D&D_Gated SCLP Hosting","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"ASPEN_Clearchoice - ContentBriefs_Q4","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":null,"mRFTE":null},{"proj":"ASPEN_DENTAL - Schema Audit","pl":"Pawan Jaiswal","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$11.8K","fFTE":0.84,"fRFTE":"$14.0K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"AvidXchange - SEO & PCM","pl":"Kerstin Baker-Ash","jRev":"$9.3K","jFTE":0.76,"jRFTE":"$12.2K","fRev":"$489.0K","fFTE":0.35,"fRFTE":"$1.40M","mRev":"$13.5K","mFTE":1.14,"mRFTE":"$11.9K"},{"proj":"CAPITAL ONE - SBC_ATL Content","pl":"Pawan Jaiswal","jRev":"$100.0K","jFTE":0.68,"jRFTE":"$147.1K","fRev":null,"fFTE":null,"fRFTE":null,"mRev":null,"mFTE":0.0,"mRFTE":null},{"proj":"CignaHealth_ME - SEO_NA","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$52.4K","fFTE":2.65,"fRFTE":"$19.8K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Citi - SEO_Mortgage.com","pl":"Tylor Hermanson","jRev":"$32.3K","jFTE":2.01,"jRFTE":"$16.1K","fRev":"$13.8K","fFTE":0.84,"fRFTE":"$16.4K","mRev":"$39.4K","mFTE":3.44,"mRFTE":"$11.5K"},{"proj":"HEB_CA - SEO","pl":"Kerstin Baker-Ash","jRev":"$13.8K","jFTE":0.68,"jRFTE":"$20.2K","fRev":"$46.9K","fFTE":2.43,"fRFTE":"$19.3K","mRev":"$13.8K","mFTE":1.32,"mRFTE":"$10.4K"},{"proj":"HEB - CA - Web Experience Redesign","pl":"Kerstin Baker-Ash","jRev":"$25.9K","jFTE":2.49,"jRFTE":"$10.4K","fRev":"$2.0K","fFTE":null,"fRFTE":null,"mRev":"$35.8K","mFTE":1.54,"mRFTE":"$23.2K"},{"proj":"PERNOD RICARD_Mumm Napa - D&D_Website Maintenance","pl":"Jithin Vinod","jRev":"$2.0K","jFTE":0.07,"jRFTE":"$29.3K","fRev":null,"fFTE":0.03,"fRFTE":null,"mRev":"$2.0K","mFTE":0.04,"mRFTE":"$51.2K"},{"proj":"Prudent Publishing - D&D","pl":"Jithin Vinod","jRev":null,"jFTE":0.02,"jRFTE":null,"fRev":"$26.7K","fFTE":1.6,"fRFTE":"$16.7K","mRev":null,"mFTE":2.78,"mRFTE":null},{"proj":"SYNCHRONY FINANCIAL - ANA_MTA Modeling","pl":"Jithin Vinod","jRev":"$16.5K","jFTE":0.17,"jRFTE":"$97.3K","fRev":"$10.4K","fFTE":0.68,"fRFTE":"$15.3K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"Bread Financial - Proposals","pl":"Jithin Vinod","jRev":null,"jFTE":0.1,"jRFTE":null,"fRev":"$16.4K","fFTE":0.34,"fRFTE":"$48.3K","mRev":"$4.6K","mFTE":0.0,"mRFTE":null},{"proj":"Brother USA - PCM_ Affiliate Marketing","pl":"Jithin Vinod","jRev":"$15.0K","jFTE":0.27,"jRFTE":"$55.4K","fRev":"$111.2K","fFTE":0.0,"fRFTE":null,"mRev":"$20.2K","mFTE":1.0,"mRFTE":"$20.2K"},{"proj":"CAPITAL ONE - LEAP Q4","pl":"Pawan Jaiswal","jRev":"$37.6K","jFTE":0.0,"jRFTE":null,"fRev":"$29.3K","fFTE":1.7,"fRFTE":"$17.3K","mRev":"$46.3K","mFTE":0.0,"mRFTE":null},{"proj":"CAPITAL ONE_Consumer Cards - SEO & GEO_Audit","pl":"Pawan Jaiswal","jRev":"$61.7K","jFTE":3.17,"jRFTE":"$19.5K","fRev":"$8.0K","fFTE":0.37,"fRFTE":"$21.7K","mRev":"$38.4K","mFTE":0.16,"mRFTE":"$239.7K"},{"proj":"CHARLES SCHWAB CORPORATION (About) - SEO_Q4","pl":"Jithin Vinod","jRev":"$3.9K","jFTE":0.93,"jRFTE":"$4.2K","fRev":"$13.6K","fFTE":0.8,"fRFTE":"$17.0K","mRev":null,"mFTE":0.0,"mRFTE":null},{"proj":"CIBC_CA - Private Wealth _SEO Assessment","pl":"Kerstin Baker-Ash","jRev":"$16.4K","jFTE":1.21,"jRFTE":"$13.6K","fRev":"$570","fFTE":0.03,"fRFTE":"$19.0K","mRev":null,"mFTE":0.04,"mRFTE":null},{"proj":"CITI - SEO_CRS_Sears","pl":"Tylor Hermanson","jRev":"$976","jFTE":0.55,"jRFTE":"$1.8K","fRev":"$6.4K","fFTE":1.0,"fRFTE":"$6.4K","mRev":null,"mFTE":0.01,"mRFTE":null},{"proj":"US BANK - ANA_WorkFlow Management_Junior Business Analyst_Staff A","pl":"Madhurima Srivastava","jRev":"$6.4K","jFTE":1.0,"jRFTE":"$6.4K","fRev":"$12.5K","fFTE":0.0,"fRFTE":null,"mRev":"$6.4K","mFTE":1.1,"mRFTE":"$5.8K"},{"proj":"Aflac - Dev_Staff Aug","pl":"Madhurima Srivastava","jRev":"$12.5K","jFTE":0.01,"jRFTE":"$1.25M","fRev":"$2.7K","fFTE":0.13,"fRFTE":"$20.6K","mRev":"$12.5K","mFTE":0.55,"mRFTE":"$22.7K"},{"proj":"Brother USA_Marketplace_Label Makers_campaign","pl":"Jithin Vinod","jRev":"$1.7K","jFTE":0.06,"jRFTE":"$29.1K","fRev":"$221","fFTE":0.01,"fRFTE":"$22.1K","mRev":"$2.2K","mFTE":null,"mRFTE":null},{"proj":"HEB_ChipAdvisor_Migration EN&FR","pl":"Kerstin Baker-Ash","jRev":"$1.5K","jFTE":0.06,"jRFTE":"$24.3K","fRev":"$14.2K","fFTE":0.22,"fRFTE":"$64.7K","mRev":"$18.9K","mFTE":0.16,"mRFTE":"$118.1K"},{"proj":"PEARL HAWAII FCU - SEO","pl":"Ravi Vidyarthi","jRev":"$17.2K","jFTE":0.96,"jRFTE":"$17.9K","fRev":"$9.7K","fFTE":1.05,"fRFTE":"$9.3K","mRev":"$15.8K","mFTE":0.0,"mRFTE":null},{"proj":"US BANK - ANA_Aprimo Strategist 3_Staff Aug","pl":"Madhurima Srivastava","jRev":"$9.7K","jFTE":0.9,"jRFTE":"$10.8K","fRev":"$5.5K","fFTE":0.03,"fRFTE":"$184.0K","mRev":"$9.7K","mFTE":1.1,"mRFTE":"$8.9K"},{"proj":"AMEX-GCS_US - D&D_MET Hosting","pl":"Bindiya Jiwani","jRev":"$444","jFTE":0.02,"jRFTE":"$22.2K","fRev":"$48.3K","fFTE":2.48,"fRFTE":"$19.5K","mRev":"$3.0K","mFTE":0.08,"mRFTE":"$37.7K"},{"proj":"BRIMAR - PCM_SEM AOR","pl":"Jithin Vinod","jRev":"$25.0K","jFTE":2.33,"jRFTE":"$10.7K","fRev":"$10.0K","fFTE":0.06,"fRFTE":"$166.7K","mRev":"$36.9K","mFTE":3.61,"mRFTE":"$10.2K"},{"proj":"Laurel Road - D&D (old)","pl":"Bindiya Jiwani","jRev":"$10.0K","jFTE":1.28,"jRFTE":"$7.8K","fRev":"$52.9K","fFTE":3.61,"fRFTE":"$14.6K","mRev":null,"mFTE":null,"mRFTE":null},{"proj":"ONEMAIN FINANCIAL - SEO+CMS+Analytics","pl":"Pawan Jaiswal","jRev":"$127.8K","jFTE":2.15,"jRFTE":"$59.5K","fRev":"$46.3K","fFTE":3.8,"fRFTE":"$12.2K","mRev":"$32.7K","mFTE":5.44,"mRFTE":"$6.0K"},{"proj":"WELLS FARGO - Content Strategy - RFP","pl":"Kerstin Baker-Ash","jRev":"$52.5K","jFTE":1.45,"jRFTE":"$36.2K","fRev":"$4.1K","fFTE":0.29,"fRFTE":"$14.2K","mRev":"$73.7K","mFTE":0.47,"mRFTE":"$156.8K"},{"proj":"Amex_Consumer_My Credit Guide - Analytics (Insurance)","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":0.49,"jRFTE":null,"fRev":"$7.9K","fFTE":0.45,"fRFTE":"$17.5K","mRev":"$9.1K","mFTE":0.68,"mRFTE":"$13.3K"},{"proj":"BROTHER USA - ANA_ GA_Governance","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$20.3K","fFTE":0.06,"fRFTE":"$338.8K","mRev":"$17.2K","mFTE":0.53,"mRFTE":"$32.4K"},{"proj":"BROTHER USA - Laser_Strategy - Acq-in-a-box","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$12.2K","fFTE":0.31,"fRFTE":"$39.5K","mRev":"$29.7K","mFTE":1.22,"mRFTE":"$24.3K"},{"proj":"BROTHER USA - LEAP_Experience Optimization","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":"$8.8K","fFTE":0.52,"fRFTE":"$17.0K","mRev":"$16.7K","mFTE":0.01,"mRFTE":"$1.67M"},{"proj":"PRUDENTIAL FINANCIAL_FSI - D&D_Website Launch","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":0.18,"fRFTE":null,"mRev":"$8.4K","mFTE":0.54,"mRFTE":"$15.5K"},{"proj":"CIBC Visa SMB Authority Audit and Implementation","pl":"Kerstin Baker-Ash","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$14.3K","mFTE":0.58,"mRFTE":"$24.7K"},{"proj":"BRIMAR - ANA_SEM Tag Implementation","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$950","mFTE":0.18,"mRFTE":"$5.3K"},{"proj":"BROTHER USA - SEO_Strategy_Initiatives","pl":"Jithin Vinod","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$16.5K","mFTE":0.39,"mRFTE":"$42.2K"},{"proj":"TRU COOPERATIVE BANK_CA - D&D_Corporate Site Migration","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$56.9K","mFTE":0.36,"mRFTE":"$158.0K"},{"proj":"TRU COOPERATIVE BANK_CA - D&D_Wealth Management","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$32.7K","mFTE":0.52,"mRFTE":"$62.9K"},{"proj":"TRU COOPERATIVE BANK_CA - User Navigation D&D","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$11.1K","mFTE":null,"mRFTE":null},{"proj":"US BANK - ANA_Workflow Management 4_Staff Aug","pl":"Madhurima Srivastava","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$5.6K","mFTE":0.85,"mRFTE":"$6.5K"},{"proj":"Laurel Road - D&D  and SEO","pl":"Bindiya Jiwani","jRev":null,"jFTE":null,"jRFTE":null,"fRev":null,"fFTE":null,"fRFTE":null,"mRev":"$23.7K","mFTE":1.36,"mRFTE":"$17.4K"}];
+const INSIGHTS={"consecutive_poor":[{"proj":"STANDARD CHARTERED BANK_SG - SEO_Content_Staff Aug","pl":"Jithin Vinod","months":[["Jan",0.47],["Feb",0.5],["Mar",0.5]]},{"proj":"Charles Schwab Corporation_Enterprise - SEO","pl":"Jithin Vinod","months":[["Feb",0.59],["Mar",-0.49]]},{"proj":"CignaHealth_ME - ANA & CRO_Envoy Performance Analysis","pl":"Jithin Vinod","months":[["Feb",-1.29],["Mar",-1.95]]},{"proj":"SYNCHRONY FINANCIAL - ANA_Holistic Analytics Support","pl":"Jithin Vinod","months":[["Jan",-0.11],["Feb",-0.34]]},{"proj":"ONEMAIN FINANCIAL - SEO","pl":"Pawan Jaiswal","months":[["Jan",-0.07],["Feb",0.54],["Mar",-0.43]]},{"proj":"CITI - SEO_CRS_Sears","pl":"Tylor Hermanson","months":[["Jan",-1.04],["Feb",-0.29]]},{"proj":"WELLS FARGO - Content Strategy - RFP","pl":"Kerstin Baker-Ash","months":[["Jan",0.56],["Feb",0.33],["Mar",0.53]]},{"proj":"Prudent Publishing - SEO","pl":"Jithin Vinod","months":[["Feb",-2.89],["Mar",0.44]]}],"declining":[{"proj":"Amex_IIS_IND - D&D_Hosting","pl":"Bindiya Jiwani","vals":[["Jan",0.92],["Feb",0.86],["Mar",0.78]]},{"proj":"Bread Financial_Bread Pay - Paid","pl":"Jithin Vinod","vals":[["Jan",0.93],["Feb",0.66],["Mar",0.65]]},{"proj":"Charles Schwab Corporation_Enterprise - SEO","pl":"Jithin Vinod","vals":[["Jan",0.85],["Feb",0.59],["Mar",-0.49]]},{"proj":"CIBC_CA - SEO_Lights On Support","pl":"Kerstin Baker-Ash","vals":[["Feb",0.94],["Mar",0.81]]},{"proj":"CignaHealth_ME - ANA & CRO_Envoy Performance Analysis","pl":"Jithin Vinod","vals":[["Jan",0.86],["Feb",-1.29],["Mar",-1.95]]},{"proj":"SILICON VALLEY BANK - Paid Search","pl":"Jithin Vinod","vals":[["Jan",0.89],["Feb",0.84],["Mar",0.75]]},{"proj":"SYNCHRONY FINANCIAL - ANA_Holistic Analytics Support","pl":"Jithin Vinod","vals":[["Jan",-0.11],["Feb",-0.34]]},{"proj":"Amex_GMS_Resy - SEO","pl":"Kerstin Baker-Ash","vals":[["Jan",0.74],["Feb",0.71],["Mar",0.54]]},{"proj":"MYFICO - SEO","pl":"Pawan Jaiswal","vals":[["Jan",0.79],["Feb",0.77],["Mar",0.46]]},{"proj":"JP Morgan Chase_Home Loans - SEO","pl":"Pawan Jaiswal","vals":[["Jan",0.85],["Feb",0.64],["Mar",0.46]]}],"negative":[{"proj":"SYNCHRONY FINANCIAL - ANA_MTA Modeling","pl":"Jithin Vinod","jM":-1.06,"fM":null,"mM":null},{"proj":"Charles Schwab Corporation_Enterprise - SEO","pl":"Jithin Vinod","jM":0.85,"fM":0.59,"mM":-0.49},{"proj":"CignaHealth_ME - ANA & CRO_Envoy Performance Analysis","pl":"Jithin Vinod","jM":0.86,"fM":-1.29,"mM":-1.95},{"proj":"SYNCHRONY FINANCIAL - ANA_Holistic Analytics Support","pl":"Jithin Vinod","jM":-0.11,"fM":-0.34,"mM":null},{"proj":"VISA_CIBC_CA_Cards - SEO","pl":"Kerstin Baker-Ash","jM":0.35,"fM":0.99,"mM":-1.0},{"proj":"WELLS FARGO - LEAP CSBB","pl":"Kerstin Baker-Ash","jM":-0.94,"fM":null,"mM":null},{"proj":"ONEMAIN FINANCIAL - Content_CMS_2025","pl":"Pawan Jaiswal","jM":0.87,"fM":0.89,"mM":-1.07},{"proj":"Aritzia_CA - SEO","pl":"Madhurima Srivastava","jM":0.78,"fM":0.87,"mM":-1.67},{"proj":"ONEMAIN FINANCIAL - SEO","pl":"Pawan Jaiswal","jM":-0.07,"fM":0.54,"mM":-0.43},{"proj":"Aflac - SEO & CRO","pl":"Madhurima Srivastava","jM":0.87,"fM":-1.85,"mM":0.9},{"proj":"PERNOD RICARD_TX Whiskey Export - D&D_ site Development","pl":"Jithin Vinod","jM":null,"fM":null,"mM":-4.45},{"proj":"PERNOD RICARD_ Codigo - Cocktial Collection Redesign and Dev 2025","pl":"Jithin Vinod","jM":-1.03,"fM":1.0,"mM":1.0},{"proj":"CAPITAL ONE_Consumer Cards - SEO & GEO_Audit","pl":"Pawan Jaiswal","jM":0.83,"fM":0.7,"mM":-1.15},{"proj":"CITI - SEO_CRS_Sears","pl":"Tylor Hermanson","jM":-1.04,"fM":-0.29,"mM":null},{"proj":"Prudent Publishing - PCM","pl":"Jithin Vinod","jM":-1.61,"fM":0.63,"mM":0.87}]};
+
+// ═══════════════════ HELPERS
+const mL=m=>(MMETA[m]||{l:m+"'26"}).l;
+const allL=()=>MONTHS.map(mL);
+const pct=(v,d=1)=>v==null||isNaN(v)?'—':`${(v*100).toFixed(d)}%`;
+const q1avg=obj=>{const vs=MONTHS.map(m=>typeof obj[m]==='number'?obj[m]:null).filter(v=>v!==null);return vs.length?vs.reduce((a,b)=>a+b,0)/vs.length:null;};
+function mClr(v,t){if(typeof v!=='number')return'';return v>=t?'cg':v>=(t*.88)?'co':'cr';}
+function rBx(l){const m={High:'br',Medium:'bo',Low:'bg',No:'bm'};return`<span class="bx ${m[l]||'bm'}">${l||'—'}</span>`;}
+function aBx(a){const m={'Implemented':'bg','Partially Implemented':'bo','Not Started':'br','Action Plan Creation':'bp'};return`<span class="bx ${m[a]||'bm'}">${a||'—'}</span>`;}
+function sBx(s){if(!s)return'';if(s.includes('Prime'))return'<span class="bx bb">Prime</span>';if(s.includes('Healthy'))return'<span class="bx bg">Healthy</span>';if(s.includes('Watch'))return'<span class="bx bo">Watch</span>';if(s.includes('Critical'))return'<span class="bx br">Critical</span>';if(s.includes('Overall'))return`<strong>${s}</strong>`;return s;}
+function uC(v){if(v==null)return'<td class="r mn cm">—</td>';const c=v>=.85?'cg':v>=.75?'':v>=.60?'co':'cr';return`<td class="r mn ${c}">${pct(v)}</td>`;}
+function ntfy(msg,tp='ok'){const n=document.getElementById('ntf');n.textContent=msg;n.className=`ntf ${tp} show`;setTimeout(()=>n.className='ntf',3000);}
+const getM=(r,m)=>m==='Jan'?r.jM:m==='Feb'?r.fM:r.mM;
+const getR=(r,m)=>m==='Jan'?r.jRev:m==='Feb'?r.fRev:r.mRev;
+const getC=(r,m)=>m==='Jan'?r.jCost:m==='Feb'?r.fCost:r.mCost;
+const getFTE=(r,m)=>m==='Jan'?r.jFTE:m==='Feb'?r.fFTE:r.mFTE;
+const getRFTE=(r,m)=>m==='Jan'?r.jRFTE:m==='Feb'?r.fRFTE:r.mRFTE;
+const getRR=(r,m)=>m==='Jan'?r.jRev:m==='Feb'?r.fRev:r.mRev;
+function colMonths(mf){return mf==='all'?MONTHS:[mf];}
+function popF(){
+  const pls=[...new Set([...PM_DETAIL.map(r=>r.pl),...RF_DETAIL.map(r=>r.pl),...RISK_DATA.map(r=>r.pl)])].filter(p=>p&&p.trim()&&p!=='#N/A').sort();
+  ['pm-plf','rf-plf','rk-plf'].forEach(id=>{const el=document.getElementById(id);if(!el)return;el.innerHTML='<option value="">All PLs</option>'+pls.map(p=>`<option value="${p}">${p}</option>`).join('');});
+}
+
+// ═══════════════════ TOOLTIP ENGINE
+let CHART_META={};// {id:{lbls,datasets,fmt,unit}}
+const TT=document.getElementById('tooltip');
+function showTT(e,id){
+  const meta=CHART_META[id];if(!meta)return;
+  const canvas=document.getElementById(id);if(!canvas)return;
+  const rect=canvas.getBoundingClientRect();
+  const mx=e.clientX-rect.left, W=canvas.width, H=canvas.height;
+  const p={t:18,r:18,b:38,l:meta.lp||48};
+  const cw=W-p.l-p.r;
+  const lbls=meta.lbls;
+  // Find closest label index
+  let bestIdx=0,bestDist=999;
+  lbls.forEach((lbl,i)=>{
+    const x=p.l+i*(cw/Math.max(lbls.length-1,1));
+    const d=Math.abs(mx-x);
+    if(d<bestDist){bestDist=d;bestIdx=i;}
+  });
+  if(bestDist>cw/lbls.length)return;
+  const lbl=lbls[bestIdx];
+  document.getElementById('tt-title').textContent=lbl;
+  const rows=meta.datasets.map(ds=>{
+    const v=ds.data[bestIdx];
+    if(v==null)return'';
+    const val=meta.fmt?meta.fmt(v):v.toFixed(meta.dp||1)+(meta.unit||'');
+    return`<div class="tt-row"><div style="display:flex;align-items:center;gap:6px"><div class="tt-dot" style="background:${ds.color}"></div><span class="tt-label">${ds.label||''}</span></div><span class="tt-val" style="color:${ds.color}">${val}</span></div>`;
+  }).filter(Boolean).join('');
+  document.getElementById('tt-rows').innerHTML=rows;
+  TT.style.display='block';
+  // Position
+  let tx=e.clientX+14, ty=e.clientY-20;
+  if(tx+180>window.innerWidth)tx=e.clientX-190;
+  if(ty+120>window.innerHeight)ty=e.clientY-130;
+  TT.style.left=tx+'px';TT.style.top=ty+'px';
+}
+function hideTT(){TT.style.display='none';}
+function attachTT(id){
+  const c=document.getElementById(id);if(!c)return;
+  c.addEventListener('mousemove',e=>showTT(e,id));
+  c.addEventListener('mouseleave',hideTT);
+}
+
+// ═══════════════════ CHART ENGINE (line + bar with hover support)
+function getCanvasWidth(id){
+  const c=document.getElementById(id);
+  if(!c)return 400;
+  // Walk up to find a visible parent with actual width
+  let el=c.parentElement;
+  while(el){if(el.offsetWidth>0)return el.offsetWidth-32;el=el.parentElement;}
+  return 400;
+}
+function lineC(id,lbls,dsets,opt={}){
+  const c=document.getElementById(id);if(!c)return;
+  const ctx=c.getContext('2d');
+  const W=getCanvasWidth(id)||400,H=parseInt(c.getAttribute('height'))||180;
+  c.width=W;c.height=H;ctx.clearRect(0,0,W,H);
+  const p={t:18,r:18,b:38,l:opt.lp||48};
+  const cw=W-p.l-p.r,ch=H-p.t-p.b;
+  let all=dsets.flatMap(d=>d.data||[]).filter(v=>v!=null&&!isNaN(v));
+  if(!all.length)return;
+  let mn=opt.mn!==undefined?opt.mn:Math.min(...all)*.88,mx=opt.mx!==undefined?opt.mx:Math.max(...all)*1.1;
+  const rng=mx-mn||1;
+  for(let i=0;i<=4;i++){const v=mn+rng*i/4,y=p.t+ch-(v-mn)/rng*ch;ctx.strokeStyle='rgba(30,42,65,.9)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.l,y);ctx.lineTo(p.l+cw,y);ctx.stroke();ctx.fillStyle='rgba(100,116,139,.65)';ctx.font='9px Inter';ctx.textAlign='right';ctx.fillText(opt.fmt?opt.fmt(v):v.toFixed(opt.dp||1)+(opt.unit||''),p.l-3,y+3);}
+  dsets.forEach(ds=>{
+    const valid=ds.data.map((v,i)=>v!=null&&!isNaN(v)?{v,i}:null).filter(Boolean);
+    if(!valid.length)return;
+    const grd=ctx.createLinearGradient(0,p.t,0,p.t+ch);grd.addColorStop(0,ds.color+'28');grd.addColorStop(1,ds.color+'00');
+    if(valid.length>1){
+      ctx.beginPath();valid.forEach(({v,i},idx)=>{const x=p.l+i*(cw/Math.max(lbls.length-1,1)),y=p.t+ch-(v-mn)/rng*ch;idx===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+      const lx=p.l+valid[valid.length-1].i*(cw/Math.max(lbls.length-1,1));
+      ctx.lineTo(lx,p.t+ch);ctx.lineTo(p.l+valid[0].i*(cw/Math.max(lbls.length-1,1)),p.t+ch);ctx.closePath();ctx.fillStyle=grd;ctx.fill();
+    }
+    ctx.beginPath();valid.forEach(({v,i},idx)=>{const x=p.l+i*(cw/Math.max(lbls.length-1,1)),y=p.t+ch-(v-mn)/rng*ch;idx===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+    ctx.strokeStyle=ds.color;ctx.lineWidth=2;ctx.stroke();
+    valid.forEach(({v,i})=>{const x=p.l+i*(cw/Math.max(lbls.length-1,1)),y=p.t+ch-(v-mn)/rng*ch;ctx.fillStyle=ds.color;ctx.beginPath();ctx.arc(x,y,3.5,0,Math.PI*2);ctx.fill();ctx.fillStyle='#0f1523';ctx.beginPath();ctx.arc(x,y,1.5,0,Math.PI*2);ctx.fill();});
+  });
+  lbls.forEach((l,i)=>{const x=p.l+i*(cw/Math.max(lbls.length-1,1));ctx.fillStyle='rgba(100,116,139,.8)';ctx.font='9px Inter';ctx.textAlign='center';ctx.fillText(l,x,H-6);});
+  if(dsets.length>1&&opt.lg!==false){let lx=p.l;dsets.forEach(ds=>{ctx.fillStyle=ds.color;ctx.fillRect(lx,H-16,14,3);ctx.fillStyle='rgba(100,116,139,.9)';ctx.font='9px Inter';ctx.textAlign='left';ctx.fillText(ds.label||'',lx+17,H-11);lx+=ctx.measureText(ds.label||'').width+32;});}
+  // store meta for tooltip
+  CHART_META[id]={lbls,datasets:dsets,fmt:opt.fmt,dp:opt.dp,unit:opt.unit,lp:opt.lp||48};
+  attachTT(id);
+}
+function barC(id,lbls,dsets,opt={}){
+  const c=document.getElementById(id);if(!c)return;
+  const ctx=c.getContext('2d');
+  const W=getCanvasWidth(id)||400,H=parseInt(c.getAttribute('height'))||200;
+  c.width=W;c.height=H;ctx.clearRect(0,0,W,H);
+  const p={t:18,r:10,b:40,l:opt.lp||44};
+  const cw=W-p.l-p.r,ch=H-p.t-p.b;
+  let all=dsets.flatMap(d=>d.data||[]).filter(v=>v!=null&&!isNaN(v));
+  if(!all.length)return;
+  let mn=opt.mn!==undefined?opt.mn:Math.min(0,...all);
+  let mx=opt.mx!==undefined?opt.mx:Math.max(...all)*1.12||1;
+  const rng=mx-mn||1;
+  for(let i=0;i<=5;i++){const v=mn+rng*i/5,y=p.t+ch-(v-mn)/rng*ch;ctx.strokeStyle='rgba(30,42,65,.9)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.l,y);ctx.lineTo(p.l+cw,y);ctx.stroke();ctx.fillStyle='rgba(100,116,139,.65)';ctx.font='9px Inter';ctx.textAlign='right';ctx.fillText(opt.fmt?opt.fmt(v):v.toFixed(opt.dp||0),p.l-3,y+3);}
+  if(mn<0&&mx>0){const y=p.t+ch-(-mn)/rng*ch;ctx.strokeStyle='rgba(91,156,246,.4)';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(p.l,y);ctx.lineTo(p.l+cw,y);ctx.stroke();}
+  const gw=cw/lbls.length,bw=gw/(dsets.length+.6);
+  lbls.forEach((lbl,gi)=>{
+    dsets.forEach((ds,di)=>{
+      const v=ds.data[gi];if(v==null||isNaN(v))return;
+      const x=p.l+gi*gw+(gw-bw*dsets.length)*.5+di*bw;
+      const base=p.t+ch-(-mn)/rng*ch;
+      const bh=Math.abs(v-Math.max(mn,0))/rng*ch;
+      const y=v>=0?base-bh:base;
+      ctx.fillStyle=Array.isArray(ds.clrs)?ds.clrs[gi]:(ds.color||'#5b9cf6');
+      ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,Math.max(bw-.5,1),Math.max(bh,.5),2);else ctx.rect(x,y,Math.max(bw-.5,1),Math.max(bh,.5));ctx.fill();
+    });
+    const sl=lbl.length>9?lbl.substring(0,9)+'…':lbl;ctx.fillStyle='rgba(100,116,139,.8)';ctx.font='9px Inter';ctx.textAlign='center';ctx.fillText(sl,p.l+gi*gw+gw/2,H-6);
+  });
+  if(dsets.length>1&&opt.lg!==false){let lx=p.l;dsets.forEach(ds=>{ctx.fillStyle=ds.color||'#5b9cf6';ctx.fillRect(lx,H-16,10,5);ctx.fillStyle='rgba(100,116,139,.9)';ctx.font='9px Inter';ctx.textAlign='left';ctx.fillText(ds.label||'',lx+13,H-11);lx+=ctx.measureText(ds.label||'').width+26;});}
+  // bar tooltip: find closest group on hover
+  const bmeta={lbls,lp:opt.lp||44,gw,bw,datasets:dsets,fmt:opt.fmt,dp:opt.dp,unit:opt.unit,mn,mx,rng,p};
+  c.addEventListener('mousemove',e=>{
+    const rect=c.getBoundingClientRect();const mx2=e.clientX-rect.left;
+    const gi=Math.floor((mx2-bmeta.lp)/bmeta.gw);
+    if(gi<0||gi>=lbls.length)return hideTT();
+    document.getElementById('tt-title').textContent=lbls[gi];
+    document.getElementById('tt-rows').innerHTML=dsets.map(ds=>{
+      const v=ds.data[gi];if(v==null)return'';
+      const val=bmeta.fmt?bmeta.fmt(v):v.toFixed(bmeta.dp||0)+(bmeta.unit||'');
+      return`<div class="tt-row"><div style="display:flex;align-items:center;gap:6px"><div class="tt-dot" style="background:${ds.color||'#5b9cf6'}"></div><span class="tt-label">${ds.label||''}</span></div><span class="tt-val" style="color:${ds.color||'#5b9cf6'}">${val}</span></div>`;
+    }).filter(Boolean).join('');
+    TT.style.display='block';let tx=e.clientX+14,ty=e.clientY-20;if(tx+180>window.innerWidth)tx=e.clientX-190;if(ty+120>window.innerHeight)ty=e.clientY-130;TT.style.left=tx+'px';TT.style.top=ty+'px';
+  });
+  c.addEventListener('mouseleave',hideTT);
+}
+
+// Custom utilization bar
+function utBarC(id,data,m){
+  const c=document.getElementById(id);if(!c)return;
+  const ctx=c.getContext('2d');const W=getCanvasWidth(id)||400,H=220;
+  c.width=W;c.height=H;ctx.clearRect(0,0,W,H);
+  const rows=data.filter(r=>r.p!=='Grand Total');
+  const pw={t:18,r:10,b:42,l:38},cw=W-pw.l-pw.r,ch=H-pw.t-pw.b;
+  for(let i=0;i<=5;i++){const v=i*20,y=pw.t+ch-v/110*ch;ctx.strokeStyle='rgba(30,42,65,.9)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pw.l,y);ctx.lineTo(pw.l+cw,y);ctx.stroke();ctx.fillStyle='rgba(100,116,139,.65)';ctx.font='9px Inter';ctx.textAlign='right';ctx.fillText(v+'%',pw.l-3,y+3);}
+  const bw=(cw/rows.length)*.72;
+  rows.forEach((r,i)=>{const v=r.gt*100,x=pw.l+(i+.5)*(cw/rows.length)-bw/2,bh=v/110*ch,y=pw.t+ch-bh;const col=r.gt>=.85?'#3ecf8e':r.gt>=.75?'#5b9cf6':r.gt>=.60?'#f59e0b':'#f16060';ctx.fillStyle=col;ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,bw,bh,3);else ctx.rect(x,y,bw,bh);ctx.fill();ctx.fillStyle='rgba(226,232,240,.9)';ctx.font='bold 9px Inter';ctx.textAlign='center';ctx.fillText(v.toFixed(0)+'%',x+bw/2,y-4);ctx.fillStyle='rgba(100,116,139,.8)';ctx.font='8px Inter';ctx.fillText(r.p.length>7?r.p.substring(0,7)+'…':r.p,pw.l+(i+.5)*(cw/rows.length),H-6);});
+  // hover
+  c.addEventListener('mousemove',e=>{
+    const rect=c.getBoundingClientRect();const mx=e.clientX-rect.left;
+    const gi=Math.floor((mx-pw.l)/(cw/rows.length));
+    if(gi<0||gi>=rows.length)return hideTT();
+    const r=rows[gi];
+    document.getElementById('tt-title').textContent=r.p+' — '+mL(m);
+    document.getElementById('tt-rows').innerHTML=`<div class="tt-row"><span class="tt-label">GT%</span><span class="tt-val" style="color:${r.gt>=.85?'#3ecf8e':r.gt>=.75?'#5b9cf6':r.gt>=.60?'#f59e0b':'#f16060'}">${pct(r.gt)}</span></div><div class="tt-row"><span class="tt-label">Status</span><span class="tt-val">${r.s}</span></div>`;
+    TT.style.display='block';let tx=e.clientX+14,ty=e.clientY-20;if(tx+160>window.innerWidth)tx=e.clientX-180;TT.style.left=tx+'px';TT.style.top=ty+'px';
+  });
+  c.addEventListener('mouseleave',hideTT);
+}
+
+// ═══════════════════ OVERVIEW — cumulative
+function renderOV(){
+  const totalRev=MONTHS.reduce((s,m)=>s+((MMETA[m]||{}).revN||0),0);
+  const avgUtil=MONTHS.reduce((s,m)=>s+((MMETA[m]||{}).util||0),0)/MONTHS.length;
+  const q1Ms=PL_MARGIN.map(r=>q1avg(r)).filter(v=>v!==null);
+  const ovM=q1Ms.reduce((a,b)=>a+b,0)/q1Ms.length;
+  const totL=MONTHS.reduce((s,m)=>s+PL_LOSS.reduce((ss,r)=>ss+(r[m]||0),0),0);
+  document.getElementById('ov-kpis').innerHTML=[
+    {l:`Total Revenue (${MONTHS.length}mo)`,v:'$'+totalRev.toFixed(2)+'M',c:'bl',s:'All months'},
+    {l:'Q1 Avg Margin',v:pct(ovM),c:'gr',s:'Avg all PLs & months'},
+    {l:'Avg Utilization GT%',v:avgUtil.toFixed(1)+'%',c:'bl',s:'Avg all months'},
+    {l:'Q1 Total Rev Loss',v:'$'+(totL/1000).toFixed(2)+'M',c:totL?'re':'gr',s:'Cumulative'},
+  ].map(k=>`<div class="kp ${k.c}"><div class="kp-l">${k.l}</div><div class="kp-v" style="font-size:19px">${k.v}</div><div class="kp-s">${k.s}</div></div>`).join('');
+
+  // Target table
+  document.getElementById('ov-tgt-body').innerHTML=PL_MARGIN.map(r=>{
+    const rf=PL_REVFTE.find(x=>x.pl===r.pl);
+    return`<tr>
+      <td><strong>${r.pl}</strong></td>
+      <td class="r mn"><span class="tag-hl">${pct(r.t)}</span></td>
+      <td class="r mn"><span class="tag-hl">${rf?rf.tK+'K':'—'}</span></td>
+      <td class="r mn ${mClr(r.Jan,r.t)}">${pct(r.Jan)}</td>
+      <td class="r mn ${mClr(r.Feb,r.t)}">${pct(r.Feb)}</td>
+      <td class="r mn ${mClr(r.Mar,r.t)}">${pct(r.Mar)}</td>
+      <td class="r mn ${rf&&r.Jan?(r.Jan>0?mClr(rf.Jan/rf.tK,1):''):''}">${rf?rf.Jan+'K':'—'}</td>
+      <td class="r mn ${rf&&r.Feb?(r.Feb>0?mClr(rf.Feb/rf.tK,1):''):''}">${rf?rf.Feb+'K':'—'}</td>
+      <td class="r mn ${rf&&r.Mar?(r.Mar>0?mClr(rf.Mar/rf.tK,1):''):''}">${rf?rf.Mar+'K':'—'}</td>
+    </tr>`;
+  }).join('');
+
+  // MoM Margin table
+  document.getElementById('ov-pm-mom').innerHTML=PL_MARGIN.map(r=>{
+    const avg=q1avg(r);
+    return`<tr><td>${r.pl.split(' ')[0]} ${r.pl.split(' ')[1]||''}</td>
+      <td class="r mn ${mClr(r.Jan,r.t)}">${pct(r.Jan)}</td>
+      <td class="r mn ${mClr(r.Feb,r.t)}">${pct(r.Feb)}</td>
+      <td class="r mn ${mClr(r.Mar,r.t)}">${pct(r.Mar)}</td>
+      <td class="r mn ${avg?mClr(avg,r.t):''}">${avg?pct(avg):'—'}</td></tr>`;
+  }).join('');
+
+  // MoM RevFTE table
+  document.getElementById('ov-rf-mom').innerHTML=PL_REVFTE.map(r=>{
+    const avg=q1avg(r);const clr=(v,t)=>v>=t?'cg':v>=(t*.85)?'co':'cr';
+    return`<tr><td>${r.pl.split(' ')[0]} ${r.pl.split(' ')[1]||''}</td>
+      <td class="r mn ${clr(r.Jan,r.tK)}">${r.Jan}K</td>
+      <td class="r mn ${clr(r.Feb,r.tK)}">${r.Feb}K</td>
+      <td class="r mn ${clr(r.Mar,r.tK)}">${r.Mar}K</td>
+      <td class="r mn ${avg?clr(avg,r.tK):''}">${avg?Math.round(avg)+'K':'—'}</td></tr>`;
+  }).join('');
+
+  // PL Scorecards
+  document.getElementById('pl-cards').innerHTML=PL_MARGIN.map(r=>{
+    const avgM=q1avg(r);const rf=PL_REVFTE.find(x=>x.pl===r.pl);const avgRF=rf?q1avg(rf):null;
+    const lossRow=PL_LOSS.find(x=>x.pl===r.pl||x.pl.includes(r.pl.split(' ')[0]));
+    const totLoss=lossRow?MONTHS.reduce((s,m)=>s+(lossRow[m]||0),0):0;
+    const risks=RISK_DATA.filter(x=>x.pl===r.pl);
+    const{curr}=getRKMonths();
+    const highR=risks.filter(x=>(x[curr]||'No')==='High').length;
+    const col=PL_C[r.pl]||'#5b9cf6';
+    return`<div class="plc" style="border-top:3px solid ${col}">
+      <div class="plc-h"><div class="plc-n">${r.pl}</div>${highR?`<span class="bx br">⚠ ${highR}</span>`:'<span class="bx bg">✓ Safe</span>'}</div>
+      <div class="plc-g">
+        <div style="text-align:center">
+          <div class="plc-v ${avgM!=null&&avgM>=r.t?'cg':'cr'}">${avgM!=null?pct(avgM):'—'}</div>
+          <div class="plc-l">Q1 Avg Margin</div><div class="plc-s">Target: ${pct(r.t)}</div>
+          <div class="pb"><div class="pb-f ${avgM!=null&&avgM>=r.t?'fg':'fr2'}" style="width:${Math.min((avgM||0)*100,100)}%"></div></div>
+        </div>
+        <div style="text-align:center">
+          <div class="plc-v ${rf&&avgRF!=null&&avgRF>=rf.tK?'cg':'cr'}">${avgRF!=null?Math.round(avgRF)+'K':'—'}</div>
+          <div class="plc-l">Q1 Avg Rev/FTE</div><div class="plc-s">Target: ${rf?rf.tK+'K':'—'}</div>
+          <div class="pb"><div class="pb-f ${rf&&avgRF!=null&&avgRF>=rf.tK?'fg':'fr2'}" style="width:${Math.min(((avgRF||0)/(rf?.tK||1))*100,100)}%"></div></div>
+        </div>
+        <div style="text-align:center">
+          <div class="plc-v ${totLoss?'cr':'cg'}">${totLoss?'$'+totLoss+'K':'None'}</div>
+          <div class="plc-l">Q1 Rev Loss</div><div class="plc-s">Cumulative</div>
+        </div>
+      </div>
+      <div class="plc-r">${MONTHS.map(m=>`<span class="bx ${typeof r[m]==='number'&&r[m]>=r.t?'bg':'br'}" style="font-size:8px">${mL(m)}: ${typeof r[m]==='number'?pct(r[m]):'—'}</span>`).join('')}</div>
+    </div>`;
+  }).join('');
+
+  const bi=PL_MARGIN.find(r=>r.pl==='Bindiya Jiwani');
+  const ms=PL_REVFTE.find(r=>r.pl==='Madhurima Srivastava');
+  const tj=PL_REVFTE.find(r=>r.pl==='Tylor Hermanson');
+  const ji=PL_REVFTE.find(r=>r.pl==='Jithin Vinod');
+  const kb=PL_MARGIN.find(r=>r.pl==='Kerstin Baker-Ash');
+  document.getElementById('ov-pos').innerHTML=[
+    `<strong>Bindiya Jiwani</strong>: Q1 avg margin <strong>${pct(q1avg(bi))}</strong> — above ${pct(bi.t)} target every month (Jan 86%, Feb 87%, Mar 87%)`,
+    `<strong>Madhurima Srivastava</strong>: Q1 avg Rev/FTE <strong>${Math.round(q1avg(ms))}K</strong> — above ${ms.tK}K target all 3 months (286K, 225K, 299K)`,
+    `<strong>Pawan Jaiswal</strong>: Best single-month Rev/FTE: <strong>$438K</strong> in Feb vs ${PL_REVFTE.find(r=>r.pl==='Pawan Jaiswal').tK}K target`,
+    `Over-achieved client goals improved to <strong>48%</strong> in March — best Q1 month`,
+    `<strong>Martech</strong> practice Prime utilization in Feb (86.2%) &amp; Mar (83.7%)`,
+    `Revenue grew <strong>44%</strong> Jan → Feb ($2.54M → $3.66M)`,
+  ].map(li=>`<li>${li}</li>`).join('');
+  document.getElementById('ov-neg').innerHTML=[
+    `<strong>Tylor Hermanson</strong>: Q1 avg Rev/FTE <strong class="cr">${Math.round(q1avg(tj))}K</strong> vs ${tj.tK}K target — below all 3 months; CITI SEO FTE overallocation is key driver`,
+    `<strong>Jithin Vinod</strong>: Q1 avg Rev/FTE <strong class="cr">${Math.round(q1avg(ji))}K</strong> vs ${ji.tK}K target — 82 projects, persistent low efficiency`,
+    `<strong>Kerstin Baker-Ash</strong>: Margin below <strong>${pct(kb.t)}</strong> target all 3 months — Wells Fargo Content Strategy &amp; AMEX GMS Resy are key drag`,
+    `<strong>Pawan Jaiswal</strong>: $1.5M revenue loss in March — OneMain Financial CMS turned negative (-107%)`,
+    `<strong>Creative Services</strong> utilization Critical all quarter — collapsed to 13% in March`,
+    `<strong>CignaHealth_ME ANA &amp; CRO</strong> (Jithin): margin -129% Feb, -195% Mar — cost overrun requiring urgent review`,
+  ].map(li=>`<li>${li}</li>`).join('');
+
+  setTimeout(()=>{
+    lineC('ov-mt',allL(),PL_MARGIN.map(r=>({label:r.pl.split(' ')[0],color:PL_C[r.pl]||'#aaa',data:MONTHS.map(m=>typeof r[m]==='number'?r[m]*100:null)})),{fmt:v=>v.toFixed(1)+'%',dp:1,unit:'',lp:38,mn:55,mx:100});
+    lineC('ov-rt',allL(),PL_REVFTE.map(r=>({label:r.pl.split(' ')[0],color:PL_C[r.pl]||'#aaa',data:MONTHS.map(m=>r[m]||null)})),{fmt:v=>v+'K',dp:0,unit:'',lp:48});
+    lineC('ov-rev',allL(),[{label:'Revenue ($M)',color:'#5b9cf6',data:MONTHS.map(m=>(MMETA[m]||{}).revN||0)}],{fmt:v=>'$'+v.toFixed(2)+'M',dp:2,lp:58});
+    lineC('ov-util',allL(),[{label:'GT%',color:'#3ecf8e',data:MONTHS.map(m=>(MMETA[m]||{}).util||0)}],{fmt:v=>v.toFixed(1)+'%',dp:1,lp:48,mn:60,mx:78});
+  },60);
+}
+
+// ═══════════════════ REV & OPS
+function renderRO(){
+  const mf=document.getElementById('ro-mf')?.value||'all';
+  const cols=colMonths(mf);
+  const act=cols[cols.length-1];
+  const meta=MMETA[act]||{};
+  const totL=PL_LOSS.reduce((s,r)=>s+(r[act]||0),0);
+  document.getElementById('ro-kpis').innerHTML=[
+    {l:`Revenue${mf==='all'?'':' — '+mL(act)}`,v:mf==='all'?'$9.39M':meta.rev||'—',c:'bl'},
+    {l:`Rev Loss${mf==='all'?'':' — '+mL(act)}`,v:mf==='all'?'$4.73M':totL?'$'+totL+'K':'None',c:mf==='all'?'re':totL?'re':'gr'},
+    {l:'Client Escalations',v:mf==='all'?'7+':act==='Jan'?3:act==='Feb'?1:4,c:'or'},
+    {l:'Goals Over-achieved',v:mf==='all'?'38–48%':act==='Jan'?'38%':act==='Feb'?'38%':'48%',c:'gr'},
+  ].map(k=>`<div class="kp ${k.c}"><div class="kp-l">${k.l}</div><div class="kp-v">${k.v}</div></div>`).join('');
+
+  // Sol table
+  const smf=document.getElementById('ro-sol-mf')?.value||'all';
+  const scols=colMonths(smf);
+  document.getElementById('ro-sol-hdr').innerHTML='<th>Solution</th>'+scols.map(m=>`<th class="r">${mL(m)}</th>`).join('');
+  document.getElementById('ro-sol-b').innerHTML=REV_SOL.map(r=>`<tr><td>${r.s}</td>${scols.map(m=>`<td class="r mn ${r[m]<0?'cr':''}">${r[m]!=null?(r[m]<0?'-$':'$')+Math.abs(r[m])+'K':'—'}</td>`).join('')}</tr>`).join('');
+
+  // Loss table
+  const lmf=document.getElementById('ro-loss-mf')?.value||'all';
+  const lcols=colMonths(lmf);
+  const lossRows=[{l:'Total Revenue Loss',vals:{Jan:'$1.71M',Feb:'$1.30M',Mar:'$1.72M'},cls:'cr'},{l:'Controllable Loss',vals:{Jan:'$195K',Feb:'—',Mar:'$1.72M'},cls:'co'},{l:'Project Loss',vals:{Jan:'$1.71M',Feb:'$270K',Mar:'$15K'},cls:''},{l:'Account Loss',vals:{Jan:'—',Feb:'$1.03M',Mar:'$224K'},cls:''}];
+  document.getElementById('ro-loss-hdr').innerHTML='<th>Metric</th>'+lcols.map(m=>`<th class="r">${mL(m)}</th>`).join('');
+  document.getElementById('ro-loss-b').innerHTML=lossRows.map(r=>`<tr><td>${r.l}</td>${lcols.map(m=>`<td class="r mn ${r.cls}">${r.vals[m]||'—'}</td>`).join('')}</tr>`).join('');
+
+  // PL Loss table
+  const pmf=document.getElementById('ro-pll-mf')?.value||'all';
+  const pcols=colMonths(pmf);
+  document.getElementById('ro-pll-hdr').innerHTML='<th>Portfolio Leader</th>'+pcols.map(m=>`<th class="r">${mL(m)}</th>`).join('');
+  document.getElementById('ro-pll-b').innerHTML=PL_LOSS.map(r=>`<tr><td>${r.pl}</td>${pcols.map(m=>`<td class="r mn ${r[m]?'cr':'cm'}">${r[m]?'$'+r[m]+'K':'—'}</td>`).join('')}</tr>`).join('');
+
+  // Escalation count
+  const emf=document.getElementById('ro-esc-mf')?.value||'all';
+  const ecols=colMonths(emf);
+  const escCnt={Jan:{Client:3,Internal:4},Feb:{Client:1,Internal:1},Mar:{Client:4,Internal:3}};
+  document.getElementById('ro-esc-cnt-hdr').innerHTML='<th>Type</th>'+ecols.map(m=>`<th class="r">${mL(m)}</th>`).join('');
+  document.getElementById('ro-esc-cnt-b').innerHTML=['Client','Internal'].map(t=>`<tr><td>${t}</td>${ecols.map(m=>`<td class="r mn">${escCnt[m]?.[t]??'—'}</td>`).join('')}</tr>`).join('');
+  // Escalation detail
+  const escDetail=emf==='all'?[...ESC_DATA.jan,...ESC_DATA.feb,...ESC_DATA.mar]:ESC_DATA[emf.toLowerCase()]||[];
+  document.getElementById('ro-esc-det-b').innerHTML=escDetail.length?escDetail.map(e=>`<tr><td><span class="bx ${e.type==='Client'?'bb':'bm'}">${e.type}</span></td><td>${rBx(e.sev)}</td><td style="white-space:normal;max-width:140px">${e.proj}</td><td style="white-space:normal;max-width:120px;font-size:11px;color:var(--mu)">${e.issue}</td><td style="font-size:11px;color:var(--mu)">${e.solution}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--mu)">No data</td></tr>';
+
+  // Feedback
+  const fbmf=document.getElementById('ro-fb-mf')?.value||'all';
+  const fbcols=colMonths(fbmf);
+  const fbRows=[{l:'Total Reports',vals:{Jan:87,Feb:120,Mar:116}},{l:'No Feedback',vals:{Jan:'78%',Feb:'85%',Mar:'67%'}},{l:'Hygiene Gap',vals:{Jan:'5%',Feb:'5%',Mar:'3%'}},{l:'Thinking Depth',vals:{Jan:'5%',Feb:'3%',Mar:'5%'}},{l:'Timelines Missed',vals:{Jan:'0%',Feb:'0%',Mar:'13%'},crm:true},{l:'Knowledge Gap',vals:{Jan:'5%',Feb:'3%',Mar:'5%'}},{l:'Inaccurate Data',vals:{Jan:'6%',Feb:'2%',Mar:'3%'}},{l:'Insufficient Brief',vals:{Jan:'1%',Feb:'1%',Mar:'1%'}},{l:'Minor / Misc',vals:{Jan:'1%',Feb:'0%',Mar:'2%'}}];
+  document.getElementById('ro-fb-hdr').innerHTML='<th>Theme</th>'+fbcols.map(m=>`<th class="r">${mL(m)}</th>`).join('');
+  document.getElementById('ro-fb-b').innerHTML=fbRows.map(r=>`<tr><td>${r.l}</td>${fbcols.map(m=>`<td class="r mn ${r.crm&&r.vals[m]!=='0%'?'cr':''}">${r.vals[m]??'—'}</td>`).join('')}</tr>`).join('');
+
+  // Client goals
+  const cgmf=document.getElementById('ro-cg-mf')?.value||'all';
+  const cgcols=colMonths(cgmf);
+  const cgRows=[{l:'Over-achieved',vals:{Jan:'38%',Feb:'38%',Mar:'48%'},cls:'cg'},{l:'On Track',vals:{Jan:'15%',Feb:'10%',Mar:'21%'},cls:''},{l:'Behind Goals',vals:{Jan:'46%',Feb:'52%',Mar:'31%'},cls:'cr'},{l:'# Projects',vals:{Jan:'26',Feb:'29',Mar:'29'},cls:'',tot:true}];
+  document.getElementById('ro-cg-hdr').innerHTML='<th>Status</th>'+cgcols.map(m=>`<th class="r">${mL(m)}</th>`).join('');
+  document.getElementById('ro-cg-b').innerHTML=cgRows.map(r=>`<tr class="${r.tot?'tot':''}"><td>${r.l}</td>${cgcols.map(m=>`<td class="r mn ${r.cls}">${r.vals[m]??'—'}</td>`).join('')}</tr>`).join('');
+
+  // Behind goals
+  const bgmf=document.getElementById('ro-bg-mf')?.value||'jan';
+  const bgdata=BG_DATA[bgmf]||{};
+  document.getElementById('ro-bg-b').innerHTML=Object.entries(bgdata).map(([type,d])=>`<tr><td style="white-space:normal">${type}</td><td class="r mn ${d.n>3?'cr':d.n>1?'co':''}">${d.n??'—'}</td><td style="white-space:normal;font-size:11px;color:var(--mu)">${d.projects||'—'}</td></tr>`).join('');
+
+  // PM bars
+  document.getElementById('pm-bars').innerHTML=PM_SCORES.map(s=>`<div style="margin-bottom:8px"><div style="display:flex;justify-content:space-between;margin-bottom:3px"><span style="font-size:11px;color:var(--mu)">${s.l}</span><span style="font-size:11px;font-family:var(--mo);color:${s.v>=.7?'var(--gr)':s.v>=.5?'var(--or)':'var(--re)'}">${pct(s.v)}</span></div><div class="pb"><div class="pb-f ${s.v>=.7?'fg':s.v>=.5?'fo':'fr2'}" style="width:${s.v*100}%"></div></div></div>`).join('');
+
+  setTimeout(()=>{
+    barC('ro-sol',REV_SOL.map(r=>r.s),[{label:mL(act),color:'',data:REV_SOL.map(r=>r[act]||0),clrs:REV_SOL.map(r=>(r[act]||0)<0?'#f16060':'#5b9cf6')}],{fmt:v=>'$'+Math.abs(v).toFixed(0)+'K',dp:0,lp:50,lg:false});
+    const gd=act==='Jan'?[38,15,47]:act==='Feb'?[38,10,52]:[48,21,31];
+    const gc=document.getElementById('ro-goal');
+    if(gc){const ctx=gc.getContext('2d');const W=gc.parentElement.clientWidth||400,H=200;gc.width=W;gc.height=H;ctx.clearRect(0,0,W,H);const pw={t:20,r:10,b:40,l:40},cw=W-pw.l-pw.r,ch=H-pw.t-pw.b;for(let i=0;i<=5;i++){const v=i*10,y=pw.t+ch-v/55*ch;ctx.strokeStyle='rgba(30,42,65,.9)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pw.l,y);ctx.lineTo(pw.l+cw,y);ctx.stroke();ctx.fillStyle='rgba(100,116,139,.65)';ctx.font='9px Inter';ctx.textAlign='right';ctx.fillText(v+'%',pw.l-3,y+3);}['Over-achieved','On Track','Behind'].forEach((l,i)=>{const v=gd[i],cl=['#3ecf8e','#5b9cf6','#f16060'][i];const bw=(cw/3)*.65,x=pw.l+(i+.5)*(cw/3)-bw/2,bh=v/55*ch,y=pw.t+ch-bh;ctx.fillStyle=cl;ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,bw,bh,3);else ctx.rect(x,y,bw,bh);ctx.fill();ctx.fillStyle='rgba(226,232,240,.9)';ctx.font='bold 10px Inter';ctx.textAlign='center';ctx.fillText(v+'%',x+bw/2,y-4);ctx.fillStyle='rgba(100,116,139,.8)';ctx.font='9px Inter';ctx.fillText(l,pw.l+(i+.5)*(cw/3),H-6);});}
+    document.getElementById('ro-sl').textContent=mL(act);
+    document.getElementById('ro-gl').textContent=mL(act);
+  },60);
+}
+
+// ═══════════════════ PROJECT MARGIN
+function renderPM(){
+  const m=GACT;
+  document.getElementById('pm-lbl').textContent=mL(m);
+  const mVals=PL_MARGIN.map(r=>r[m]).filter(v=>typeof v==='number');
+  const avgM=mVals.reduce((a,b)=>a+b,0)/mVals.length;
+  const belowAll=PM_DETAIL.filter(r=>{const v=getM(r,m);return typeof v==='number'&&v<0.6&&v!==0;});
+  const negAll=PM_DETAIL.filter(r=>{const v=getM(r,m);return typeof v==='number'&&v<0;});
+  document.getElementById('pm-kpis').innerHTML=[
+    {l:`Avg PL Margin — ${mL(m)}`,v:pct(avgM),c:'bl'},
+    {l:`Projects below 60% — ${mL(m)}`,v:belowAll.length,c:'or'},
+    {l:`Negative Margin — ${mL(m)}`,v:negAll.length,c:negAll.length?'re':'gr'},
+    {l:'Q1 Avg (all PLs)',v:pct(PL_MARGIN.reduce((s,r)=>{const a=q1avg(r);return a?s+a:s;},0)/PL_MARGIN.filter(r=>q1avg(r)!==null).length),c:'gr'},
+  ].map(k=>`<div class="kp ${k.c}"><div class="kp-l">${k.l}</div><div class="kp-v" style="font-size:${String(k.v).length>6?'16px':'22px'}">${k.v}</div></div>`).join('');
+
+  // PL Summary — clean, filtered
+  const sumMF=document.getElementById('pm-sum-mf')?.value||'all';
+  const sumCols=colMonths(sumMF);
+  document.getElementById('pm-pl-hdr').innerHTML=`<tr><th>Portfolio Leader</th><th class="r">Target</th>${sumCols.map(m=>`<th class="r">${mL(m)}</th>`).join('')}<th class="r">Q1 Avg</th></tr>`;
+  document.getElementById('pm-pl').innerHTML=PL_MARGIN.map(r=>{
+    const avg=q1avg(r);
+    return`<tr><td>${r.pl}</td><td class="r mn"><span class="tag-hl">${pct(r.t)}</span></td>${sumCols.map(m=>`<td class="r mn ${mClr(r[m],r.t)}">${pct(r[m])}</td>`).join('')}<td class="r mn ${avg?mClr(avg,r.t):''}">${avg?pct(avg):'—'}</td></tr>`;
+  }).join('');
+
+  filterPM();
+  renderPMInsights();
+}
+
+function filterPM(){
+  const q=(document.getElementById('pm-srch').value||'').toLowerCase();
+  const pl=(document.getElementById('pm-plf').value||'');
+  const mf=(document.getElementById('pm-mf').value||'Mar');
+  const cols=mf==='all'?MONTHS:[mf];
+
+  if(mf==='all'){
+    document.getElementById('pm-det-hdr').innerHTML='<tr><th>Project</th><th>PL</th><th class="r">Jan Rev</th><th class="r">Jan M</th><th class="r">Feb Rev</th><th class="r">Feb M</th><th class="r">Mar Rev</th><th class="r">Mar M</th></tr>';
+  } else {
+    document.getElementById('pm-det-hdr').innerHTML=`<tr><th>Project</th><th>PL</th><th class="r">Revenue</th><th class="r">Cost</th><th class="r">Margin</th></tr>`;
+  }
+
+  const f=PM_DETAIL.filter(r=>r.pl&&r.pl!=='#N/A'&&(!q||r.proj.toLowerCase().includes(q)||r.pl.toLowerCase().includes(q))&&(!pl||r.pl===pl));
+  document.getElementById('pm-det').innerHTML=f.map(r=>{
+    if(mf==='all'){
+      const mc=v=>typeof v==='number'?v<0?'cr':v>=.85?'cg':v<.6?'co':'':'';
+      return`<tr><td style="max-width:220px;overflow:hidden;text-overflow:ellipsis" title="${r.proj}">${r.proj}</td><td style="font-size:11px;max-width:90px;overflow:hidden;text-overflow:ellipsis">${r.pl}</td><td class="r mn">${r.jRev||'—'}</td><td class="r mn ${mc(r.jM)}">${pct(r.jM)}</td><td class="r mn">${r.fRev||'—'}</td><td class="r mn ${mc(r.fM)}">${pct(r.fM)}</td><td class="r mn">${r.mRev||'—'}</td><td class="r mn ${mc(r.mM)}">${pct(r.mM)}</td></tr>`;
+    } else {
+      const v=getM(r,mf),rv=getR(r,mf),co=getC(r,mf);
+      const vc=typeof v==='number'?v<0?'cr':v>=.85?'cg':v<.6?'co':'':'';
+      return`<tr><td style="max-width:240px;overflow:hidden;text-overflow:ellipsis" title="${r.proj}">${r.proj}</td><td style="font-size:11px;max-width:110px;overflow:hidden;text-overflow:ellipsis">${r.pl}</td><td class="r mn">${rv||'—'}</td><td class="r mn">${co||'—'}</td><td class="r mn ${vc}">${pct(v)}</td></tr>`;
+    }
+  }).join('');
+  document.getElementById('pm-cnt').textContent=`${f.length} projects`;
+}
+
+function renderPMInsights(){
+  const m=document.getElementById('pm-ins-mf')?.value||'all';
+  document.getElementById('pm-ins-lbl').textContent=m==='all'?'Q1 Full Quarter':mL(m);
+
+  const allProj=PM_DETAIL.filter(r=>r.pl&&r.pl!=='#N/A');
+  const months=m==='all'?MONTHS:[m];
+
+  // 1. Declining margins (consecutive drop)
+  const declining=allProj.filter(r=>{
+    const vals=[r.jM,r.fM,r.mM].filter(v=>typeof v==='number'&&v!==0&&v!=null);
+    if(vals.length<2)return false;
+    return vals[vals.length-1]<vals[0]-0.1&&vals.every((v,i)=>i===0||v<=vals[i-1]);
+  }).sort((a,b)=>{
+    const av=Math.min(...['jM','fM','mM'].map(k=>typeof a[k]==='number'?a[k]:1));
+    const bv=Math.min(...['jM','fM','mM'].map(k=>typeof b[k]==='number'?b[k]:1));
+    return av-bv;
+  }).slice(0,6);
+
+  document.getElementById('pm-decline').innerHTML=declining.length?declining.map(r=>{
+    const pts=[];
+    if(typeof r.jM==='number'&&r.jM!==0)pts.push(`Jan: ${pct(r.jM)}`);
+    if(typeof r.fM==='number'&&r.fM!==0)pts.push(`Feb: ${pct(r.fM)}`);
+    if(typeof r.mM==='number'&&r.mM!==0)pts.push(`Mar: ${pct(r.mM)}`);
+    const drop=typeof r.jM==='number'&&typeof r.mM==='number'?((r.jM-r.mM)*100).toFixed(0):null;
+    return`<li><strong>${r.proj}</strong> <span style="font-size:10px;color:var(--mu)">(${r.pl.split(' ')[0]} ${r.pl.split(' ')[1]||''})</span>: ${pts.join(' → ')}<span class="sub">${drop?`↓ ${drop}pp decline across Q1. `:''} Consider: SOW scope change? Resource mix shift? Client-side delays impacting billing?</span></li>`;
+  }).join(''):'<li class="cm">No consistently declining margin projects this period</li>';
+
+  // 2. Negative / critical
+  const negative=allProj.filter(r=>{
+    if(m==='all') return ['jM','fM','mM'].some(k=>typeof r[k]==='number'&&r[k]<0);
+    return typeof getM(r,m)==='number'&&getM(r,m)<0;
+  }).sort((a,b)=>{
+    const av=m==='all'?Math.min(...['jM','fM','mM'].map(k=>typeof a[k]==='number'?a[k]:0)):getM(a,m)||0;
+    const bv=m==='all'?Math.min(...['jM','fM','mM'].map(k=>typeof b[k]==='number'?b[k]:0)):getM(b,m)||0;
+    return av-bv;
+  }).slice(0,7);
+
+  document.getElementById('pm-negative').innerHTML=negative.length?negative.map(r=>{
+    const negMonths=[];
+    if(m==='all'){if(typeof r.jM==='number'&&r.jM<0)negMonths.push(`Jan: ${pct(r.jM)}`);if(typeof r.fM==='number'&&r.fM<0)negMonths.push(`Feb: ${pct(r.fM)}`);if(typeof r.mM==='number'&&r.mM<0)negMonths.push(`Mar: ${pct(r.mM)}`);}
+    else{const v=getM(r,m);if(typeof v==='number'&&v<0)negMonths.push(`${mL(m)}: ${pct(v)}`);}
+    const worst=m==='all'?Math.min(...['jM','fM','mM'].map(k=>typeof r[k]==='number'?r[k]:1)):getM(r,m)||0;
+    const reason=worst<-1?'Severe cost overrun — costs exceeded revenue by over 100%':worst<-0.5?'Significant cost overrun — project may need SOW renegotiation':'Margin below zero — review cost allocation and billing';
+    return`<li><strong>${r.proj}</strong> <span style="font-size:10px;color:var(--mu)">(${r.pl.split(' ')[0]})</span>: <em>${negMonths.join(', ')}</em><span class="sub">${reason}</span><span class="q">→ Requires immediate PL review: Is this a fixed-fee SOW with scope creep? Are costs being correctly allocated?</span></li>`;
+  }).join(''):'<li class="cg">No negative margin projects this period</li>';
+
+  // 3. Consecutive poor
+  const consec=INSIGHTS.consecutive_poor||[];
+  const filtConsec=m==='all'?consec:consec.filter(r=>{const v=getM(PM_DETAIL.find(p=>p.proj===r.proj)||{},m);return typeof v==='number'&&v<0.6;});
+  document.getElementById('pm-consec').innerHTML=filtConsec.length?filtConsec.map(r=>{
+    const pts=r.months.map(([mo,v])=>`${mo}: ${(v).toFixed(0)}%`).join(' → ');
+    return`<li><strong>${r.proj}</strong> <span style="font-size:10px;color:var(--mu)">(${r.pl.split(' ')[0]})</span>: ${pts}<span class="sub">Consecutive underperformance signals a structural issue — not a one-off. Escalation recommended.</span><span class="q">→ Is the project team aware? Has a corrective action plan been created?</span></li>`;
+  }).join(''):'<li class="cm">No consecutive poor performers identified for this period</li>';
+
+  // 4. PL impact analysis
+  const plImpact=PL_MARGIN.map(r=>{
+    const targetM=r.t;
+    const allBelowTarget=PM_DETAIL.filter(p=>p.pl===r.pl&&m==='all'?['jM','fM','mM'].some(k=>typeof p[k]==='number'&&p[k]<targetM&&p[k]!==0):(typeof getM(p,m==='all'?'Mar':m)==='number'&&getM(p,m==='all'?'Mar':m)<targetM&&getM(p,m==='all'?'Mar':m)!==0));
+    const negProj=PM_DETAIL.filter(p=>p.pl===r.pl&&(m==='all'?['jM','fM','mM'].some(k=>typeof p[k]==='number'&&p[k]<0):typeof getM(p,m)==='number'&&getM(p,m)<0));
+    if(negProj.length===0&&allBelowTarget.length<2)return null;
+    const mVal=m==='all'?q1avg(r):r[m];
+    return{pl:r.pl,target:targetM,margin:mVal,below:allBelowTarget,neg:negProj};
+  }).filter(Boolean);
+
+  document.getElementById('pm-plimpact').innerHTML=plImpact.length?plImpact.map(r=>{
+    const negNames=r.neg.slice(0,3).map(p=>p.proj.substring(0,30)+'…').join(', ');
+    const belowNames=r.below.filter(p=>!r.neg.find(n=>n.proj===p.proj)).slice(0,3).map(p=>p.proj.substring(0,30)+'…').join(', ');
+    return`<li><strong>${r.pl}</strong>: Portfolio margin <strong class="${typeof r.margin==='number'&&r.margin>=r.target?'cg':'cr'}">${r.margin!=null?pct(r.margin):'—'}</strong> vs ${pct(r.target)} target
+      ${r.neg.length?`<span class="sub">🔴 Negative margin drag: ${negNames}</span>`:''}
+      ${belowNames?`<span class="sub">🟡 Below-target projects: ${belowNames}</span>`:''}
+      <span class="q">→ What is the combined revenue impact of these underperforming projects on the PL total?</span></li>`;
+  }).join(''):'<li class="cg">No significant PL-level margin drag identified</li>';
+}
+
+// ═══════════════════ REV/FTE
+function renderRF(){
+  const m=GACT;
+  document.getElementById('rf-lbl').textContent=mL(m);
+  const mVals=PL_REVFTE.map(r=>r[m]||0).filter(v=>v>0);
+  const avgV=mVals.reduce((a,b)=>a+b,0)/mVals.length;
+  const metT=PL_REVFTE.filter(r=>(r[m]||0)>=r.tK).length;
+  const q1a=PL_REVFTE.map(r=>q1avg(r)).filter(v=>v!==null);
+  document.getElementById('rf-kpis').innerHTML=[
+    {l:`Avg Rev/FTE — ${mL(m)}`,v:Math.round(avgV)+'K',c:'bl'},
+    {l:'PLs Meeting Target',v:`${metT} / ${PL_REVFTE.length}`,c:metT>=3?'gr':'or'},
+    {l:'PLs Below Target',v:PL_REVFTE.filter(r=>(r[m]||0)<r.tK).length,c:'re'},
+    {l:'Q1 Avg Rev/FTE',v:Math.round(q1a.reduce((a,b)=>a+b,0)/q1a.length)+'K',c:'gr'},
+  ].map(k=>`<div class="kp ${k.c}"><div class="kp-l">${k.l}</div><div class="kp-v">${k.v}</div></div>`).join('');
+
+  // PL Summary
+  const sumMF=document.getElementById('rf-sum-mf')?.value||'all';
+  const sumCols=colMonths(sumMF);
+  const clr=(v,t)=>v>=t?'cg':v>=(t*.85)?'co':'cr';
+  document.getElementById('rf-pl-hdr').innerHTML=`<tr><th>Portfolio Leader</th><th class="r">Target</th>${sumCols.map(m=>`<th class="r">${mL(m)}</th>`).join('')}<th class="r">Q1 Avg</th></tr>`;
+  document.getElementById('rf-pl').innerHTML=PL_REVFTE.map(r=>{
+    const avg=q1avg(r);
+    return`<tr><td>${r.pl}</td><td class="r mn"><span class="tag-hl">${r.tK}K</span></td>${sumCols.map(m=>`<td class="r mn ${clr(r[m]||0,r.tK)}">${r[m]?r[m]+'K':'—'}</td>`).join('')}<td class="r mn ${avg?clr(avg,r.tK):''}">${avg?Math.round(avg)+'K':'—'}</td></tr>`;
+  }).join('');
+
+  filterRF();
+  renderRFInsights();
+  setTimeout(()=>{lineC('rf-trend',(()=>{const allL2=allL();return allL2;})(),PL_REVFTE.map(r=>({label:r.pl.split(' ')[0],color:PL_C[r.pl]||'#aaa',data:MONTHS.map(m=>r[m]||null)})),{fmt:v=>v+'K',dp:0,lp:48});},60);
+}
+
+function filterRF(){
+  const q=(document.getElementById('rf-srch').value||'').toLowerCase();
+  const pl=(document.getElementById('rf-plf').value||'');
+  const mf=(document.getElementById('rf-mf').value||'Mar');
+  if(mf==='all'){
+    document.getElementById('rf-det-hdr').innerHTML='<tr><th>Project</th><th>PL</th><th class="r">Jan Rev</th><th class="r">Jan FTE</th><th class="r">Jan R/FTE</th><th class="r">Feb Rev</th><th class="r">Feb FTE</th><th class="r">Feb R/FTE</th><th class="r">Mar Rev</th><th class="r">Mar FTE</th><th class="r">Mar R/FTE</th></tr>';
+  } else {
+    document.getElementById('rf-det-hdr').innerHTML=`<tr><th>Project</th><th>PL</th><th class="r">Earned Revenue</th><th class="r">FTE Utilization</th><th class="r">Rev / FTE</th></tr>`;
+  }
+  const f=RF_DETAIL.filter(r=>r.pl&&(!q||r.proj.toLowerCase().includes(q)||r.pl.toLowerCase().includes(q))&&(!pl||r.pl===pl));
+  document.getElementById('rf-det').innerHTML=f.map(r=>{
+    if(mf==='all'){
+      return`<tr><td style="max-width:220px;overflow:hidden;text-overflow:ellipsis" title="${r.proj}">${r.proj}</td><td style="font-size:11px;max-width:90px;overflow:hidden;text-overflow:ellipsis">${r.pl}</td><td class="r mn">${r.jRev||'—'}</td><td class="r mn">${r.jFTE??'—'}</td><td class="r mn">${r.jRFTE||'—'}</td><td class="r mn">${r.fRev||'—'}</td><td class="r mn">${r.fFTE??'—'}</td><td class="r mn">${r.fRFTE||'—'}</td><td class="r mn">${r.mRev||'—'}</td><td class="r mn">${r.mFTE??'—'}</td><td class="r mn">${r.mRFTE||'—'}</td></tr>`;
+    } else {
+      return`<tr><td style="max-width:240px;overflow:hidden;text-overflow:ellipsis" title="${r.proj}">${r.proj}</td><td style="font-size:11px;max-width:110px;overflow:hidden;text-overflow:ellipsis">${r.pl}</td><td class="r mn">${getRR(r,mf)||'—'}</td><td class="r mn">${getFTE(r,mf)??'—'}</td><td class="r mn">${getRFTE(r,mf)||'—'}</td></tr>`;
+    }
+  }).join('');
+  document.getElementById('rf-cnt').textContent=`${f.length} projects`;
+}
+
+function renderRFInsights(){
+  const m=document.getElementById('rf-ins-mf')?.value||'all';
+  document.getElementById('rf-ins-lbl').textContent=m==='all'?'Q1 Full Quarter':mL(m);
+  const months=m==='all'?MONTHS:[m];
+
+  // 1. PLs below target
+  const belowPLs=PL_REVFTE.filter(r=>months.some(mo=>(r[mo]||0)<r.tK));
+  document.getElementById('rf-below').innerHTML=belowPLs.map(r=>{
+    const items=months.filter(mo=>(r[mo]||0)<r.tK).map(mo=>{
+      const deficit=r.tK-(r[mo]||0);
+      const highFTE=RF_DETAIL.filter(p=>p.pl===r.pl&&getFTE(p,mo)!=null&&getFTE(p,mo)>3).slice(0,2);
+      return{mo,deficit,highFTE};
+    });
+    return`<li><strong>${r.pl}</strong> — Target: <span class="tag-hl">${r.tK}K</span>
+      ${items.map(({mo,deficit,highFTE})=>`<span class="sub">${mL(mo)}: <strong class="cr">${r[mo]}K</strong> (−${deficit}K vs target)${highFTE.length?` — High FTE projects: ${highFTE.map(p=>p.proj.substring(0,25)+'…').join(', ')}`:''}</span>`).join('')}
+      <span class="q">→ Is revenue lower due to SOW scope constraints? Are resources (FTEs) being allocated beyond what the SOW supports?</span>
+      <span class="q">→ Review whether billing rates or engagement scope needs renegotiation</span></li>`;
+  }).join('')||'<li class="cg">All PLs meeting Rev/FTE targets</li>';
+
+  // 2. High FTE, low revenue
+  const highFTEProj=RF_DETAIL.filter(r=>months.some(m=>getFTE(r,m)!=null&&getFTE(r,m)>3&&getRR(r,m)!=null))
+    .sort((a,b)=>{const af=Math.max(...months.map(m=>getFTE(a,m)||0));const bf=Math.max(...months.map(m=>getFTE(b,m)||0));return bf-af;}).slice(0,7);
+  document.getElementById('rf-highfte').innerHTML=highFTEProj.map(r=>{
+    const fteData=months.map(m=>{const fte=getFTE(r,m);return fte!=null?`${mL(m)}: ${fte} FTE, Rev ${getRR(r,m)||'—'}`:null;}).filter(Boolean);
+    return`<li><strong>${r.proj}</strong> <span style="font-size:10px;color:var(--mu)">(${r.pl.split(' ')[0]})</span>
+      <span class="sub">${fteData.join(' | ')}</span>
+      <span class="q">→ Why are ${Math.max(...months.map(m=>getFTE(r,m)||0)).toFixed(1)} FTEs required? Is revenue proportional to the team size? Possible SOW mismatch or role over-staffing.</span></li>`;
+  }).join('')||'<li class="cm">No high-FTE concerns identified</li>';
+
+  // 3. Consecutive underperformance
+  const rfConsec=RF_DETAIL.filter(r=>{
+    const pairs=[['Jan','Feb'],['Feb','Mar']];
+    return pairs.some(([a,b])=>{
+      const pa=PL_REVFTE.find(x=>x.pl===r.pl);
+      if(!pa)return false;
+      return(getRR(r,a)&&getFTE(r,a)>2)&&(getRR(r,b)&&getFTE(r,b)>2);
+    });
+  }).filter(r=>{
+    const pa=PL_REVFTE.find(x=>x.pl===r.pl);
+    return pa&&months.every(m=>(pa[m]||0)<pa.tK);
+  }).slice(0,5);
+  document.getElementById('rf-consec').innerHTML=rfConsec.length?rfConsec.map(r=>{
+    const pa=PL_REVFTE.find(x=>x.pl===r.pl);
+    const fteData=months.map(m=>{const fte=getFTE(r,m);const rv=getRR(r,m);return fte!=null&&rv?`${mL(m)}: ${fte} FTE / ${rv}`:null;}).filter(Boolean);
+    return`<li><strong>${r.proj}</strong> <span style="font-size:10px;color:var(--mu)">(${r.pl})</span>
+      <span class="sub">${fteData.join(' → ')} — consistently high FTE with portfolio below target</span>
+      <span class="q">→ Operational inefficiency: Are deliverables aligned with the FTE investment? Review team composition and output quality.</span></li>`;
+  }).join(''):'<li class="cm">No persistent Rev/FTE underperformers identified</li>';
+}
+
+// ═══════════════════ RISK
+function getRKMonths(){
+  // Use the Risk tab's own dropdown (rk-mf) as the selected "viewing" month
+  // That month becomes PREV, and next month in RISK_MONTHS becomes CURR
+  // So "viewing Apr" means: show Apr(prev) → May(curr)
+  const sel=document.getElementById('rk-mf');
+  const chosen=sel?sel.value:RISK_MONTHS[RISK_MONTHS.length-2]||RISK_MONTHS[0];
+  const idx=RISK_MONTHS.indexOf(chosen);
+  if(idx!==-1 && idx<RISK_MONTHS.length-1){
+    return{prev:RISK_MONTHS[idx], curr:RISK_MONTHS[idx+1]};
+  }
+  // If last month selected, show prev→curr (last two)
+  const last=RISK_MONTHS[RISK_MONTHS.length-1];
+  const secondLast=RISK_MONTHS[RISK_MONTHS.length-2]||RISK_MONTHS[0];
+  return{prev:secondLast, curr:last};
+}
+
+function setRKMonth(val){
+  // Called when risk dropdown changes
+  requestAnimationFrame(()=>requestAnimationFrame(()=>renderRK()));
+}
+
+function refreshRKDropdown(){
+  const sel=document.getElementById('rk-mf');
+  if(!sel)return;
+  // Show all months that have a NEXT month in RISK_MONTHS (so we can show prev→curr)
+  // Plus always show the last month as "latest"
+  const opts=RISK_MONTHS.slice(0,-1); // all except the last (those are "prev" options)
+  // Also add the last if RISK_MONTHS has only 1
+  const toShow=opts.length>0?opts:[RISK_MONTHS[0]];
+  const curVal=sel.value||toShow[toShow.length-1];
+  sel.innerHTML=toShow.map(m=>`<option value="${m}" ${m===curVal?'selected':''}>${mL(m)}</option>`).join('');
+  // Default to latest available
+  if(!sel.value||!toShow.includes(sel.value)){
+    sel.value=toShow[toShow.length-1];
+  }
+}
+function renderRK(){
+  refreshRKDropdown();
+  const{curr,prev}=getRKMonths();
+  const ord={High:3,Medium:2,Low:1,No:0};
+  // Get current and prev status from month-keyed fields
+  const getCu=r=>r[curr]||'No';
+  const getPr=r=>r[prev]||'No';
+
+  // Update labels
+  const snapLbl=document.getElementById('rk-snapshot-lbl');
+  if(snapLbl)snapLbl.textContent=`${mL(prev)} → ${mL(curr)}`;
+  const plLbl=document.getElementById('rk-pl-lbl');
+  if(plLbl)plLbl.textContent=mL(curr);
+  const prevHdr=document.getElementById('rk-prev-hdr');
+  if(prevHdr)prevHdr.textContent=mL(prev)+' Status';
+  const currHdr=document.getElementById('rk-curr-hdr');
+  if(currHdr)currHdr.textContent=mL(curr)+' Status';
+
+  const high=RISK_DATA.filter(r=>getCu(r)==='High');
+  const med=RISK_DATA.filter(r=>getCu(r)==='Medium');
+  const imp=RISK_DATA.filter(r=>(ord[getPr(r)]||0)>(ord[getCu(r)]||0));
+  const esc2=RISK_DATA.filter(r=>(ord[getCu(r)]||0)>(ord[getPr(r)]||0));
+  const ns=high.filter(r=>r.ac==='Not Started');
+
+  document.getElementById('rk-kpis').innerHTML=[
+    {l:`High Risk — ${mL(curr)}`,v:high.length,c:'re'},
+    {l:'Medium Risk',v:med.length,c:'or'},
+    {l:`Improved ${mL(prev)}→${mL(curr)}`,v:imp.length,c:'gr'},
+    {l:`Escalated ${mL(prev)}→${mL(curr)}`,v:esc2.length,c:'re'},
+  ].map(k=>`<div class="kp ${k.c}"><div class="kp-l">${k.l}</div><div class="kp-v">${k.v}</div></div>`).join('');
+
+  // High risk by PL
+  const plHighRisk={};
+  high.forEach(r=>{plHighRisk[r.pl]=(plHighRisk[r.pl]||[]);plHighRisk[r.pl].push(r);});
+  document.getElementById('rk-high').innerHTML=Object.entries(plHighRisk).map(([pl,items])=>
+    `<li><strong>${pl}</strong>: ${items.length} High Risk item${items.length>1?'s':''}<span class="sub">${items.map(r=>`${r.p} (${r.t}) — Action: ${r.ac}`).join('; ')}</span></li>`
+  ).join('')||'<li class="cg">No high-risk items this month</li>';
+
+  document.getElementById('rk-imp').innerHTML=imp.slice(0,8).map(r=>
+    `<li><strong>${r.p}</strong> <span style="font-size:10px;color:var(--mu)">(${r.pl.split(' ')[0]})</span>: ${r.t} <strong>${getPr(r)}</strong> → <strong class="cg">${getCu(r)}</strong><span class="sub">Action: ${r.ac}</span></li>`
+  ).join('')||'<li class="cm">No improvements this period</li>';
+
+  const persHigh=RISK_DATA.filter(r=>getPr(r)==='High'&&getCu(r)==='High');
+  document.getElementById('rk-esc').innerHTML=[
+    ...esc2.slice(0,4).map(r=>`<li>⬆ <strong>${r.p}</strong> (${r.pl.split(' ')[0]}): ${r.t} escalated <strong>${getPr(r)}</strong> → <strong class="cr">${getCu(r)}</strong><span class="sub">Action: ${r.ac}</span></li>`),
+    ...persHigh.slice(0,3).map(r=>`<li>🔴 <strong>${r.p}</strong> (${r.pl.split(' ')[0]}): ${r.t} persistently High both months — Action: <em>${r.ac}</em></li>`),
+    ns.length?`<li>⚠ <strong>${ns.length}</strong> High Risk items with <strong class="cr">No Action Started</strong>: ${ns.slice(0,3).map(r=>r.p.substring(0,25)+'…').join(', ')}</li>`:'',
+  ].filter(Boolean).join('')||'<li class="cm">No escalation concerns</li>';
+
+  filterRisk();
+
+  const plR={};
+  RISK_DATA.forEach(r=>{
+    if(!plR[r.pl])plR[r.pl]={H:0,M:0,L:0};
+    const v=getCu(r);
+    plR[r.pl][v==='High'?'H':v==='Medium'?'M':'L']++;
+  });
+  const pls=Object.keys(plR);
+  setTimeout(()=>{
+    barC('rk-pl',pls.map(p=>p.split(' ')[0]),[
+      {label:'High',color:'#f16060',data:pls.map(p=>plR[p].H||0)},
+      {label:'Medium',color:'#f59e0b',data:pls.map(p=>plR[p].M||0)},
+      {label:'Low/None',color:'#3ecf8e',data:pls.map(p=>plR[p].L||0)},
+    ],{dp:0,lp:28,mn:0});
+    const types={};RISK_DATA.forEach(r=>{types[r.t]=(types[r.t]||0)+1;});
+    const tk=Object.keys(types);
+    barC('rk-type',tk.map(k=>k.length>12?k.substring(0,12)+'…':k),[{label:'',color:'#9f7aea',data:tk.map(k=>types[k])}],{dp:0,lp:28,lg:false,mn:0});
+  },120);
+}
+function filterRisk(){
+  const{curr,prev}=getRKMonths();
+  const getCu=r=>r[curr]||'No';
+  const getPr=r=>r[prev]||'No';
+  const q=(document.getElementById('rk-srch').value||'').toLowerCase();
+  const pl=(document.getElementById('rk-plf').value||'');
+  const st=(document.getElementById('rk-stf').value||'');
+  const ty=(document.getElementById('rk-tyf').value||'');
+  const f=RISK_DATA.filter(r=>
+    (!q||r.p.toLowerCase().includes(q)||r.pl.toLowerCase().includes(q)||r.t.toLowerCase().includes(q))&&
+    (!pl||r.pl===pl)&&
+    (!st||getCu(r)===st)&&
+    (!ty||r.t===ty)
+  );
+  document.getElementById('rk-body').innerHTML=f.map(r=>`<tr>
+    <td style="max-width:190px;overflow:hidden;text-overflow:ellipsis" title="${r.p}">${r.p}</td>
+    <td>${r.t}</td>
+    <td style="font-size:11px">${r.pl}</td>
+    <td>${rBx(getPr(r))}</td>
+    <td>${rBx(getCu(r))}</td>
+    <td>${aBx(r.ac)}</td>
+  </tr>`).join('');
+  document.getElementById('rk-cnt').textContent=`${f.length} items`;
+}
+
+// ═══════════════════ UTILIZATION
+function renderUT(){
+  const m=document.getElementById('ut-mf')?.value||'Mar';
+  const _utbl=document.getElementById('ut-bl');if(_utbl)_utbl.textContent=mL(m);
+  const _uttl=document.getElementById('ut-tl');if(_uttl)_uttl.textContent=mL(m);
+  const data=UTIL[m]||UTIL['Mar'];
+  const ngt=data.filter(r=>r.p!=='Grand Total');const gt=data.find(r=>r.p==='Grand Total');
+  document.getElementById('ut-kpis').innerHTML=[
+    {l:`Overall GT% — ${mL(m)}`,v:gt?pct(gt.gt):'—',c:'bl'},{l:'Prime / Healthy',v:ngt.filter(r=>r.s.includes('Prime')||r.s.includes('Healthy')).length,c:'gr'},
+    {l:'Watch',v:ngt.filter(r=>r.s.includes('Watch')).length,c:'or'},{l:'Critical',v:ngt.filter(r=>r.s.includes('Critical')).length,c:'re'},
+  ].map(k=>`<div class="kp ${k.c}"><div class="kp-l">${k.l}</div><div class="kp-v">${k.v}</div></div>`).join('');
+  document.getElementById('ut-body').innerHTML=data.map(r=>`<tr class="${r.p==='Grand Total'?'tot':''}"><td>${r.p}</td>${uC(r.l1)}${uC(r.l2)}${uC(r.l3)}${uC(r.m1)}${uC(r.m2)}<td class="r mn ${r.gt>=.85?'cg':r.gt>=.75?'':r.gt>=.60?'co':'cr'}">${pct(r.gt)}</td><td>${sBx(r.s)}</td></tr>`).join('');
+
+  // MoM table with filter
+  const momMF=document.getElementById('ut-mom-mf')?.value||'all';
+  const momCols=colMonths(momMF);
+  document.getElementById('ut-mom-hdr').innerHTML=`<tr><th>Practice</th>${momCols.map(m=>`<th class="r">${mL(m)} GT%</th><th>${mL(m)}</th>`).join('')}</tr>`;
+  const pracs=[...new Set(Object.values(UTIL).flatMap(d=>d.map(r=>r.p)))];
+  document.getElementById('ut-mom-b').innerHTML=pracs.map(p=>{
+    return`<tr class="${p==='Grand Total'?'tot':''}"><td>${p}</td>${momCols.map(m=>{const r=UTIL[m]?.find(x=>x.p===p);return`<td class="r mn">${r?pct(r.gt):'—'}</td><td>${r?sBx(r.s):'—'}</td>`;}).join('')}</tr>`;
+  }).join('');
+
+  setTimeout(()=>{
+    utBarC('ut-bar',data,m);
+    lineC('ut-trend',allL(),[{label:'GT%',color:'#5b9cf6',data:MONTHS.map(mo=>{const g=UTIL[mo]?.find(r=>r.p==='Grand Total');return g?g.gt*100:null;})}],{fmt:v=>v.toFixed(1)+'%',dp:1,lp:48,mn:60,mx:78,lg:false});
+  },120);
+}
+
+// ═══════════════════ TAB SWITCHING
+const RENDERS={ov:renderOV,ro:renderRO,pm:renderPM,rf:renderRF,rk:renderRK,ut:renderUT};
+function sw(id){
+  document.querySelectorAll('.st').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.pn').forEach(p=>p.classList.remove('active'));
+  document.getElementById('st-'+id).classList.add('active');
+  document.getElementById('pn-'+id).classList.add('active');
+  // Use requestAnimationFrame to ensure panel is visible (display:block) before rendering charts
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=>{ if(RENDERS[id])RENDERS[id](); }); });
+}
+
+// ═══════════════════ GLOBAL MONTH
+function setGlobalMonth(m){
+  GACT=m;
+  const tab=document.querySelector('.st.active');
+  if(tab){
+    const id=tab.id.replace('st-','');
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      if(RENDERS[id])RENDERS[id]();
+      if(id!=='ov')renderOV();
+    }));
+  }
+}
+
+// ═══════════════════ MONTH MANAGEMENT
+function addMonth(){
+  const n=document.getElementById('nm-n').value.trim();const y=document.getElementById('nm-y').value.trim()||'26';
+  if(!n){ntfy('Enter month name','err');return;}
+  const k=n.substring(0,3);if(MONTHS.includes(k)){ntfy('Month exists','err');return;}
+  MONTHS.push(k);
+  const rv=document.getElementById('nm-r').value.trim()||'—';const ut=parseFloat(document.getElementById('nm-u').value)||0;
+  MMETA[k]={l:`${n}'${y}`,rev:rv,revN:parseFloat(rv.replace(/[^0-9.]/g,''))||0,util:ut};
+  UTIL[k]=JSON.parse(JSON.stringify(UTIL['Mar']));
+  PL_MARGIN.forEach(r=>{if(r[k]===undefined)r[k]=null;});PL_REVFTE.forEach(r=>{if(r[k]===undefined)r[k]=null;});PL_LOSS.forEach(r=>{if(r[k]===undefined)r[k]=0;});
+  // Update topbar period label
+  const perLbl=document.getElementById('tb-period');if(perLbl){const first=MONTHS[0];const last=MONTHS[MONTHS.length-1];perLbl.textContent=first===last?mL(first):'Q1–'+mL(last);}
+  cM('addM');ntfy(`${n}'${y} added`,'ok');['nm-n','nm-r','nm-u'].forEach(i=>{const e=document.getElementById(i);if(e)e.value='';});document.getElementById('nm-y').value='26';
+}
+function oM(id){document.getElementById(id).classList.add('open');}
+function cM(id){document.getElementById(id).classList.remove('open');}
+document.querySelectorAll('.ov').forEach(o=>o.addEventListener('click',function(e){if(e.target===this)this.classList.remove('open');}));
+
+// ═══════════════════ INIT
+// Update topbar period label on load
+(function(){
+  const perLbl=document.getElementById('tb-period');
+  if(perLbl){const f=MONTHS[0],l=MONTHS[MONTHS.length-1];perLbl.textContent=f===l?mL(f):'Q1–'+mL(l);}
+})();
+popF();
+renderOV();
+</script>
+</body>
+</html>
